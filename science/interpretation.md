@@ -21,7 +21,7 @@ This protection uses a property of the exact cyclic alphabet. Additional phase e
 Suppose the input contains $`n`$ photons. The loss environment's photon count has the binomial law
 
 ```math
-L\mid N=n\sim\operatorname{Bin}(n,1-\eta).
+L\mid N=n\sim\mathrm{Bin}(n,1-\eta).
 ```
 
 The rescaled count $`L/(1-\eta)`$ is an unbiased estimate of $`n`$, with conditional mean-squared error

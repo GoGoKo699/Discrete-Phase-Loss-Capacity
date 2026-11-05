@@ -140,3 +140,27 @@ theorems, not on these simulations.
 No efficient implementation of the non-Gaussian recovery instrument is claimed.
 Continuous phase perturbations, a correlated phase process, joint limits in
 loss and alphabet size, and optimal energy constants are outside these checks.
+
+## Hosted mathematical display
+
+The [browser collector](hosted/capture_hosted_math.cjs) compares the mathematical expressions in a pinned Git revision with their actual rendering on GitHub. It inspects every tracked Markdown page at widths of 1440 and 760 pixels, including formulas in tables. The [text contract](hosted/math-contract.json) adds explicit expected text for the overview and repaired model displays.
+
+The source and hosted sides have different roles. MathJax compiles the source into an expected MathML structure; Chromium reads the MathML actually supplied by GitHub. The collector compares symbols, scripts, fractions, labels, expression counts and bounded display geometry, then saves the HTML, screenshots, inventories and report. Inspect the screenshots as well: a structural pass does not establish visual legibility or scientific correctness.
+
+To reproduce from an exact checked-out commit, install the browser dependencies outside the repository and use a new evidence directory:
+
+```bash
+npm install --prefix /tmp/phase-loss-hosted-deps playwright@1.56.1 mathjax-full@3.2.1
+/tmp/phase-loss-hosted-deps/node_modules/.bin/playwright install chromium
+checked_revision="$(git rev-parse HEAD)"
+NODE_PATH=/tmp/phase-loss-hosted-deps/node_modules node --require ./verification/hosted/retry_529.cjs verification/hosted/capture_hosted_math.cjs \
+  --root "$PWD" \
+  --repository GoGoKo699/Discrete-Phase-Loss-Capacity \
+  --revision "$checked_revision" \
+  --contract verification/hosted/math-contract.json \
+  --output /tmp/phase-loss-hosted-evidence
+```
+
+This requires Node.js 18 or later, Python 3.10 or later, Git and a compatible Chromium environment. The pinned commit must already exist on the public repository: local working changes are not the hosted source. A report passes only for its recorded revision and page scope. The read-only pull-request workflow runs the same full-page comparison and retains its diagnostic captures for seven days. A failed request or rendering check remains failed until a fresh, successful capture is inspected.
+
+The [transport adapter](hosted/retry_529.cjs) retries an HTTP 529 response at most three times, after 3, 7 and 15 seconds, using the same page, URL and browser context. It stops retrying if the response indicates an access or policy denial. Other status codes and browser errors propagate immediately. Each observed 529 response is logged; the collector still requires an actual successful page response and the complete mathematical comparison.

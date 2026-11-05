@@ -1,6 +1,15 @@
 # References
 
-Primary publication metadata and the cited results were checked on 2026-11-05. The keys below match [references.bib](references.bib); headings supply ordinary Markdown anchors, for example `REFERENCES.md#dsw2018`. [RELATED_WORK.md](RELATED_WORK.md) explains the contribution boundary. Journal articles and pinned project repositories are distinguished explicitly.
+Primary publication metadata and the cited results were checked on 2026-11-05. The keys below match [references.bib](references.bib); headings supply ordinary Markdown anchors, for example `REFERENCES.md#dsw2018`. [RELATED_WORK.md](RELATED_WORK.md) explains the contribution boundary. The educational textbook, research articles and pinned project repositories have distinct roles.
+
+## Wilde2017
+
+Mark M. Wilde, **Quantum Information Theory**, second edition, Cambridge University Press (2017).
+
+- DOI and publisher: [10.1017/9781316809976](https://doi.org/10.1017/9781316809976)
+- Free author version: [arXiv:1106.1445v8, *From Classical to Quantum Shannon Theory*](https://arxiv.org/abs/1106.1445v8), revised 14 July 2019 with corrections. This access version is distinguished from the selected 2017 book edition.
+- Role: the single educational anchor for the [learning route](../learning/README.md). The [source-to-project bridge](../learning/WILDE_BRIDGE.md) identifies the relevant chapters and connects states, channels, entropy and communication protocols to this optical model.
+- Scope: textbook foundations support the learning map. The channel-specific estimates and constructions are proved in the scientific pages, and research-level capacity and distillation ingredients are credited to the primary papers below.
 
 ## CW2004
 

@@ -59,10 +59,10 @@ A Kraus family for the first ordering is $`\{A_\ell P_r\}_{\ell,r}`$. The number
 The energy transformation is exact:
 
 ```math
-\operatorname{Tr}\!\left[
+\mathrm{Tr}\!\left[
 \hat n\,\mathcal N_{\eta,J}(\rho)
 \right]
-=\eta\,\operatorname{Tr}(\hat n\rho).
+=\eta\,\mathrm{Tr}(\hat n\rho).
 ```
 
 The main theorem fixes $`0\lt\eta\lt1`$ while $`J`$ grows. The lossless endpoint $`\eta=1`$ is treated separately.
@@ -75,16 +75,16 @@ An $`n`$-use protocol alternates local operations and public communication with 
 
 ```math
 \frac1n\sum_{i=1}^{n}
-\operatorname{Tr}\!\left(\hat n\,\rho_{A_i}^{(i)}\right)
+\mathrm{Tr}\!\left(\hat n\,\rho_{A_i}^{(i)}\right)
 \le E.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Equivalently, for the prior classical history $`H_i`$, the summand is
 
 ```math
 \mathbb E_{H_i}\!\left[
-\operatorname{Tr}\!\left(\hat n\,\rho_{A_i|H_i}^{(i)}\right)
+\mathrm{Tr}\!\left(\hat n\,\rho_{A_i|H_i}^{(i)}\right)
 \right].
 ```
 
@@ -137,7 +137,7 @@ For $`X\in\{Q_2,K\}`$, define the energy required for a fixed target rate $`R\gt
 ```math
 E_{\min}^{X}(\eta,J,R)
 =\inf\{E\ge0:X(\eta,J,E)\ge R\}.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 The infimum of the empty set is infinity. Achievability below is proved with a strict margin above $`R`$, so no conclusion relies on whether a boundary capacity is attained by one particular protocol.
