@@ -29,10 +29,11 @@ jobs:
       - name: Compare actual GitHub mathematics
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
+          HOSTED_RETRY_LOG: ${{ runner.temp }}/hosted-evidence/transport-retries.jsonl
           CHECKED_REPOSITORY: ${{ github.repository }}
           CHECKED_REVISION: ${{ github.event.pull_request.head.sha }}
         run: |
-          node verification/hosted/capture_hosted_math.cjs \
+          node --require ./verification/hosted/retry_529.cjs verification/hosted/capture_hosted_math.cjs \
             --root "$GITHUB_WORKSPACE" \
             --repository "$CHECKED_REPOSITORY" \
             --revision "$CHECKED_REVISION" \

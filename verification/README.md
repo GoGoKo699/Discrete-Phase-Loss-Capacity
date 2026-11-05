@@ -153,7 +153,7 @@ To reproduce from an exact checked-out commit, install the browser dependencies 
 npm install --prefix /tmp/phase-loss-hosted-deps playwright@1.56.1 mathjax-full@3.2.1
 /tmp/phase-loss-hosted-deps/node_modules/.bin/playwright install chromium
 checked_revision="$(git rev-parse HEAD)"
-NODE_PATH=/tmp/phase-loss-hosted-deps/node_modules node verification/hosted/capture_hosted_math.cjs \
+NODE_PATH=/tmp/phase-loss-hosted-deps/node_modules node --require ./verification/hosted/retry_529.cjs verification/hosted/capture_hosted_math.cjs \
   --root "$PWD" \
   --repository GoGoKo699/Discrete-Phase-Loss-Capacity \
   --revision "$checked_revision" \
@@ -162,3 +162,5 @@ NODE_PATH=/tmp/phase-loss-hosted-deps/node_modules node verification/hosted/capt
 ```
 
 This requires Node.js 18 or later, Python 3.10 or later, Git and a compatible Chromium environment. The pinned commit must already exist on the public repository: local working changes are not the hosted source. A report passes only for its recorded revision and page scope. The read-only pull-request workflow runs the same full-page comparison and retains its diagnostic captures for seven days. A failed request or rendering check remains failed until a fresh, successful capture is inspected.
+
+The [transport adapter](hosted/retry_529.cjs) retries an HTTP 529 response at most three times, after 3, 7 and 15 seconds, using the same page, URL and browser context. It stops retrying if the response indicates an access or policy denial. Other status codes and browser errors propagate immediately. Each observed 529 response is logged; the collector still requires an actual successful page response and the complete mathematical comparison.
