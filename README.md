@@ -40,6 +40,10 @@ Start with the [scientific overview](science/README.md), then follow the route m
 | Which results and techniques are inherited? | [Related work](references/RELATED_WORK.md) and [references](references/REFERENCES.md) |
 | What can be reproduced numerically? | [Verification guide](verification/README.md) |
 
+## Learn the project
+
+The [learning route](learning/README.md) uses Mark M. Wilde’s *Quantum Information Theory*, second edition (Cambridge, 2017), as its educational anchor. The [Wilde bridge](learning/WILDE_BRIDGE.md) connects the relevant textbook chapters to optical modes, the photon budget and the proof mechanisms. The [30-milestone map](learning/MILESTONES.md) develops the background into the complete communication-energy argument, with dependencies and links to the authoritative science.
+
 ## Reproduce the finite checks
 
 From the repository root:

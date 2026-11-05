@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "expressions": [
+    {
+      "path": "README.md",
+      "index": 1,
+      "source_sha256": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+      "expected_text": "J"
+    },
+    {
+      "path": "README.md",
+      "index": 2,
+      "source_sha256": "59a94416a2a319caf40a348286e620ef3594226a2eac1efe842231962d1e157d",
+      "expected_text": "η"
+    },
+    {
+      "path": "README.md",
+      "index": 3,
+      "source_sha256": "a9f51566bd6705f7ea6ad54bb9deb449f795582d6529a0e22207b8981233ec58",
+      "expected_text": "E"
+    },
+    {
+      "path": "README.md",
+      "index": 4,
+      "source_sha256": "74b2a911b4f627f94a5420af68fed92d882a5efaef166e1e7f190445b2bbb8bf",
+      "expected_text": "ΘR(J)"
+    },
+    {
+      "path": "README.md",
+      "index": 5,
+      "source_sha256": "b216aefbf757ab31dc92b8374e42a532ec2b2f9fd895c4c9dbfd9b975092eb07",
+      "expected_text": "0<η<1"
+    },
+    {
+      "path": "README.md",
+      "index": 6,
+      "source_sha256": "cc73cb70bc838e07794c1a14e002d3b58e39348987428d1bd08edc3811cd10b2",
+      "expected_text": "Θη,R(J2)"
+    },
+    {
+      "path": "README.md",
+      "index": 7,
+      "source_sha256": "15744baecba89b15ca038ad1b3537e93c93072f7a20b5eb0c26a158ea69da5ce",
+      "expected_text": "0<R<Cη,Cη=−log2⁡(1−η)."
+    },
+    {
+      "path": "README.md",
+      "index": 8,
+      "source_sha256": "5da91e15de04cc9ed845155843f47d62e6d821ec54f91472caf41ab500859e6c",
+      "expected_text": "Cη"
+    },
+    {
+      "path": "README.md",
+      "index": 9,
+      "source_sha256": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+      "expected_text": "J"
+    },
+    {
+      "path": "README.md",
+      "index": 10,
+      "source_sha256": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+      "expected_text": "J"
+    },
+    {
+      "path": "README.md",
+      "index": 11,
+      "source_sha256": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+      "expected_text": "J"
+    },
+    {
+      "path": "README.md",
+      "index": 12,
+      "source_sha256": "29097134fc17258fdbf15b4539c983c98a2902a0af827b29177dbdf439bfb887",
+      "expected_text": "J2"
+    },
+    {
+      "path": "README.md",
+      "index": 13,
+      "source_sha256": "5da91e15de04cc9ed845155843f47d62e6d821ec54f91472caf41ab500859e6c",
+      "expected_text": "Cη"
+    },
+    {
+      "path": "science/model.md",
+      "index": 12,
+      "source_sha256": "ca660c0ff3f4845820f40b023cc767e0036507eeee946fecf4c8732a8a099f8b",
+      "expected_text": "Tr[n^Nη,J(ρ)]=ηTr(n^ρ)."
+    },
+    {
+      "path": "science/model.md",
+      "index": 21,
+      "source_sha256": "2f64b8358ad2cba471e1b074317cc93e6fae796416b29e615ca1c7ce10b495e6",
+      "expected_text": "1n∑i=1nTr(n^ρAi(i))≤E.(1)"
+    },
+    {
+      "path": "science/model.md",
+      "index": 23,
+      "source_sha256": "50cdb349356b3ccd22f45f759ab061c9c029a28990a414f183f85fc38e827879",
+      "expected_text": "EHi[Tr(n^ρAi|Hi(i))]."
+    },
+    {
+      "path": "science/model.md",
+      "index": 36,
+      "source_sha256": "cafb4fae9a3e380f9f81930bdd3fcab0fd4df2b90ad73dba39a04d59e8ade731",
+      "expected_text": "EminX(η,J,R)=inf{E≥0:X(η,J,E)≥R}.(2)"
+    }
+  ]
+}

@@ -37,12 +37,12 @@ jobs:
             --repository "$CHECKED_REPOSITORY" \
             --revision "$CHECKED_REVISION" \
             --output "$RUNNER_TEMP/hosted-evidence" \
-            --page README.md --page science/model.md
+            --contract verification/hosted/math-contract.json
       - name: Retain source inventories and actual hosted captures
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: hosted-math-${{ github.event.pull_request.head.sha }}
+          name: hosted-math-${{ github.event.pull_request.head.sha }}-attempt-${{ github.run_attempt }}
           path: ${{ runner.temp }}/hosted-evidence
           if-no-files-found: error
           retention-days: 7

@@ -9,7 +9,7 @@ Unambiguous discrimination and reciprocal-state constructions are established me
 Fix $`M\in\mathbb N_0`$ and let
 
 ```math
-\mathcal H_M=\operatorname{span}\{|0\rangle,\ldots,|M\rangle\},
+\mathcal H_M=\mathrm{span}\{|0\rangle,\ldots,|M\rangle\},
 \qquad
 \Pi_M=\sum_{m=0}^{M}|m\rangle\langle m|.
 ```
@@ -51,7 +51,7 @@ Consequently, for every $`X`$ supported on $`\mathcal H_M`$,
 =
 \frac1J\sum_{j=0}^{J-1}
 W_j\mathcal L_\eta(X)W_j^\dagger.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 The data cutoff is imposed before displacement. The actual channel input generally has infinite Fock support, with finite and explicitly counted mean energy.
@@ -74,7 +74,7 @@ For every $`A\gt0`$, the finite matrix $`G`$ is positive definite. Put
 s=\lambda_{\min}(G),
 \qquad
 R_j=(\langle j|\otimes I_{\mathcal H_M})G^{-1}V^\dagger.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 There is a receiver instrument with success branches
@@ -91,7 +91,7 @@ and a failure branch. It satisfies
 \right]
 =
 \frac{s}{J}\mathcal L_\eta(X)
-\tag{3}
+\qquad\text{(3)}
 ```
 
 for every operator $`X`$ supported on $`\mathcal H_M`$. Thus the total success map is exactly $`s\mathcal L_\eta`$. Its success probability is $`s`$, independent of the data state. Equations (1)–(3) remain valid after tensoring every map with the identity on an arbitrary reference.
@@ -135,7 +135,7 @@ From (2),
 
 ```math
 R_jW_\ell=\delta_{j\ell}I_{\mathcal H_M}.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 Also,
@@ -148,7 +148,7 @@ Write the polar decomposition $`V=WG^{1/2}`$, where $`W`$ is an isometry on the 
 
 ```math
 s\sum_jR_j^\dagger R_j\le I_{\mathcal H}.
-\tag{5}
+\qquad\text{(5)}
 ```
 
 The success maps are trace nonincreasing and can be completed by a failure map with effect $`I-s\sum_jR_j^\dagger R_j`$. For example, the failure map can place its trace weight in a separate failure flag. Since each diagonal Gram block is the identity, a Rayleigh quotient supported on one block equals one; therefore $`0\lt s\le1`$.
@@ -168,7 +168,7 @@ B_M(d)
 \sum_{k=0}^{\min(m,n)}
 \frac{d^{m+n-2k}}
 {(m-k)!(n-k)!k!}.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 Its degree is $`2M`$. Normal ordering gives
@@ -195,7 +195,7 @@ Taking entrywise absolute values and bounding the operator norm by the sum of ab
 ```math
 \|\Pi_M D(\alpha)\Pi_M\|
 \le B_M(|\alpha|)e^{-|\alpha|^2/2}.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 This estimate is deliberately uniform rather than optimized.
@@ -228,7 +228,7 @@ Let $`h=\min\{|j-\ell|,J-|j-\ell|\}`$. For $`1\le h\le J/2`$ and $`A=aJ`$,
 
 ```math
 d_{j\ell}=2aJ\sin(\pi h/J)\ge4ah.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 The last inequality uses $`\sin x\ge2x/\pi`$ for $`0\le x\le\pi/2`$.
@@ -240,7 +240,7 @@ There are at most two entries at each positive circular separation in a block ro
 \le
 2\sum_{h=1}^{\infty}
 \sup_{d\ge4ah}B_M(d)e^{-d^2/2}.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 For completeness, the block Schur bound follows by applying
@@ -273,7 +273,7 @@ It follows that $`c_{h+1}\le\rho_M(a)c_h`$. Whenever $`\rho_M(a)\lt1`$, (9) yiel
 :=
 \frac{2B_M(4a)e^{-8a^2}}
 {1-\rho_M(a)}.
-\tag{10}
+\qquad\text{(10)}
 ```
 
 For fixed $`M`$, this expression tends to zero as $`a\to\infty`$. Choose a finite $`a`$ meeting the stated conditions and $`\Omega_M(a)\le\delta`$. Then
@@ -304,7 +304,7 @@ The data marginals used in [rate_energy.md](rate_energy.md) are Fock diagonal, s
 
 ```math
 E_{\rm active}=E_0+\frac{a^2J^2}{\eta}.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 Equation (11) is the energy of every attempted active use, including attempts for which the receiver declares failure. The recovery theorem permits arbitrary local non-Gaussian operations; it does not supply a bound on circuit size or control precision.

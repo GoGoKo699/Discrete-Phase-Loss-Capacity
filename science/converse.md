@@ -14,7 +14,7 @@ Q_2(\eta,J,E)
 -\log_2(1-\eta),
 \ f\!\left(\frac{4\eta E}{(1-\eta)J^2}\right)
 \right\}.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Here $`f(u)=g(u)+\min\{u,1\}`$. The bound applies to arbitrary reference-entangled inputs and to adaptive protocols. Its energy dependence requires only a finite first moment of the photon number.
@@ -27,7 +27,7 @@ For a bipartite state $`\sigma_{RB}`$, squashed entanglement is
 
 ```math
 E_{\rm sq}(R:B)_\sigma
-=\frac12\inf_{\omega_{RBC}:\operatorname{Tr}_C\omega=\sigma}
+=\frac12\inf_{\omega_{RBC}:\mathrm{Tr}_C\omega=\sigma}
 I(R:B|C)_\omega.
 ```
 
@@ -36,8 +36,8 @@ An equivalent minimization applies a channel to a purifying environment. The ene
 ```math
 E_{\rm sq}(\mathcal N,\hat n,E)
 =
-\sup_{\psi_{RA}:\operatorname{Tr}(\hat n\psi_A)\le E}
-E_{\rm sq}(R:B)_{(\operatorname{id}_R\otimes\mathcal N)(\psi)},
+\sup_{\psi_{RA}:\mathrm{Tr}(\hat n\psi_A)\le E}
+E_{\rm sq}(R:B)_{(\mathrm{id}_R\otimes\mathcal N)(\psi)},
 ```
 
 where the inputs in the supremum are pure and the reference is arbitrary.
@@ -45,7 +45,7 @@ where the inputs in the supremum are pure and the reference is arbitrary.
 [DSW2018, Theorem 4](../references/REFERENCES.md#dsw2018) upper-bounds the adaptive average-energy secret-key capacity by this quantity, assuming a Gibbs input observable and finite output entropy at each finite input-energy bound. The number observable satisfies
 
 ```math
-\operatorname{Tr}(e^{-\beta\hat n})
+\mathrm{Tr}(e^{-\beta\hat n})
 =\frac1{1-e^{-\beta}}\lt\infty
 \qquad(\beta\gt0).
 ```
@@ -56,7 +56,7 @@ The channel satisfies the other hypothesis because its output mean is $`\eta E`$
 Q_2(\eta,J,E)
 \le K(\eta,J,E)
 \le E_{\rm sq}(\mathcal N_{\eta,J},\hat n,E).
-\tag{2}
+\qquad\text{(2)}
 ```
 
 The source's Eq. (101) uses the average over channel inputs, not a separate energy cap on each use. The result is a weak-converse capacity bound. No strong-converse assertion is needed here.
@@ -79,15 +79,15 @@ The vectors $`|\xi_n\rangle`$ are unnormalized and need not be orthogonal. Suppo
 \qquad
 \mathsf S=\mathsf N\bmod J,
 \qquad
-\mathsf L\mid\mathsf N=n\sim\operatorname{Bin}(n,q).
+\mathsf L\mid\mathsf N=n\sim\mathrm{Bin}(n,q).
 ```
 
 Then
 
 ```math
-E_{\rm sq}(R:B)_{(\operatorname{id}\otimes\mathcal N_{\eta,J})(\psi)}
+E_{\rm sq}(R:B)_{(\mathrm{id}\otimes\mathcal N_{\eta,J})(\psi)}
 \le H(\mathsf N\mid\mathsf L,\mathsf S).
-\tag{3}
+\qquad\text{(3)}
 ```
 
 **Proof.** Use the channel's Kraus operators $`A_\ell P_r`$ in a Stinespring dilation and measure their orthogonal environment label $`(\ell,r)`$. This is a legitimate squashing channel. Its conditional, unnormalized reference-output vector is
@@ -139,7 +139,7 @@ For every distribution of $`\mathsf N`$ with mean at most $`E`$,
 H(\mathsf N\mid\mathsf L,\mathsf S)
 \le
 f\!\left(\frac{4\eta E}{qJ^2}\right).
-\tag{4}
+\qquad\text{(4)}
 ```
 
 **Proof.** Define the integer quotient and an estimator by
@@ -155,18 +155,18 @@ Fix any nearest-integer convention at ties, and set
 
 ```math
 \mathsf Z
-=\mathsf K-\operatorname{round}(\widehat{\mathsf K}).
+=\mathsf K-\mathrm{round}(\widehat{\mathsf K}).
 ```
 
 For every integer $`k`$ and real $`x`$,
 
 ```math
-|k-\operatorname{round}(x)|\le2|k-x|.
-\tag{5}
+|k-\mathrm{round}(x)|\le2|k-x|.
+\qquad\text{(5)}
 ```
 
 If the rounded value equals $`k`$, the inequality is immediate. Otherwise $`|k-x|\ge1/2`$, and the triangle inequality gives
-$`|k-\operatorname{round}(x)|\le|k-x|+1/2\le2|k-x|`$.
+$`|k-\mathrm{round}(x)|\le|k-x|+1/2\le2|k-x|`$.
 
 Apply (5), then condition on the photon number before evaluating the second moment:
 
@@ -188,7 +188,7 @@ Apply (5), then condition on the photon number before evaluating the second mome
 \qquad
 u:=\frac{4\eta E}{qJ^2}.
 \end{aligned}
-\tag{6}
+\qquad\text{(6)}
 ```
 
 The conditional identity uses
@@ -196,7 +196,7 @@ The conditional identity uses
 ```math
 \mathbb E[\mathsf L\mid\mathsf N]=q\mathsf N,
 \qquad
-\operatorname{Var}(\mathsf L\mid\mathsf N)=q\eta\mathsf N.
+\mathrm{Var}(\mathsf L\mid\mathsf N)=q\eta\mathsf N.
 ```
 
 Equation (6) never subtracts potentially divergent unconditional second moments. Its integrand is nonnegative, and its conditional expectation is linear in $`\mathsf N`$. A finite photon-number variance is therefore unnecessary.
@@ -208,7 +208,7 @@ H(\mathsf N\mid\mathsf L,\mathsf S)
 =
 H(\mathsf Z\mid\mathsf L,\mathsf S)
 \le H(\mathsf Z).
-\tag{7}
+\qquad\text{(7)}
 ```
 
 Since $`\mathsf Z`$ is integer-valued,
@@ -253,7 +253,7 @@ For either $`X=Q_2`$ or $`X=K`$, if $`X(\eta,J,E)\ge R\gt0`$, then
 ```math
 E\ge
 \frac{1-\eta}{4\eta}\,f^{-1}(R)\,J^2.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 In particular, at fixed $`0\lt\eta\lt1`$, any sequence $`E_J=o(J^2)`$ obeys

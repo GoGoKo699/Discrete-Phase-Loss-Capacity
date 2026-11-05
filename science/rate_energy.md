@@ -23,7 +23,7 @@ independent of $`J`$ such that, for all $`J\ge2`$,
 c_{\eta,R}J^2
 \le E_{\min}^{X}(\eta,J,R)
 \le C_{\eta,R}J^2.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 One valid lower constant is
@@ -32,7 +32,7 @@ One valid lower constant is
 c_{\eta,R}
 =
 \frac{1-\eta}{4\eta}f^{-1}(R).
-\tag{2}
+\qquad\text{(2)}
 ```
 
 The upper construction uses a fixed finite data cutoff and a carrier amplitude proportional to $`J`$. Its constants depend on $`\eta`$ and the target rate but not on coding block length. The result is for fixed transmissivity; it makes no claim uniform in a simultaneous limit $`\eta\to1`$.
@@ -49,7 +49,7 @@ Let $`p`$ be a distribution on $`\{0,\ldots,M\}`$. Alice prepares its canonical 
 \sum_{n=0}^{M}\sqrt{p_n}\,|n\rangle_R|n\rangle_A.
 ```
 
-Let $`\sigma_{RB}=(\operatorname{id}_R\otimes\mathcal L_\eta)(\psi_p)`$. The loss Kraus decomposition is
+Let $`\sigma_{RB}=(\mathrm{id}_R\otimes\mathcal L_\eta)(\psi_p)`$. The loss Kraus decomposition is
 
 ```math
 \sigma_{RB}
@@ -69,7 +69,7 @@ where
 
 The branch vectors are mutually orthogonal: they have distinct values of the difference between the reference label and receiver photon number. If
 $`\mathsf N\sim p`$ and
-$`\mathsf L\mid\mathsf N\sim\operatorname{Bin}(\mathsf N,1-\eta)`$,
+$`\mathsf L\mid\mathsf N\sim\mathrm{Bin}(\mathsf N,1-\eta)`$,
 their squared norms are the probabilities of $`\mathsf L`$. Therefore
 
 ```math
@@ -86,7 +86,7 @@ I_{\rm rev}(p,\eta)
 S(R)_\sigma-S(RB)_\sigma
 =
 H(p)-H(\mathsf L).
-\tag{3}
+\qquad\text{(3)}
 ```
 
 The finite-dimensional hashing inequality with communication from Bob to Alice achieves any rate below the positive part of (3); see [DW2005](../references/REFERENCES.md#dw2005) and its reverse-reconciliation application in [Reverse2009](../references/REFERENCES.md#reverse2009). Both retained systems have dimension at most $`M+1`$, so no infinite-dimensional distillation limit is being imported in this step.
@@ -97,7 +97,7 @@ For every $`0\lt R\lt C_\eta`$, there is a finite $`M`$ and a distribution $`p`$
 
 ```math
 R_0:=H(p)-H(\mathsf L)\gt R.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 The choice can be fixed before varying either $`J`$ or the coding block length.
@@ -126,7 +126,7 @@ The formal reverse coherent information of this finite-mean distribution is
 g(\mu)-g(q\mu)
 \longrightarrow-\log_2q=C_\eta
 \qquad(\mu\to\infty).
-\tag{5}
+\qquad\text{(5)}
 ```
 
 The limit follows from $`g(x)=\log_2(ex)+o(1)`$ as $`x\to\infty`$. Choose one finite $`\mu`$ for which the expression in (5) exceeds $`R`$.
@@ -152,7 +152,7 @@ where the variable on the right has the original geometric law. Thus its tail en
 H\!\left(p^{(\mu,M)}\right)
 =
 g(\mu)-\frac{h_2(\epsilon_M)}{1-\epsilon_M},
-\tag{6}
+\qquad\text{(6)}
 ```
 
 where $`h_2`$ is binary entropy.
@@ -178,7 +178,7 @@ therefore imply
 \epsilon_M\!\left[g(q\mu)+g(q(M+1+\mu))\right]
 +h_2(\epsilon_M)
 }{1-\epsilon_M}.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 The right side tends to zero: $`\epsilon_M`$ decreases exponentially and the entropy of the tail mean grows only logarithmically. Equations (6) and (7) establish
@@ -198,7 +198,7 @@ Fix the distribution from Lemma 4, with cutoff $`M`$, mean $`E_0`$, and reverse 
 
 ```math
 (1-\delta)R_0\gt R.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 By [Lemma 3 in recovery.md](recovery.md#lemma-3-uniform-success-with-amplitude-proportional-to-the-alphabet-size), choose a finite $`a=a(M,\delta)`$ giving success probability $`s_J\ge1-\delta`$ for every $`J`$, with output carrier amplitude $`A=aJ`$.
@@ -220,7 +220,7 @@ Q_2\!\left(
 \ge s_JR_0
 \ge(1-\delta)R_0
 \gt R.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 Every attempted use has the same input marginal. Because the data marginal is Fock diagonal, the displacement cross terms vanish and its mean is exactly
@@ -251,7 +251,7 @@ For each fixed $`J\ge2`$, $`0\lt\eta\lt1`$, and $`E\gt0`$,
 Q_2(\eta,J,E)\gt0,
 \qquad
 K(\eta,J,E)\gt0.
-\tag{10}
+\qquad\text{(10)}
 ```
 
 To see this, use $`M=1`$ and $`p_0=p_1=1/2`$. Equation (3) gives
@@ -288,7 +288,7 @@ For each fixed $`J\ge2`$ and $`0\lt\eta\lt1`$,
 \sup_{E\lt\infty}K(\eta,J,E)
 =
 C_\eta.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 Indeed, Theorem 3 supplies a finite energy for every target below $`C_\eta`$, while Theorem 1 supplies the endpoint upper bound. Monotonicity in $`E`$ also makes (11) the corresponding limit as $`E\to\infty`$. This statement concerns the two capacities defined here and a fixed finite alphabet.
@@ -299,14 +299,14 @@ For every $`J\ge2`$ and $`E\ge0`$,
 
 ```math
 Q_2(1,J,E)=K(1,J,E)=g(E/J).
-\tag{12}
+\qquad\text{(12)}
 ```
 
 Consequently, for either capacity and every finite $`R\gt0`$,
 
 ```math
 E_{\min}^{X}(1,J,R)=J\,g^{-1}(R).
-\tag{13}
+\qquad\text{(13)}
 ```
 
 **Converse.** At $`\eta=1`$, the channel is $`\mathcal D_J`$. Measuring its residue environment gives the same pure-branch extension as Lemma 1, without a loss count. For an arbitrary input purification with photon law $`\mathsf N`$, set
@@ -332,7 +332,7 @@ The Gibbs and finite output-entropy conditions still hold, so [DSW2018](../refer
 **Achievability.** The residue-zero subspace
 
 ```math
-\operatorname{span}\{|Jk\rangle:k\ge0\}
+\mathrm{span}\{|Jk\rangle:k\ge0\}
 ```
 
 is noiseless under $`\mathcal D_J`$. For $`E\gt0`$, take a geometric law of mean $`\nu=E/J`$ on $`k`$ and condition it on $`k\le M`$. Alice sends the second half of
