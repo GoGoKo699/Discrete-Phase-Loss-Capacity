@@ -1,0 +1,1126 @@
+{
+  "status": "passed",
+  "scope": "Finite numerical checks, not a proof or a capacity computation.",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "random_seed": 20261105
+  },
+  "tolerances": {
+    "probability_and_moment": 4e-12,
+    "entropy": 5e-10,
+    "matrix_operator_or_frobenius": 3e-10
+  },
+  "classical_converse": [
+    {
+      "case": "vacuum",
+      "eta": 0.7,
+      "J": 7,
+      "support": [
+        0
+      ],
+      "input_mean": 0.0,
+      "input_second_moment": 0.0,
+      "H_N_given_L_residue": 0.0,
+      "H_Z_given_L_residue": 0.0,
+      "H_Z": -0.0,
+      "centered_second_moment": 0.0,
+      "predicted_centered_second_moment": 0.0,
+      "rounded_error_second_moment": 0.0,
+      "u": 0.0,
+      "f_u": 0.0
+    },
+    {
+      "case": "truncated_geometric",
+      "eta": 0.7,
+      "J": 7,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "input_mean": 1.9990099075891734,
+      "input_second_moment": 9.971287320086056,
+      "H_N_given_L_residue": 0.12239351356563982,
+      "H_Z_given_L_residue": 0.1223935135656391,
+      "H_Z": 0.610864075357657,
+      "centered_second_moment": 4.664356451041405,
+      "predicted_centered_second_moment": 4.664356451041403,
+      "rounded_error_second_moment": 0.11311245305822756,
+      "u": 0.3807637919217472,
+      "f_u": 1.5538792045163843
+    },
+    {
+      "case": "two_peaks",
+      "eta": 0.2,
+      "J": 3,
+      "support": [
+        0,
+        60
+      ],
+      "input_mean": 2.4,
+      "input_second_moment": 144.0,
+      "H_N_given_L_residue": 6.63624607318732e-42,
+      "H_Z_given_L_residue": 5.551115123125783e-17,
+      "H_Z": 0.2259191078190648,
+      "centered_second_moment": 0.6000000000000005,
+      "predicted_centered_second_moment": 0.6,
+      "rounded_error_second_moment": 0.06483577375245633,
+      "u": 0.2666666666666666,
+      "f_u": 1.207150921420023
+    },
+    {
+      "case": "rare_bright_tail",
+      "eta": 0.7,
+      "J": 8,
+      "support": [
+        0,
+        2,
+        31,
+        503
+      ],
+      "input_mean": 2.422,
+      "input_second_moment": 300.898,
+      "H_N_given_L_residue": 1.276957883493233e-41,
+      "H_Z_given_L_residue": 2.220446049250313e-16,
+      "H_Z": 0.39271658316100294,
+      "centered_second_moment": 5.651333333333331,
+      "predicted_centered_second_moment": 5.651333333333333,
+      "rounded_error_second_moment": 0.10005321101594757,
+      "u": 0.3532083333333333,
+      "f_u": 1.4740368229752137
+    },
+    {
+      "case": "single_residue",
+      "eta": 0.95,
+      "J": 5,
+      "support": [
+        0,
+        5,
+        10,
+        30,
+        95
+      ],
+      "input_mean": 14.0,
+      "input_second_moment": 657.5,
+      "H_N_given_L_residue": 1.6249668360762277,
+      "H_Z_given_L_residue": 1.624966836076228,
+      "H_Z": 2.9092780231924236,
+      "centered_second_moment": 265.9999999999997,
+      "predicted_centered_second_moment": 265.9999999999997,
+      "rounded_error_second_moment": 10.640000000000008,
+      "u": 42.55999999999996,
+      "f_u": 7.870939033803097
+    }
+  ],
+  "arbitrary_reference_inputs": [
+    {
+      "reference": "orthogonal",
+      "reference_dimension": 9,
+      "eta": 0.7,
+      "J": 3,
+      "data_cutoff": 8,
+      "average_branch_entanglement": 0.3051669933568562,
+      "classical_posterior_entropy": 0.30516699335685626,
+      "strictness_gap": 5.551115123125783e-17
+    },
+    {
+      "reference": "identical",
+      "reference_dimension": 2,
+      "eta": 0.7,
+      "J": 3,
+      "data_cutoff": 8,
+      "average_branch_entanglement": 3.869995552137228e-18,
+      "classical_posterior_entropy": 0.30516699335685626,
+      "strictness_gap": 0.30516699335685626
+    },
+    {
+      "reference": "nonorthogonal",
+      "reference_dimension": 3,
+      "eta": 0.7,
+      "J": 3,
+      "data_cutoff": 8,
+      "average_branch_entanglement": 0.18482010887797876,
+      "classical_posterior_entropy": 0.30516699335685626,
+      "strictness_gap": 0.12034688447887751
+    }
+  ],
+  "exact_filter": [
+    {
+      "J": 3,
+      "M": 2,
+      "a": 0.65,
+      "state": "random_entangled",
+      "q_min": 0.6692110536585091,
+      "gram_condition_number": 1.920138701697883,
+      "left_inverse_operator_error": 2.0786060976927802e-15,
+      "CP_operator_max_eigenvalue": 1.000000000000001,
+      "reference_data_map_frobenius_error": 5.97004801038748e-16,
+      "success_probability_error": 7.771561172376096e-16,
+      "reference_marginal_error": 5.207407663672592e-16
+    },
+    {
+      "J": 3,
+      "M": 2,
+      "a": 0.65,
+      "state": "two_level_bell",
+      "q_min": 0.6692110536585091,
+      "gram_condition_number": 1.920138701697883,
+      "left_inverse_operator_error": 2.0786060976927802e-15,
+      "CP_operator_max_eigenvalue": 1.000000000000001,
+      "reference_data_map_frobenius_error": 7.788609035324133e-16,
+      "success_probability_error": 7.771561172376096e-16,
+      "reference_marginal_error": 7.774197385439712e-16
+    },
+    {
+      "J": 5,
+      "M": 2,
+      "a": 1.2,
+      "state": "random_entangled",
+      "q_min": 0.9999999649202345,
+      "gram_condition_number": 1.0000000693916282,
+      "left_inverse_operator_error": 4.077926170414874e-15,
+      "CP_operator_max_eigenvalue": 1.0000000000000013,
+      "reference_data_map_frobenius_error": 1.6337485341582154e-15,
+      "success_probability_error": 6.661338147750939e-16,
+      "reference_marginal_error": 9.305364597889227e-16
+    },
+    {
+      "J": 5,
+      "M": 2,
+      "a": 1.2,
+      "state": "two_level_bell",
+      "q_min": 0.9999999649202345,
+      "gram_condition_number": 1.0000000693916282,
+      "left_inverse_operator_error": 4.077926170414874e-15,
+      "CP_operator_max_eigenvalue": 1.0000000000000013,
+      "reference_data_map_frobenius_error": 1.0169260057008389e-15,
+      "success_probability_error": 6.661338147750939e-16,
+      "reference_marginal_error": 6.70900792985757e-16
+    }
+  ],
+  "rate_energy_example": {
+    "eta": 0.7,
+    "M": 2,
+    "untruncated_geometric_mean": 1.0,
+    "p": [
+      0.5714285714285714,
+      0.2857142857142857,
+      0.14285714285714285
+    ],
+    "lost_count_probabilities": [
+      0.8414285714285715,
+      0.14571428571428574,
+      0.01285714285714286
+    ],
+    "data_mean_energy": 0.5714285714285714,
+    "reverse_coherent_information_R0": 0.6835261561255819,
+    "carrier_a": 1.2,
+    "carrier_energy_coefficient_a_squared_over_eta": 2.0571428571428574,
+    "target_rate": 0.5,
+    "analytic_uniform_q_lower": 0.9890834744294305,
+    "analytic_uniform_rate_lower": 0.6760644253640838,
+    "minimum_q_over_tested_J": 0.9975715971295879,
+    "tested_J_values": [
+      {
+        "J": 2,
+        "Gram_dimension": 6,
+        "carrier_output_amplitude": 2.4,
+        "q_min": 0.9975715971295879,
+        "gram_distance_from_identity": 0.0024284028704122385,
+        "rate_s_R0": 0.6818662792460447,
+        "charged_input_energy": 8.8
+      },
+      {
+        "J": 3,
+        "Gram_dimension": 9,
+        "carrier_output_amplitude": 3.5999999999999996,
+        "q_min": 0.9999950331737413,
+        "gram_distance_from_identity": 4.966826258723245e-06,
+        "rate_s_R0": 0.6835227611699211,
+        "charged_input_energy": 19.085714285714285
+      },
+      {
+        "J": 4,
+        "Gram_dimension": 12,
+        "carrier_output_amplitude": 4.8,
+        "q_min": 0.9999998245596627,
+        "gram_distance_from_identity": 1.7544033725780395e-07,
+        "rate_s_R0": 0.6835260362075225,
+        "charged_input_energy": 33.48571428571429
+      },
+      {
+        "J": 8,
+        "Gram_dimension": 24,
+        "carrier_output_amplitude": 9.6,
+        "q_min": 0.9999999948559042,
+        "gram_distance_from_identity": 5.144095815978744e-09,
+        "rate_s_R0": 0.6835261526094578,
+        "charged_input_energy": 132.22857142857146
+      },
+      {
+        "J": 16,
+        "Gram_dimension": 48,
+        "carrier_output_amplitude": 19.2,
+        "q_min": 0.9999999981021559,
+        "gram_distance_from_identity": 1.897844104092883e-09,
+        "rate_s_R0": 0.6835261548283558,
+        "charged_input_energy": 527.2
+      },
+      {
+        "J": 32,
+        "Gram_dimension": 96,
+        "carrier_output_amplitude": 38.4,
+        "q_min": 0.9999999985192392,
+        "gram_distance_from_identity": 1.480761291361432e-09,
+        "rate_s_R0": 0.6835261551134431,
+        "charged_input_energy": 2107.0857142857144
+      },
+      {
+        "J": 64,
+        "Gram_dimension": 192,
+        "carrier_output_amplitude": 76.8,
+        "q_min": 0.9999999986102831,
+        "gram_distance_from_identity": 1.3897172301824412e-09,
+        "rate_s_R0": 0.683526155175674,
+        "charged_input_energy": 8426.628571428573
+      }
+    ],
+    "fixed_mu_cutoff_limit": {
+      "eta": 0.7,
+      "mu": 3.0,
+      "thermal_reverse_coherent_information": 1.3489108184791627,
+      "cases": [
+        {
+          "M": 4,
+          "tail_probability": 0.2373046875,
+          "H_input": 2.208618301761103,
+          "H_loss": 1.2481368286621257,
+          "reverse_coherent_information": 0.9604814730989775,
+          "loss_entropy_limit": 1.896201679357369,
+          "loss_entropy_error": 0.6480648506952433,
+          "analytic_loss_entropy_error_bound": 2.551039842742091
+        },
+        {
+          "M": 12,
+          "tail_probability": 0.023757264018058777,
+          "H_input": 3.0791229290223843,
+          "H_loss": 1.7855090320082805,
+          "reverse_coherent_information": 1.2936138970141038,
+          "loss_entropy_limit": 1.896201679357369,
+          "loss_entropy_error": 0.11069264734908857,
+          "analytic_loss_entropy_error_bound": 0.305741563877103
+        },
+        {
+          "M": 32,
+          "tail_probability": 7.533931929047496e-05,
+          "H_input": 3.243971859125446,
+          "H_loss": 1.8953881647215631,
+          "reverse_coherent_information": 1.348583694403883,
+          "loss_entropy_limit": 1.896201679357369,
+          "loss_entropy_error": 0.0008135146358059231,
+          "analytic_loss_entropy_error_bound": 0.0016557480760763393
+        },
+        {
+          "M": 64,
+          "tail_probability": 7.568017374869511e-09,
+          "H_input": 3.245112282752473,
+          "H_loss": 1.8962015200324605,
+          "reverse_coherent_information": 1.3489107627200128,
+          "loss_entropy_limit": 1.896201679357369,
+          "loss_entropy_error": 1.593249085996007e-07,
+          "analytic_loss_entropy_error_bound": 2.735408634801895e-07
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "check": "independent displacement formulas M=2, delta=(0.7+0.2j)",
+      "value": 1.249000902703301e-16,
+      "upper": 0.0,
+      "tolerance": 2e-12,
+      "passed": true
+    },
+    {
+      "check": "independent displacement formulas M=2, delta=(-1.1+0.4j)",
+      "value": 3.3306690738754696e-16,
+      "upper": 0.0,
+      "tolerance": 2e-12,
+      "passed": true
+    },
+    {
+      "check": "independent displacement formulas M=2, delta=(2.7-0.3j)",
+      "value": 1.6653345369377348e-16,
+      "upper": 0.0,
+      "tolerance": 2e-12,
+      "passed": true
+    },
+    {
+      "check": "independent displacement formulas M=4, delta=(0.7+0.2j)",
+      "value": 1.6653345369377348e-16,
+      "upper": 0.0,
+      "tolerance": 2e-12,
+      "passed": true
+    },
+    {
+      "check": "independent displacement formulas M=4, delta=(-1.1+0.4j)",
+      "value": 3.3306690738754696e-16,
+      "upper": 0.0,
+      "tolerance": 2e-12,
+      "passed": true
+    },
+    {
+      "check": "independent displacement formulas M=4, delta=(2.7-0.3j)",
+      "value": 1.27675647831893e-15,
+      "upper": 0.0,
+      "tolerance": 2e-12,
+      "passed": true
+    },
+    {
+      "check": "vacuum: joint normalization",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "vacuum: N marginal",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "vacuum: conditional centered second moment",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "vacuum: pointwise rounding inequality",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "vacuum: rounded-error second moment",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "vacuum: conditional integer translation",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "vacuum: conditioning reduces entropy",
+      "value": 0.0,
+      "upper": -0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "vacuum: integer entropy envelope",
+      "value": -0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "truncated_geometric: joint normalization",
+      "value": 1.1102230246251565e-16,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "truncated_geometric: N marginal",
+      "value": 5.551115123125783e-17,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "truncated_geometric: conditional centered second moment",
+      "value": 1.7763568394002505e-15,
+      "upper": 0.0,
+      "tolerance": 1.865742580416561e-11,
+      "passed": true
+    },
+    {
+      "check": "truncated_geometric: pointwise rounding inequality",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "truncated_geometric: rounded-error second moment",
+      "value": 0.11311245305822756,
+      "upper": 0.3807637919217472,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "truncated_geometric: conditional integer translation",
+      "value": 7.216449660063518e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "truncated_geometric: conditioning reduces entropy",
+      "value": 0.12239351356563982,
+      "upper": 0.610864075357657,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "truncated_geometric: integer entropy envelope",
+      "value": 0.610864075357657,
+      "upper": 1.5538792045163843,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "two_peaks: joint normalization",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "two_peaks: N marginal",
+      "value": 4.163336342344337e-17,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "two_peaks: conditional centered second moment",
+      "value": 5.551115123125783e-16,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "two_peaks: pointwise rounding inequality",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "two_peaks: rounded-error second moment",
+      "value": 0.06483577375245633,
+      "upper": 0.2666666666666666,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "two_peaks: conditional integer translation",
+      "value": 5.551115123125783e-17,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "two_peaks: conditioning reduces entropy",
+      "value": 6.63624607318732e-42,
+      "upper": 0.2259191078190648,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "two_peaks: integer entropy envelope",
+      "value": 0.2259191078190648,
+      "upper": 1.207150921420023,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rare_bright_tail: joint normalization",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rare_bright_tail: N marginal",
+      "value": 8.326672684688674e-17,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rare_bright_tail: conditional centered second moment",
+      "value": 1.7763568394002505e-15,
+      "upper": 0.0,
+      "tolerance": 2.260533333333333e-11,
+      "passed": true
+    },
+    {
+      "check": "rare_bright_tail: pointwise rounding inequality",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rare_bright_tail: rounded-error second moment",
+      "value": 0.10005321101594757,
+      "upper": 0.3532083333333333,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rare_bright_tail: conditional integer translation",
+      "value": 2.220446049250313e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rare_bright_tail: conditioning reduces entropy",
+      "value": 1.276957883493233e-41,
+      "upper": 0.39271658316100294,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rare_bright_tail: integer entropy envelope",
+      "value": 0.39271658316100294,
+      "upper": 1.4740368229752137,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "single_residue: joint normalization",
+      "value": 1.1102230246251565e-16,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "single_residue: N marginal",
+      "value": 8.326672684688674e-17,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "single_residue: conditional centered second moment",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 1.0639999999999988e-09,
+      "passed": true
+    },
+    {
+      "check": "single_residue: pointwise rounding inequality",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "single_residue: rounded-error second moment",
+      "value": 10.640000000000008,
+      "upper": 42.55999999999996,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "single_residue: conditional integer translation",
+      "value": 2.220446049250313e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "single_residue: conditioning reduces entropy",
+      "value": 1.6249668360762277,
+      "upper": 2.9092780231924236,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "single_residue: integer entropy envelope",
+      "value": 2.9092780231924236,
+      "upper": 7.870939033803097,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "orthogonal: each posterior reference entropy inequality",
+      "value": 2.220446049250313e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "orthogonal: conditional pure-state entropy equality",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "orthogonal: averaged reference entropy inequality",
+      "value": 0.3051669933568562,
+      "upper": 0.30516699335685626,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "orthogonal reference saturates classical bound",
+      "value": 5.551115123125783e-17,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "identical: each posterior reference entropy inequality",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "identical: conditional pure-state entropy equality",
+      "value": 4.969936782035652e-15,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "identical: averaged reference entropy inequality",
+      "value": 3.869995552137228e-18,
+      "upper": 0.30516699335685626,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "identical reference gives zero entanglement",
+      "value": 3.869995552137228e-18,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "nonorthogonal: each posterior reference entropy inequality",
+      "value": 2.985519766904976e-15,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "nonorthogonal: conditional pure-state entropy equality",
+      "value": 5.051514762044462e-15,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "nonorthogonal: averaged reference entropy inequality",
+      "value": 0.18482010887797876,
+      "upper": 0.30516699335685626,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "nonorthogonal example is a strict inequality",
+      "value": 0.001,
+      "upper": 0.12034688447887751,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "Gram J=3, M=2, a=0.65: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=3, M=2, a=0.65: coherent vacuum block",
+      "value": 4.539131392528307e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=3: left inverse",
+      "value": 2.0786060976927802e-15,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=3: trace-nonincreasing success instrument",
+      "value": 1.000000000000001,
+      "upper": 1.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=3, random_entangled: exact reference-data map",
+      "value": 5.97004801038748e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=3, random_entangled: state-independent success",
+      "value": 7.771561172376096e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=3, random_entangled: reference marginal",
+      "value": 5.207407663672592e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=3, two_level_bell: exact reference-data map",
+      "value": 7.788609035324133e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=3, two_level_bell: state-independent success",
+      "value": 7.771561172376096e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=3, two_level_bell: reference marginal",
+      "value": 7.774197385439712e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=5, M=2, a=1.2: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=5, M=2, a=1.2: coherent vacuum block",
+      "value": 7.248380584265166e-15,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=5: left inverse",
+      "value": 4.077926170414874e-15,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=5: trace-nonincreasing success instrument",
+      "value": 1.0000000000000013,
+      "upper": 1.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=5, random_entangled: exact reference-data map",
+      "value": 1.6337485341582154e-15,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=5, random_entangled: state-independent success",
+      "value": 6.661338147750939e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=5, random_entangled: reference marginal",
+      "value": 9.305364597889227e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=5, two_level_bell: exact reference-data map",
+      "value": 1.0169260057008389e-15,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=5, two_level_bell: state-independent success",
+      "value": 6.661338147750939e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "filter J=5, two_level_bell: reference marginal",
+      "value": 6.70900792985757e-16,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "example: analytic uniform success lower bound is positive",
+      "value": 0.0,
+      "upper": 0.9890834744294305,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "example: analytic guaranteed rate exceeds target",
+      "value": 0.5,
+      "upper": 0.6760644253640838,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "Gram J=2, M=2, a=1.2: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=2, M=2, a=1.2: coherent vacuum block",
+      "value": 3.305965128139558e-32,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "scaling J=2: Gram eigenvalue above uniform envelope",
+      "value": 0.9890834744294305,
+      "upper": 0.9975715971295879,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=3, M=2, a=1.2: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=3, M=2, a=1.2: coherent vacuum block",
+      "value": 1.802025749156351e-15,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "scaling J=3: Gram eigenvalue above uniform envelope",
+      "value": 0.9890834744294305,
+      "upper": 0.9999950331737413,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=4, M=2, a=1.2: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=4, M=2, a=1.2: coherent vacuum block",
+      "value": 7.117976962289579e-25,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "scaling J=4: Gram eigenvalue above uniform envelope",
+      "value": 0.9890834744294305,
+      "upper": 0.9999998245596627,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=8, M=2, a=1.2: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=8, M=2, a=1.2: coherent vacuum block",
+      "value": 1.4330312052948736e-14,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "scaling J=8: Gram eigenvalue above uniform envelope",
+      "value": 0.9890834744294305,
+      "upper": 0.9999999948559042,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=16, M=2, a=1.2: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=16, M=2, a=1.2: coherent vacuum block",
+      "value": 1.7053138445888721e-13,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "scaling J=16: Gram eigenvalue above uniform envelope",
+      "value": 0.9890834744294305,
+      "upper": 0.9999999981021559,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=32, M=2, a=1.2: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=32, M=2, a=1.2: coherent vacuum block",
+      "value": 6.821255378355489e-13,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "scaling J=32: Gram eigenvalue above uniform envelope",
+      "value": 0.9890834744294305,
+      "upper": 0.9999999985192392,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=64, M=2, a=1.2: Hermiticity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "Gram J=64, M=2, a=1.2: coherent vacuum block",
+      "value": 2.7285021513421954e-12,
+      "upper": 0.0,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "scaling J=64: Gram eigenvalue above uniform envelope",
+      "value": 0.9890834744294305,
+      "upper": 0.9999999986102831,
+      "tolerance": 3e-10,
+      "passed": true
+    },
+    {
+      "check": "cutoff M=4: geometric conditional entropy identity",
+      "value": 4.440892098500626e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "cutoff M=4: explicit lost-count entropy convergence bound",
+      "value": 0.6480648506952433,
+      "upper": 2.551039842742091,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "cutoff M=12: geometric conditional entropy identity",
+      "value": 8.881784197001252e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "cutoff M=12: explicit lost-count entropy convergence bound",
+      "value": 0.11069264734908857,
+      "upper": 0.305741563877103,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "cutoff M=32: geometric conditional entropy identity",
+      "value": 4.440892098500626e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "cutoff M=32: explicit lost-count entropy convergence bound",
+      "value": 0.0008135146358059231,
+      "upper": 0.0016557480760763393,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "cutoff M=64: geometric conditional entropy identity",
+      "value": 4.440892098500626e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "cutoff M=64: explicit lost-count entropy convergence bound",
+      "value": 1.593249085996007e-07,
+      "upper": 2.735408634801895e-07,
+      "tolerance": 5e-10,
+      "passed": true
+    }
+  ],
+  "number_of_checks": 109
+}

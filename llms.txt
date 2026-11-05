@@ -1,0 +1,21 @@
+# Discrete Phase Noise and Photon Loss
+
+This repository studies the mean photon energy needed to maintain a fixed two-way entanglement or secret-key rate through an independently redrawn cyclic phase alphabet followed by pure loss.
+
+## Scientific story
+- README.md: principal result, resources, reading routes and scope.
+- science/README.md: connected scientific route.
+- science/model.md: exact channel, unconditional average-energy constraint, capacity definitions and main claims.
+- science/converse.md: environment-label squashing, integer estimator, finite-mean entropy bound and adaptive converse.
+- science/recovery.md: exact data-preserving heralded filter and uniform displaced-Fock Gram bound.
+- science/rate_energy.md: finite-support reverse hashing, matching energy theorem, exact lossless benchmark and fixed-alphabet capacities.
+- science/interpretation.md: physical mechanism, metrology connection, noncommuting limits and scope.
+
+## Attribution and reproduction
+- references/RELATED_WORK.md: closest-work comparisons and inherited ingredients.
+- references/REFERENCES.md: source identities, links and where each result is used.
+- references/references.bib: structured bibliography.
+- verification/README.md: commands, numerical checks and their limits.
+
+## Preserve these distinctions
+The phase is redrawn independently every use; it is not one common unknown phase across a block. The energy constraint averages all physical uses and adaptive histories. Carrier photons and failed attempts are charged. The new claim is a matched communication-energy law; lossy metrology, pure-loss capacities, squashed-entanglement amortization and reciprocal discrimination methods are inherited. The converse covers arbitrary encodings and finite-mean photon tails. The recovery is unrestricted and non-Gaussian; efficient implementation and continuously broadened phase robustness are unproved. Finite checks support the calculations, while the universal claims follow from the proofs and cited theorems.
