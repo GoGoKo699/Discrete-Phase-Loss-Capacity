@@ -275,7 +275,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Combine the converse and construction under the same unconditional energy convention. Explain why both two-way entanglement and key require and admit quadratic energy for a fixed partial loss and fixed positive rate below the pure-loss endpoint. Identify which constants depend on loss and target rate, and why the theorem is not an exact finite-energy capacity formula.
 - **Dependencies and story role:** [M12](#m12), [M17](#m17), [M25](#m25). The two proof directions meet in the central result.
 - **Conceptual connection:** A universal lower bound and one compatible protocol determine the optimal scaling order.
-- **Sources:** [Fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy), [proof](../science/rate_energy.md#proof-of-theorem-3) and [finite carrier calculations](../verification/README.md#a-quantitative-example).
+- **Sources:** [Fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy), [proof](../science/rate_energy.md#proof-of-theorem-3) and [finite carrier calculations](../verification/README.md#fixed-loss-carrier-example).
 
 ### M27
 

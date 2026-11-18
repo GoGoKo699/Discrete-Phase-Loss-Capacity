@@ -122,7 +122,7 @@ displacement matrix and $`4a\ge\sqrt{2M}`$, then, with
 $`r=2^{2M}e^{-24a^2}<1`$,
 
 ```math
-\|G-I\|
+\lVert G-I\rVert
 \le 2\sum_{h\ge1}B_M(4ah)e^{-8a^2h^2}
 \le \frac{2B_M(4a)e^{-8a^2}}{1-r}.
 ```

@@ -193,7 +193,7 @@ e^{-|\alpha|^2/2}\sqrt{m!\,n!}
 Taking entrywise absolute values and bounding the operator norm by the sum of absolute matrix entries yields
 
 ```math
-\|\Pi_M D(\alpha)\Pi_M\|
+\lVert \Pi_M D(\alpha)\Pi_M\rVert
 \le B_M(|\alpha|)e^{-|\alpha|^2/2}.
 \qquad\text{(7)}
 ```
@@ -236,7 +236,7 @@ The last inequality uses $`\sin x\ge2x/\pi`$ for $`0\le x\le\pi/2`$.
 There are at most two entries at each positive circular separation in a block row. The Hermitian block Schur bound therefore gives
 
 ```math
-\|G-I\|
+\lVert G-I\rVert
 \le
 2\sum_{h=1}^{\infty}
 \sup_{d\ge4ah}B_M(d)e^{-d^2/2}.
@@ -245,7 +245,7 @@ There are at most two entries at each positive circular separation in a block ro
 
 For completeness, the block Schur bound follows by applying
 $`|\langle x_j,G_{j\ell}x_\ell\rangle|
-\le\|G_{j\ell}\|\,\|x_j\|\,\|x_\ell\|`$
+\le\lVert G_{j\ell}\rVert\,\lVert x_j\rVert\,\lVert x_\ell\rVert`$
 and then the ordinary scalar row-sum bound. The at-most-two multiplicity in (9) is independent of $`J`$.
 
 Choose $`a`$ so that $`4a\ge\sqrt{2M}`$. Each monomial $`d^r e^{-d^2/2}`$ with $`0\le r\le2M`$ is then nonincreasing throughout the relevant range. Thus the supremum in (9) is bounded by its value at $`4ah`$. Define
@@ -267,7 +267,7 @@ Because the polynomial coefficients are nonnegative and its degree is at most $`
 It follows that $`c_{h+1}\le\rho_M(a)c_h`$. Whenever $`\rho_M(a)\lt1`$, (9) yields the explicit uniform bound
 
 ```math
-\|G-I\|
+\lVert G-I\rVert
 \le
 \Omega_M(a)
 :=
@@ -279,7 +279,7 @@ It follows that $`c_{h+1}\le\rho_M(a)c_h`$. Whenever $`\rho_M(a)\lt1`$, (9) yiel
 For fixed $`M`$, this expression tends to zero as $`a\to\infty`$. Choose a finite $`a`$ meeting the stated conditions and $`\Omega_M(a)\le\delta`$. Then
 
 ```math
-s=\lambda_{\min}(G)\ge1-\|G-I\|\ge1-\delta,
+s=\lambda_{\min}(G)\ge1-\lVert G-I\rVert\ge1-\delta,
 ```
 
 uniformly for every alphabet size. ∎

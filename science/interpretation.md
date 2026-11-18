@@ -62,7 +62,7 @@ Finite-Fock overlaps are bounded by a fixed polynomial times a Gaussian in this 
 
 The input carrier energy is $`a^2J^2/\eta`$. The data energy and cutoff can both remain fixed as $`J`$ grows. Reverse hashing of accepted pairs then attains every fixed rate below the pure-loss endpoint. This gives a matching sufficiency statement under the same energy convention as the converse.
 
-A [quantitative example](../verification/README.md#a-quantitative-example) uses $`\eta=0.7`$, the three-level data law $`p=(4,2,1)/7`$, and $`a=1.2`$. Its exact energy is
+A [quantitative example](../verification/README.md#fixed-loss-carrier-example) uses $`\eta=0.7`$, the three-level data law $`p=(4,2,1)/7`$, and $`a=1.2`$. Its exact energy is
 
 ```math
 E=\frac47+\frac{72}{35}J^2.

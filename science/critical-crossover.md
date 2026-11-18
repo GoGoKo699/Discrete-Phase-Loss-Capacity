@@ -43,7 +43,7 @@ I_c &= H(\mathsf B)-H(\mathsf L)\\
 \end{aligned}
 ```
 
-The second line uses the bijection between $`(\mathsf B,\mathsf L)`$ and $`(\mathsf N,\mathsf L)`$. The receiver can measure $`\mathsf B\bmod J`$ without resolving the encoded levels. Since $`r`$ is known, this gives $`\mathsf L\bmod J=(r-\mathsf B)\bmod J`$. The receiver can use the least nonnegative representative of the loss residue as its syndrome. It equals the full loss count when $`0\le\ell<J`$. Within such a branch the receiver can relabel $`|r+Ju-\ell\rangle`$ as $`|u\rangle`$ without measuring the encoded label $`u`$. The proof of the rate uses the full loss distribution and charges all events, including losses of $`J`$ photons or more. In particular, if $`E_r=\mathbb E[\mathsf N\mid\mathsf S=r]`$,
+The second line uses the bijection between $`(\mathsf B,\mathsf L)`$ and $`(\mathsf N,\mathsf L)`$. The receiver can measure $`\mathsf B\bmod J`$ without resolving the encoded levels. Since $`r`$ is known, this gives $`\mathsf L\bmod J=(r-\mathsf B)\bmod J`$. The receiver can use the least nonnegative representative of the loss residue as its syndrome. It equals the full loss count when $`0\le\ell\lt J`$. Within such a branch the receiver can relabel $`|r+Ju-\ell\rangle`$ as $`|u\rangle`$ without measuring the encoded label $`u`$. The proof of the rate uses the full loss distribution and charges all events, including losses of $`J`$ photons or more. In particular, if $`E_r=\mathbb E[\mathsf N\mid\mathsf S=r]`$,
 
 ```math
 H(\mathsf L\mid\mathsf B)
@@ -64,7 +64,7 @@ To implement the fractions in a finite period, first reserve an arbitrarily smal
 
 ## Exact capacity in the critical window
 
-Let $`J\to\infty`$ through integers, let $`E=eJ`$ for fixed $`e\ge0`$, and suppose $`Jq_J\to\lambda`$ with $`0\le\lambda<\infty`$. For each $`J`$ take the capacity coding limit at that channel and energy before taking the limit in $`J`$. Then
+Let $`J\to\infty`$ through integers, let $`E=eJ`$ for fixed $`e\ge0`$, and suppose $`Jq_J\to\lambda`$ with $`0\le\lambda\lt\infty`$. For each $`J`$ take the capacity coding limit at that channel and energy before taking the limit in $`J`$. Then
 
 ```math
 \begin{aligned}
@@ -84,13 +84,13 @@ Let $`J\to\infty`$ through integers, let $`E=eJ`$ for fixed $`e\ge0`$, and suppo
 
 The supremum is over joint laws of the normalized residue $`A`$ and the number-lattice index $`\mathsf U`$. The cost $`A+\mathsf U`$ is the input photon number divided by $`J`$. The residue specifies which number lattice is in use and which loss residue the receiver should infer. The Poisson observation represents information lost to the environment. The code has access to the received oscillator.
 
-For $`\lambda=0`$ the count is deterministic and $`F_0(e)=g(e)`$, attained using $`A=0`$ and a geometric index of mean $`e`$. At $`e=0`$ the capacity is zero. For each positive $`e`$ and finite $`\lambda`$, an index supported on two adjacent nonnegative integers with $`A=0`$ and both probabilities positive can be chosen within the budget. The observation $`\mathsf L=0`$ leaves both indices possible, so $`F_\lambda(e)>0`$. When $`Jq_J\to\infty`$ and $`E=eJ`$ instead, the [lost-count estimate](converse.md#lemma-2-a-prior-uniform-integer-estimation-bound) bounds the capacity of the lossy channel by $`f(4\eta e/(Jq_J))`$ with $`f(x)=g(x)+\min\{x,1\}`$ and forces all three rates to zero. Complete loss gives zero directly.
+For $`\lambda=0`$ the count is deterministic and $`F_0(e)=g(e)`$, attained using $`A=0`$ and a geometric index of mean $`e`$. At $`e=0`$ the capacity is zero. For each positive $`e`$ and finite $`\lambda`$, an index supported on two adjacent nonnegative integers with $`A=0`$ and both probabilities positive can be chosen within the budget. The observation $`\mathsf L=0`$ leaves both indices possible, so $`F_\lambda(e)\gt0`$. When $`Jq_J\to\infty`$ and $`E=eJ`$ instead, the [lost-count estimate](converse.md#lemma-2-a-prior-uniform-integer-estimation-bound) bounds the capacity of the lossy channel by $`f(4\eta e/(Jq_J))`$ with $`f(x)=g(x)+\min\{x,1\}`$ and forces all three rates to zero. Complete loss gives zero directly.
 
 ### Proof of the variational limit
 
 The finite-alphabet bound leaves a gap of at most $`g(q_Je)`$, which tends to zero. It remains to take the limit of $`C_J(q_J,eJ)`$. Set $`A=\mathsf S/J`$ and $`\mathsf U=\lfloor\mathsf N/J\rfloor`$. The optimized entropy becomes $`H(\mathsf U\mid\mathsf L,A)`$, with the same mean constraint as the limiting formula and the binomial count of $`J(A+\mathsf U)`$ trials. Two estimates make the limit uniform over admissible priors.
 
-**Truncating the index.** Let $`T=\mathbf 1_{\{\mathsf U>M\}}`$ and $`p=\Pr[T=1]\le e/(M+1)`$. The chain rule gives
+**Truncating the index.** Let $`T=\mathbf 1_{\{\mathsf U\gt M\}}`$ and $`p=\Pr[T=1]\le e/(M+1)`$. The chain rule gives
 
 ```math
 H(\mathsf U\mid\mathsf L,A)

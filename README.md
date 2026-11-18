@@ -32,7 +32,7 @@ Let $`q_J=1-\eta_J`$ be the loss probability. When $`Jq_J\to\lambda`$ and $`E=eJ
 
 ```math
 F_\lambda(e)=\sup_{\mathbb E[A+U]\le e} H(U\mid L,A),
-\qquad L\mid (A,U)\sim\operatorname{Pois}\!\left(\lambda(A+U)\right).
+\qquad L\mid (A,U)\sim\mathrm{Pois}\!\left(\lambda(A+U)\right).
 ```
 
 The receiver can infer the loss count modulo the alphabet size from the received number residue. This leaves an ambiguity with entropy at most $`g(q_J E/J)`$, which vanishes in this regime. The achievability code schedules its input residues in advance and uses the transmitted mode itself. [Proof and two-level example](science/critical-crossover.md)

@@ -82,7 +82,7 @@
     {
       "path": "README.md",
       "index": 21,
-      "source_sha256": "70b2f37eceb13881c97c7940e79aeb3cceebbb82ff8e7ca32e8a3b7d25bbb28d",
+      "source_sha256": "8fbcb07bd9eec8bd0bfe758d97cc8d28683da48479cf06ca2e184ee8c2c6a074",
       "expected_text": "Fλ(e)=supE[A+U]≤eH(U∣L,A),L∣(A,U)∼Pois(λ(A+U))."
     },
     {
