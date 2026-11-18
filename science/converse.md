@@ -131,6 +131,8 @@ Taking this particular extension in the definition of squashed entanglement prov
 
 All entropies used here are finite: $`H(\mathsf N)\le g(E)`$, $`H(\mathsf L)\le g(qE)`$, and $`H(\mathsf S)\le\log_2J`$. The reference entropy is also finite because it equals the input entropy. The countable classical extension consequently has the stated conditional-entropy interpretation. The proof does not replace a general input by a Fock-diagonal input. It only uses its Fock probabilities to upper-bound the entropy of the actual conditional reference states. ∎
 
+The [critical-crossover proof](critical-crossover.md) uses (3) directly, before applying the following integer-estimation bound.
+
 ## Lemma 2: a prior-uniform integer-estimation bound
 
 For every distribution of $`\mathsf N`$ with mean at most $`E`$,

@@ -1,6 +1,6 @@
 # Related work and contribution boundary
 
-This comparison concerns the model and theorem in [model.md](../science/model.md), [converse.md](../science/converse.md), [recovery.md](../science/recovery.md), and [rate_energy.md](../science/rate_energy.md). Primary metadata and the relevant statements were checked on 2026-11-05. The bibliography is in [REFERENCES.md](REFERENCES.md) and [references.bib](references.bib). This is a bounded comparison of the closest identified results, not an exhaustive priority claim.
+This comparison concerns the model and theorem in [model.md](../science/model.md), [converse.md](../science/converse.md), [recovery.md](../science/recovery.md), and [rate_energy.md](../science/rate_energy.md). The [critical crossover](../science/critical-crossover.md) extends the channel model to shrinking loss at linear energy. The bibliography is in [REFERENCES.md](REFERENCES.md) and [references.bib](references.bib). This is a bounded comparison of the closest identified results, not an exhaustive priority claim.
 
 ## The precise result being compared
 
@@ -17,7 +17,7 @@ u=\frac{4\eta E}{(1-\eta)J^2},
 ```
 
 
-where $`g(x)=(x+1)\log_2(x+1)-x\log_2x`$. A matching construction reaches every fixed rate below the pure-loss endpoint using energy $`O(J^2)`$. At $`\eta=1`$, the same resource convention gives the exact benchmark $`Q_2=K=g(E/J)`$, hence linear fixed-rate energy. The lossy result does not determine the exact finite-energy capacity or a joint limit in which $`\eta`$ approaches one with $`J`$.
+where $`g(x)=(x+1)\log_2(x+1)-x\log_2x`$. A matching construction reaches every fixed rate below the pure-loss endpoint using energy $`O(J^2)`$. At $`\eta=1`$, the same resource convention gives the exact benchmark $`Q_2=K=g(E/J)`$, hence linear fixed-rate energy. At linear energy and inverse-alphabet loss probability, the crossover theorem identifies a common capacity limit from a Poisson loss count and bounds the advantage of two-way assistance at finite alphabet size.
 
 ## Results and methods inherited by the proof
 
@@ -30,6 +30,12 @@ where $`g(x)=(x+1)\log_2(x+1)-x\log_2x`$. A matching construction reaches every 
 The use of a measured environment is mathematical: it bounds the channel's squashed entanglement and does not grant the receiver access to lost photons or to the phase label. DSW's Gibbs-observable and output-entropy hypotheses are checked in the [converse](../science/converse.md). The new entropy estimate uses the conditional variance of the binomial loss count and requires only the first moment of input photon number. It does not impose a photon-number variance bound or a physical input cutoff.
 
 ## Closest external comparisons
+
+### Modular photon number and the crossover
+
+[Michael et al.](REFERENCES.md#michael2016) and [Grimsmo, Combes and Baragiola](REFERENCES.md#grimsmo2020) establish the use of photon-number residues and generalized parity in bosonic codes. [Jacoby, Arnon-Friedman and Rosenblum](REFERENCES.md#jacoby2026) use modular number measurements to distill selected entangled two-cavity states. The crossover proof uses a known input residue and bounds the information in loss counts that agree modulo the alphabet size. Optimized coherent information approaches the adaptive converse, producing an exact limit across three communication tasks. [Wilde and Qi](REFERENCES.md#wildeqi2018) supply the constrained unassisted coding theorem. [Crossover proof](../science/critical-crossover.md)
+
+[Falco et al.](REFERENCES.md#falco2026) derive the finite-energy assisted capacity for the pure-loss channel. A cyclic twirl adds a residue label in the environment and changes which photon-number coherences survive. The Poisson posterior in the crossover depends on this extra channel structure.
 
 ### Bosonic loss and continuous phase diffusion
 
@@ -71,4 +77,4 @@ Two existing project sources supply particularly close comparisons. These are re
 
 ## Supported contribution statement
 
-For the stated memoryless single-mode channel, the project supplies matching necessary and sufficient orders of mean energy at every fixed assisted quantum or secret-key rate below the pure-loss endpoint. The technically specific advance is a first-moment-only modular/binomial converse paired with an entanglement-preserving recovery whose success remains uniform as the cyclic phase alphabet grows. The exact finite-energy capacity, optimal constants, efficient implementation, broadened phase atoms, and a uniform lossless crossover are not claimed. The source comparisons above support this scoped contribution; they do not establish exhaustive priority.
+For the stated memoryless single-mode channel, the project supplies matching necessary and sufficient orders of mean energy at every fixed assisted quantum or secret-key rate below the pure-loss endpoint. The technically specific advance is a first-moment-only modular/binomial converse paired with an entanglement-preserving recovery whose success remains uniform as the cyclic phase alphabet grows. The exact linear-energy crossover applies when loss shrinks inversely with alphabet size. The exact capacity at general finite alphabet and loss, efficient implementation and robustness to broadened phase atoms remain open here. The source comparisons above support this scoped contribution; they do not establish exhaustive priority.

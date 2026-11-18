@@ -65,7 +65,7 @@ The energy transformation is exact:
 =\eta\,\mathrm{Tr}(\hat n\rho).
 ```
 
-The main theorem fixes $`0\lt\eta\lt1`$ while $`J`$ grows. The lossless endpoint $`\eta=1`$ is treated separately.
+The fixed-loss theorem holds at $`0\lt\eta\lt1`$ while $`J`$ grows. The lossless endpoint $`\eta=1`$ and the regime where loss shrinks with the alphabet have their own capacity statements.
 
 ## Protocols and average input energy
 
@@ -130,7 +130,7 @@ Trace-distance and fidelity criteria give the same vanishing-error capacities, s
 Q_2(\eta,J,E)\le K(\eta,J,E).
 ```
 
-Only these two capacities are needed for the main result. The construction and converse do not assume Gaussian encoders, a prescribed bosonic code, product inputs in the converse, or a particular recovery measurement.
+These two capacities are the tasks in the fixed-loss energy theorem. The converse admits arbitrary encoders and adaptive protocols.
 
 For $`X\in\{Q_2,K\}`$, define the energy required for a fixed target rate $`R\gt0`$ by
 
@@ -141,6 +141,10 @@ E_{\min}^{X}(\eta,J,R)
 ```
 
 The infimum of the empty set is infinity. Achievability below is proved with a strict margin above $`R`$, so no conclusion relies on whether a boundary capacity is attained by one particular protocol.
+
+## Unassisted quantum capacity
+
+Write $`Q(\eta,J,E)`$ for the quantum communication capacity at the same unconditional average input energy. The encoder and decoder may act jointly on their own coding blocks, with no shared entanglement or auxiliary classical communication between them. The transmission error tends to zero as the number of uses tends to infinity. A fixed public schedule of residue subspaces is part of the code. Thus $`Q\le Q_2\le K`$ under the common energy constraint. [Energy-constrained coding theorem](../references/REFERENCES.md#wildeqi2018)
 
 ## Entropy notation
 
@@ -176,4 +180,6 @@ The function $`f`$ is continuous, strictly increasing, and concave on the nonneg
 [The recovery construction](recovery.md) adds a counted displacement carrier and applies an exact heralded operation on a finite data subspace. A uniform Gram estimate makes its success probability close to one with carrier energy proportional to $`J^2`$.
 
 [The rate and energy theorem](rate_energy.md) supplies a fixed finite data distribution with sufficient reverse-hashing rate, proves the cutoff limit explicitly, and combines the two bounds. The same page derives the exact lossless benchmark.
+
+[The critical crossover](critical-crossover.md) uses fixed number-residue subspaces to approach the environment entropy bound without assistance, then takes the joint loss and alphabet-size limit at linear energy.
 

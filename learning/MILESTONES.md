@@ -2,16 +2,16 @@
 
 [Learning overview](README.md) · [Wilde bridge](WILDE_BRIDGE.md) · [Scientific account](../science/README.md)
 
-This map follows the question: how much mean photon energy is needed to keep a fixed entanglement or secret-key rate when the number of possible phase rotations grows? Its targets connect the physical channel, the universal converse, and the matching communication construction. The [model and statements](../science/model.md) fix the assumptions and the [rate–energy theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy) gives the precise result.
+How much mean photon energy is needed to keep a fixed communication rate as the number of possible phase rotations grows? The route connects one optical mode, the adaptive converse and a counted carrier construction at fixed loss. It then follows the same channel into the near-lossless regime, where the residue of the received photon number leads to an exact limiting capacity. The [model](../science/model.md), [fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy) and [critical crossover](../science/critical-crossover.md) give the precise statements.
 
 The selected educational anchor is **Mark M. Wilde, *Quantum Information Theory*, second edition (Cambridge University Press, 2017)**. The [reading map](WILDE_BRIDGE.md#reading-map) identifies the relevant sections. Textbook foundations, the optical derivations supplied here, and the primary research theorems used by the proofs have distinct roles.
 
 | Phase | Milestones | Scientific role |
 |---|---|---|
 | [Background and preliminaries](#background-and-preliminaries) | M01–M12 | Join states, entropy and quantum operations to one optical mode, its photon budget and the assisted communication task. |
-| [Narrative and innovation](#narrative-and-innovation) | M13–M30 | Build the environment-based converse and the receiver construction, combine their energy orders, and explain the endpoints, evidence and scope. |
+| [Narrative and innovation](#narrative-and-innovation) | M13–M30 | Build the environment converse and carrier recovery, compare fixed loss with zero loss, and derive the critical crossover. |
 
-The 12/18 allocation reflects these two bodies of work. The background phase ends with the complete communication problem. The narrative phase begins with the separate proof mechanisms and ends with their joint physical meaning. Dependencies name earlier milestones; each source link leads to the authoritative statement or argument. Technical lemmas and detailed calculations remain in those sources.
+The 12/18 allocation reflects these two bodies of work. The background phase ends with the complete communication problem. The narrative phase begins with the fixed-loss proof mechanisms and ends with a common capacity curve for the joint limit. Dependencies name earlier milestones; each source link leads to the authoritative statement or argument. Technical lemmas and detailed calculations remain in those sources.
 
 ## Background and preliminaries
 
@@ -275,7 +275,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Combine the converse and construction under the same unconditional energy convention. Explain why both two-way entanglement and key require and admit quadratic energy for a fixed partial loss and fixed positive rate below the pure-loss endpoint. Identify which constants depend on loss and target rate, and why the theorem is not an exact finite-energy capacity formula.
 - **Dependencies and story role:** [M12](#m12), [M17](#m17), [M25](#m25). The two proof directions meet in the central result.
 - **Conceptual connection:** A universal lower bound and one compatible protocol determine the optimal scaling order.
-- **Sources:** [fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy); [its proof](../science/rate_energy.md#proof-of-theorem-3).
+- **Sources:** [Fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy), [proof](../science/rate_energy.md#proof-of-theorem-3) and [finite carrier calculations](../verification/README.md#a-quantitative-example).
 
 ### M27
 
@@ -289,31 +289,30 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 
 ### M28
 
-**Positive rates and noncommuting limits**
+**What Bob can infer from the output residue**
 
-- **Central question:** How can every finite alphabet allow a positive rate while the growing-alphabet limit has none at fixed energy?
-- **Understanding target:** Explain duty cycling at any positive energy and transmissivity, the pure-loss endpoint reached as energy grows at a fixed finite alphabet, and the vanishing capacity when alphabet size grows at fixed energy. Identify the order of limits and the entanglement-breaking continuous uniform phase channel. Distinguish a fixed-rate energy law from a hard zero-capacity threshold.
-- **Dependencies and story role:** [M07](#m07), [M09](#m09), [M17](#m17), [M25](#m25), [M26](#m26). The scaling theorem is placed among its operational consequences.
-- **Conceptual connection:** The order of resource and noise limits changes the communication conclusion.
-- **Sources:** [positive-rate construction](../science/rate_energy.md#positive-rate-for-every-finite-alphabet-and-positive-energy); [fixed-alphabet endpoint](../science/rate_energy.md#fixed-alphabet-unrestricted-capacities); [continuous-limit interpretation](../science/interpretation.md#finite-alphabets-and-the-continuous-limit).
+- **Central question** Which information about the lost photons can Bob infer while preserving the encoded number superposition?
+- **Understanding target** Use the known input residue to infer $`L\bmod J`$ from the receiver's output residue. Explain why measuring the residue preserves coherence within a residue class. Derive the forward coherent information of a fixed-residue input and bound its deficit from the converse by the entropy of the unresolved loss quotient. Explain how a predetermined, energy-accounted schedule handles multiple input residues.
+- **Dependencies and story role** [M03](#m03), [M06](#m06), [M07](#m07), [M09](#m09), [M14](#m14), [M23](#m23) and [M27](#m27) give the entropy, symmetry and operational tools. The achievable proof returns to the residue subspaces used in the lossless benchmark.
+- **Conceptual connection** The converse uses the full lost count. The output gives Bob the residue exactly, and mean lost photons control the cost of any unresolved part.
+- **Sources** [Wilde bridge](WILDE_BRIDGE.md#the-critical-crossover) and [finite-alphabet bound](../science/critical-crossover.md#the-finite-alphabet-bound).
 
 ### M29
 
-**What the numerical example verifies**
+**From a binomial loss count to an exact capacity**
 
-- **Central question:** Which claims can the reproducible finite checks test, and which remain analytical?
-- **Understanding target:** Trace the three-level data example from its input distribution through reverse rate, exact charged energy and recovery success. Distinguish the analytic bound uniform in alphabet size from the evaluated Gram eigenvalues, and approximate decimal evaluations from interval-certified bounds. Explain why finite tests cannot establish the heavy-tail or arbitrary-adaptive converse.
-- **Dependencies and story role:** [M15](#m15), [M16](#m16), [M20](#m20)–[M26](#m26). The result is connected to concrete computation with a precise evidence boundary.
-- **Conceptual connection:** Numerical reproduction tests implementation-sensitive identities while the proof supplies the universal quantifiers.
-- **Sources:** [quantitative example](../verification/README.md#a-quantitative-example); [check scope](../verification/README.md#what-is-checked); [verification limits](../verification/README.md#limits-of-this-verification).
+- **Central question** Why do all three capacities converge to the same curve when loss falls inversely with the alphabet size?
+- **Understanding target** At mean energy $`E=eJ`$ and loss probability $`q_J`$ with $`Jq_J\to\lambda`$, split the normalized input number into its fractional residue and integer index. Explain the limiting Poisson law and why truncating large indices uniformly in the mean-constrained prior is needed before using that approximation. Explain how rounding the fractional residue down respects the energy budget. Take the coding block length limit at each fixed alphabet size before taking the joint limit.
+- **Dependencies and story role** [M03](#m03), [M06](#m06), [M09](#m09), [M15](#m15), [M27](#m27) and [M28](#m28) give the mean constraint, lattice and vanishing capacity gap. The lossless entropy formula becomes one endpoint of a curve.
+- **Conceptual connection** The lost count becomes a classical Poisson observation of the rescaled input number. Its posterior uncertainty gives the maximum surviving quantum rate in the limit.
+- **Sources** [Exact capacity in the critical window](../science/critical-crossover.md#exact-capacity-in-the-critical-window) and [Wilde bridge](WILDE_BRIDGE.md#the-critical-crossover).
 
 ### M30
 
-**The complete mechanism and its scope**
+**A two-level check of the crossover and its scope**
 
-- **Central question:** What is the full physical explanation of the result, and what would change the problem?
-- **Understanding target:** Give one connected account: loss and residue information constrain surviving entanglement; a counted carrier separates whole data subspaces; exact heralding and finite-dimensional distillation attain the same energy order. Locate the inherited theorems and the new communication argument. Explain why a shared phase across uses, extra transmitted references, continuous phase broadening or bounds on receiver implementation require additional analysis.
-- **Dependencies and story role:** [M12](#m12), [M17](#m17), [M22](#m22)–[M29](#m29). This integrates the mathematical mechanism, operational claim, evidence and physical boundaries.
-- **Conceptual connection:** The theorem's significance comes from matching universal necessity with an allowed protocol under one explicit resource model.
-- **Sources:** [physical interpretation and boundaries](../science/interpretation.md); [related-work comparison](../references/RELATED_WORK.md); [Wilde-to-project bridge](WILDE_BRIDGE.md).
-
+- **Central question** What rate can the simplest nontrivial residue code attain, and what does that example leave to the full theorem?
+- **Understanding target** For equiprobable input numbers $`0`$ and $`J`$ at $`q_J=1/J`$, identify the one lost count and the one received count that leave uncertainty about which number was sent. Relate those two posterior entropies to the code's achievable rate and to the Poisson prediction. Explain how the common limiting capacity also optimizes over other input laws. Compare the role of the output residue here with the counted carrier in the fixed-loss protocol, and identify how correlated phases, continuous phase broadening or restricted receiver hardware would change the model.
+- **Dependencies and story role** [M06](#m06), [M12](#m12), [M22](#m22) and [M26](#m26)–[M29](#m29) connect the concrete rate to both proof routes.
+- **Conceptual connection** A finite example checks the entropy calculation and illustrates the limiting mechanism. The proof supplies optimality over every protocol covered by the model.
+- **Sources** [Two-level example](../science/critical-crossover.md#a-two-level-example), [physical scope](../science/interpretation.md#boundaries-of-the-result) and [verification limits](../verification/README.md#limits-of-this-verification).

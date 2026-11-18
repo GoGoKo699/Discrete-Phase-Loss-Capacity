@@ -1,6 +1,6 @@
 # References
 
-Primary publication metadata and the cited results were checked on 2026-11-05. The keys below match [references.bib](references.bib); headings supply ordinary Markdown anchors, for example `REFERENCES.md#dsw2018`. [RELATED_WORK.md](RELATED_WORK.md) explains the contribution boundary. The educational textbook, research articles and pinned project repositories have distinct roles.
+The fixed-loss sources were checked on 2026-11-05 and the crossover references on 2026-11-18. The keys below match [references.bib](references.bib); headings supply ordinary Markdown anchors, for example `REFERENCES.md#dsw2018`. [RELATED_WORK.md](RELATED_WORK.md) explains the contribution boundary. The educational textbook, research articles and pinned project repositories have distinct roles.
 
 ## Wilde2017
 
@@ -35,6 +35,41 @@ Noah Davis, Maksim E. Shirokov, and Mark M. Wilde, **Energy-constrained two-way 
 - Author manuscript: [arXiv:1801.08102](https://arxiv.org/abs/1801.08102); [checked version 3](https://arxiv.org/html/1801.08102v3)
 - Pinpoint: Sec. IV, Eq. (101), and Theorem 4, Eqs. (139)–(141); Proposition 1 gives the finite-block weak converse for approximate private-state generation.
 - Role: the imported adaptive weak-converse theorem. The [converse](../science/converse.md) checks its Gibbs-observable and finite-output-entropy conditions and supplies the channel-specific entropy bound. The average-energy framework itself is inherited.
+
+## WildeQi2018
+
+Mark M. Wilde and Haoyu Qi, **Energy-constrained private and quantum capacities of quantum channels**, *IEEE Transactions on Information Theory* **64**(12), 7802–7827 (2018).
+
+- [DOI 10.1109/TIT.2018.2854766](https://doi.org/10.1109/TIT.2018.2854766) · [arXiv:1609.01997](https://arxiv.org/abs/1609.01997)
+- Theorems 1, 2 and 5 and Eq. (164) justify the regularized coherent-information lower bound for unassisted communication under mean input energy. The [crossover proof](../science/critical-crossover.md) applies it to a fixed schedule of residue subspaces.
+
+## Michael2016
+
+Marios H. Michael, Matti Silveri, R. T. Brierley, Victor V. Albert, Juha Salmilehto, Liang Jiang and S. M. Girvin, **New class of quantum error-correcting codes for a bosonic mode**, *Physical Review X* **6**, 031006 (2016).
+
+- [DOI 10.1103/PhysRevX.6.031006](https://doi.org/10.1103/PhysRevX.6.031006)
+- Generalized number parity identifies photon-loss and photon-gain syndromes in binomial codes.
+
+## Grimsmo2020
+
+Arne L. Grimsmo, Joshua Combes and Ben Q. Baragiola, **Quantum computing with rotation-symmetric bosonic codes**, *Physical Review X* **10**, 011058 (2020).
+
+- [DOI 10.1103/PhysRevX.10.011058](https://doi.org/10.1103/PhysRevX.10.011058)
+- Rotation-symmetric encodings establish the role of fixed number residues as code subspaces.
+
+## Jacoby2026
+
+Shoham Jacoby, Rotem Arnon-Friedman and Serge Rosenblum, **Hardware-efficient entanglement distillation using bosonic systems**.
+
+- [arXiv:2503.09700v3](https://arxiv.org/abs/2503.09700v3)
+- Section 2 uses modular measurements on a chosen two-cavity entangled state for loss and dephasing distillation with classical communication.
+
+## Falco2026
+
+Alessandro Falco, Francesco Anna Mele, Ludovico Lami and Vittorio Giovannetti, **Energy-constrained two-way capacities of the pure-loss channel**.
+
+- [arXiv:2610.12365](https://arxiv.org/abs/2610.12365)
+- The exact energy-constrained two-way capacity reported in this preprint concerns pure loss with no cyclic phase channel.
 
 ## DW2005
 

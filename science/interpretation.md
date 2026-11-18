@@ -107,10 +107,16 @@ For finite $`J`$, positive transmissivity and every positive mean-energy budget,
 
 Thus quadratic energy is necessary to keep a specified positive rate as the alphabet grows. A smaller energy budget permits a rate that vanishes with $`J`$. The theorem permits such duty cycling in its converse and does not impose a photon-number cutoff or a per-history energy cap on general protocols.
 
+## The crossover at linear energy
+
+If the transmitter uses a known input number residue, measuring the received residue reveals the number of lost photons modulo the alphabet size. The only unresolved part of that count is its integer quotient. A mean-photon bound controls the entropy of the quotient, even for input distributions with infinite variance.
+
+At $`E=eJ`$, there are three regimes. If $`Jq_J\to0`$, the capacities approach the lossless value $`g(e)`$. If $`Jq_J\to\lambda`$ for finite positive $`\lambda`$, the Poisson loss count carries partial information about the encoded index. The resulting posterior entropy gives the exact optimized limit. If $`Jq_J\to\infty`$, the same linear photon budget gives a vanishing rate by the lost-count converse. [Critical crossover proof](critical-crossover.md)
+
 ## Boundaries of the result
 
 The exact phase atoms, their independence across uses and the known alphabet are part of the channel. A phase common to many uses creates a memory channel with different protected subspaces and different capacities. A separately transmitted noiseless reference or additional optical degree of freedom also changes the resource model.
 
 Local operations are unrestricted. The carrier energy is fully counted, while the implementation time, local laboratory energy, control precision and gate complexity of the non-Gaussian recovery are not optimized. The code is an existence construction for the stated capacity model. Its robustness to continuous perturbations of the phase alphabet remains a separate question.
 
-The analysis fixes $`\eta`$ strictly between zero and one. It does not establish a joint crossover law when the loss tends to zero as $`J`$ grows, an optimal low-transmissivity rate exponent at fixed energy, or the exact finite-energy capacity curve. These limitations leave the matched fixed-loss, fixed-rate energy law intact.
+The fixed-loss energy theorem and the exact linear-energy crossover concern different limiting regimes. The finite-alphabet bounds can differ at positive loss. The optimal rate at fixed energy and very low transmissivity remains open in this account.

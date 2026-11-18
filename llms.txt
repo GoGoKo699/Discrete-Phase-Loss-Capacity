@@ -1,6 +1,6 @@
 # Discrete Phase Noise and Photon Loss
 
-This repository studies the mean photon energy needed to maintain a fixed two-way entanglement or secret-key rate through an independently redrawn cyclic phase alphabet followed by pure loss.
+This repository studies communication through an independently redrawn cyclic phase alphabet followed by pure loss. It derives fixed-loss energy scaling and an exact common capacity limit at linear energy when loss shrinks inversely with alphabet size.
 
 ## Scientific story
 
@@ -10,6 +10,7 @@ This repository studies the mean photon energy needed to maintain a fixed two-wa
 - science/converse.md: environment-label squashing, integer estimator, finite-mean entropy bound and adaptive converse.
 - science/recovery.md: exact data-preserving heralded filter and uniform displaced-Fock Gram bound.
 - science/rate_energy.md: finite-support reverse hashing, matching energy theorem, exact lossless benchmark and fixed-alphabet capacities.
+- science/critical-crossover.md: loss-count alias entropy bound at finite alphabet size and exact Poisson limit for unassisted quantum, two-way quantum and two-way secret-key capacities.
 - science/interpretation.md: physical mechanism, metrology connection, noncommuting limits and scope.
 
 ## Learning route

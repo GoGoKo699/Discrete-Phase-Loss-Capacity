@@ -12,7 +12,7 @@ import sys
 import numpy as np
 import scipy
 from scipy.special import eval_genlaguerre
-from scipy.stats import binom
+from scipy.stats import binom, poisson
 
 
 SEED = 20261105
@@ -418,6 +418,203 @@ def check_rates_and_scaling() -> dict:
     }
 
 
+def check_single_residue_coherent_information() -> dict:
+    # The first two priors share one physical channel and are time-shared below.
+    cases = [
+        ("zero_residue", 3, 0.4, np.array([0, 3, 6]), np.array([0.5, 0.3, 0.2])),
+        ("nonzero_residue", 3, 0.4, np.array([1, 4, 7]), np.array([0.25, 0.25, 0.5])),
+        ("lossless", 4, 0.0, np.array([2, 6, 10]), np.array([0.5, 0.3, 0.2])),
+        ("vacuum", 4, 0.4, np.array([0]), np.array([1.0])),
+    ]
+    rows = []
+    for label, j, q, support, probabilities in cases:
+        law = finite_joint(support, probabilities, 1 - q, j)
+        ns, losses, weights = (law[key] for key in ("n", "l", "p"))
+        output_numbers = ns - losses
+        residue = int(support[0] % j)
+        quotient_p = np.bincount(losses // j, weights=weights)
+        output_p = np.bincount(output_numbers, weights=weights)
+        loss_p = np.bincount(losses, weights=weights)
+        h_posterior = law["h_cond"]
+        h_alias = entropy(weights) - entropy(output_p)
+        coherent_information = entropy(output_p) - entropy(loss_p)
+        mean = float(np.dot(support, probabilities))
+        alias_upper = bosonic_g(q * mean / j)
+
+        # Build the joint reference–receiver state from the loss isometry.
+        # Its dimensions grow with the supplied finite support only.
+        output_dim = int(support[-1]) + 1
+        branches = np.zeros((output_dim, support.size, output_dim))
+        for index, (n, probability) in enumerate(zip(support, probabilities, strict=True)):
+            ell = np.arange(n + 1)
+            branches[ell, index, n - ell] = np.sqrt(probability * binom.pmf(ell, n, q))
+        flat_branches = branches.reshape(output_dim, -1)
+        rb = flat_branches.T @ flat_branches
+        b = np.trace(rb.reshape(support.size, output_dim, support.size, output_dim),
+                     axis1=0, axis2=2)
+        direct_coherent_information = vn_entropy(b) - vn_entropy(rb)
+
+        check(f"{label}: receiver determines loss residue",
+              np.max(np.abs((residue - output_numbers) % j - losses % j)), 0)
+        check(f"{label}: independent forward coherent information",
+              abs(direct_coherent_information - coherent_information), 0, ENTROPY_TOL)
+        check(f"{label}: posterior minus alias entropy identity",
+              abs(coherent_information - (h_posterior - h_alias)), 0, ENTROPY_TOL)
+        check(f"{label}: conditional alias entropy at most quotient entropy",
+              h_alias, entropy(quotient_p), ENTROPY_TOL)
+        check(f"{label}: quotient entropy at most mean-energy envelope",
+              entropy(quotient_p), alias_upper, ENTROPY_TOL)
+        rows.append({
+            "case": label, "J": j, "q": q, "residue": residue,
+            "input_photon_numbers": support.tolist(),
+            "input_probabilities": probabilities.tolist(), "mean_input_energy": mean,
+            "H_N_given_L_residue": h_posterior, "H_L_given_B": h_alias,
+            "H_floor_L_over_J": entropy(quotient_p), "g_qE_over_J": alias_upper,
+            "coherent_information_from_state": direct_coherent_information,
+            "coherent_information_from_counts": coherent_information,
+            "probability_L_at_least_J": float(weights[losses >= j].sum()),
+        })
+
+    fractions = np.array([0.4, 0.6])
+    schedule_mean = sum(f * row["mean_input_energy"] for f, row in zip(fractions, rows[:2]))
+    schedule_upper = sum(f * row["g_qE_over_J"] for f, row in zip(fractions, rows[:2]))
+    schedule_posterior = sum(
+        f * row["H_N_given_L_residue"] for f, row in zip(fractions, rows[:2])
+    )
+    schedule_rate = sum(
+        f * row["coherent_information_from_state"] for f, row in zip(fractions, rows[:2])
+    )
+    joint = finite_joint(
+        np.array([0, 3, 6, 1, 4, 7]),
+        np.array([0.5, 0.3, 0.2, 0.25, 0.25, 0.5]) * np.repeat(fractions, 3),
+        0.6, 3,
+    )
+    schedule_envelope = bosonic_g(0.4 * schedule_mean / 3)
+    check("time sharing: average posterior equals H(N|L,S)",
+          abs(schedule_posterior - joint["h_cond"]), 0, ENTROPY_TOL)
+    check("time sharing: concave energy envelope",
+          schedule_upper, schedule_envelope, ENTROPY_TOL)
+    check("time sharing: coherent information lower bound",
+          schedule_posterior - schedule_rate, schedule_envelope, ENTROPY_TOL)
+    return {
+        "single_residue_cases": rows,
+        "time_sharing": {
+            "residue_case_names": [row["case"] for row in rows[:2]],
+            "fractions": fractions.tolist(), "average_input_energy": schedule_mean,
+            "H_N_given_L_S": schedule_posterior,
+            "average_forward_coherent_information": schedule_rate,
+            "average_single_residue_entropy_envelopes": schedule_upper,
+            "global_entropy_envelope": schedule_envelope,
+        },
+    }
+
+
+def binary_rate_term(z: float) -> float:
+    """Contribution from one ambiguous count under an equiprobable binary input."""
+    return float(((1 + z) * np.log2(1 + z) - z * np.log2(z)) / 2) if z else 0.0
+
+
+def check_binary_poisson_limit() -> dict:
+    limit = binary_rate_term(math.exp(-1))
+    rows = []
+    for j in (8, 32, 128, 512, 2048):
+        q = 1 / j
+        law = finite_joint(np.array([0, j]), np.array([0.5, 0.5]), 1 - q, j)
+        b = np.bincount(law["n"] - law["l"], weights=law["p"])
+        losses = np.bincount(law["l"], weights=law["p"])
+        rate = entropy(b) - entropy(losses)
+        probability_no_loss = math.exp(j * math.log1p(-q))
+        predicted_rate = binary_rate_term(probability_no_loss) - binary_rate_term(q ** j)
+        check(f"binary J={j}: finite-order formula", abs(rate - predicted_rate), 0, ENTROPY_TOL)
+        rows.append({
+            "J": j, "q": q, "mean_input_energy": j / 2,
+            "coherent_information": rate, "closed_form_coherent_information": predicted_rate,
+            "poisson_limit_error": abs(rate - limit),
+        })
+    check("binary J=2048: approach to the Poisson limiting rate",
+          rows[-1]["poisson_limit_error"], 1e-4)
+    return {"lambda": 1, "rescaled_energy": 0.5, "poisson_limit": limit, "finite_J": rows}
+
+
+def index_conditional_entropy(joint: np.ndarray) -> float:
+    # Axes are residue, encoded index and (possibly bucketed) loss count.
+    return entropy(joint) - entropy(joint.sum(axis=1))
+
+
+def check_rounded_poisson_prior() -> dict:
+    lam = 1.2
+    residues = np.array([0.0, 0.42, 0.999, 1.0])
+    prior = np.array([[0.25, 0.1, 0.05], [0.15, 0.12, 0.13],
+                      [0.1, 0.0, 0.0], [0.0, 0.1, 0.0]])
+    indices = np.arange(prior.shape[1])
+    continuum_energy = float(np.sum(prior * (residues[:, None] + indices)))
+    # Include the overflow as a separate outcome with its actual probability.
+    counts = np.arange(64)
+    continuum = np.zeros((*prior.shape, counts.size + 1))
+    for a, r in enumerate(residues):
+        for u in indices:
+            mean = lam * (r + u)
+            continuum[a, u] = prior[a, u] * np.append(
+                poisson.pmf(counts, mean), poisson.sf(counts[-1], mean)
+            )
+    continuum_h = index_conditional_entropy(continuum)
+    rows = []
+    for j in (8, 32, 128):
+        q = lam / j
+        rounded = np.minimum(np.floor(j * residues).astype(int), j - 1)
+        rounded_energy = float(np.sum(prior * (rounded[:, None] / j + indices)))
+        binomial_joint = np.zeros((j, *continuum.shape[1:]))
+        poisson_coarsened = np.zeros_like(binomial_joint)
+        joint_tv_before_merge = 0.0
+        for a, r in enumerate(rounded):
+            poisson_coarsened[r] += continuum[a]
+            for u in indices:
+                n = int(r + j * u)
+                mass = prior[a, u] * np.append(
+                    binom.pmf(counts, n, q), binom.sf(counts[-1], n, q)
+                )
+                binomial_joint[r, u] += mass
+                joint_tv_before_merge += float(np.sum(np.abs(mass - continuum[a, u])) / 2)
+        binomial_h = index_conditional_entropy(binomial_joint)
+        coarsened_h = index_conditional_entropy(poisson_coarsened)
+        joint_tv = float(np.sum(np.abs(binomial_joint - poisson_coarsened)) / 2)
+        continuity_upper = binary_entropy(joint_tv) + joint_tv * np.log2(indices.size)
+        tv_upper = (indices[-1] + 1) * j * q**2 + lam / j
+        poisson_overflow = float(continuum[:, :, -1].sum())
+        binomial_overflow = float(binomial_joint[:, :, -1].sum())
+        overflow_upper = 1e-40
+        check(f"rounded prior J={j}: clipped residue and nonincreasing energy",
+              max(abs(rounded[-1] - (j - 1)), rounded_energy - continuum_energy), 0, PROB_TOL)
+        check(f"rounded prior J={j}: count law normalization",
+              abs(float(binomial_joint.sum()) - 1), 0, PROB_TOL)
+        check(f"rounded prior J={j}: Le Cam and mean shift bound on counted TV",
+              joint_tv_before_merge, tv_upper, PROB_TOL)
+        check(f"rounded prior J={j}: marginalizing the unrounded label contracts TV",
+              joint_tv, joint_tv_before_merge, PROB_TOL)
+        check(f"rounded prior J={j}: coarser residue gives more conditional entropy",
+              continuum_h + 1e-3, coarsened_h, ENTROPY_TOL)
+        check(f"rounded prior J={j}: finite-index entropy continuity",
+              abs(binomial_h - coarsened_h), continuity_upper, ENTROPY_TOL)
+        check(f"rounded prior J={j}: probability in overflow bucket",
+              max(poisson_overflow, binomial_overflow), overflow_upper)
+        rows.append({
+            "J": j, "q": q, "rounded_residues": rounded.tolist(),
+            "rounded_energy": rounded_energy,
+            "binned_TV_before_merging_residues": joint_tv_before_merge,
+            "binned_TV_after_merging_residues": joint_tv, "analytic_TV_upper": tv_upper,
+            "coarsened_poisson_conditional_entropy": coarsened_h,
+            "binomial_conditional_entropy": binomial_h,
+            "analytic_entropy_continuity_upper": continuity_upper,
+            "poisson_overflow_mass": poisson_overflow, "binomial_overflow_mass": binomial_overflow,
+        })
+    return {
+        "joint_residue_index_prior": prior.tolist(), "unrounded_residues": residues.tolist(),
+        "lambda": lam, "unrounded_mean_energy": continuum_energy,
+        "unrounded_poisson_conditional_entropy": continuum_h,
+        "loss_overflow_bucket_starts_at": 64, "finite_J": rows,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=Path(__file__).with_name("results.json"))
@@ -444,6 +641,11 @@ def main() -> None:
         "arbitrary_reference_inputs": check_arbitrary_references(rng),
         "exact_filter": check_filter(rng),
         "rate_energy_example": check_rates_and_scaling(),
+        "critical_crossover": {
+            "finite_alphabet": check_single_residue_coherent_information(),
+            "binary_example": check_binary_poisson_limit(),
+            "rounded_poisson_prior": check_rounded_poisson_prior(),
+        },
         "checks": CHECKS,
     }
     result["number_of_checks"] = len(CHECKS)

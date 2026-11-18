@@ -303,8 +303,8 @@
         "J": 64,
         "Gram_dimension": 192,
         "carrier_output_amplitude": 76.8,
-        "q_min": 0.9999999986102831,
-        "gram_distance_from_identity": 1.3897172301824412e-09,
+        "q_min": 0.9999999986102832,
+        "gram_distance_from_identity": 1.3897170081378363e-09,
         "rate_s_R0": 0.683526155175674,
         "charged_input_energy": 8426.628571428573
       }
@@ -353,6 +353,259 @@
           "loss_entropy_limit": 1.896201679357369,
           "loss_entropy_error": 1.593249085996007e-07,
           "analytic_loss_entropy_error_bound": 2.735408634801895e-07
+        }
+      ]
+    }
+  },
+  "critical_crossover": {
+    "finite_alphabet": {
+      "single_residue_cases": [
+        {
+          "case": "zero_residue",
+          "J": 3,
+          "q": 0.4,
+          "residue": 0,
+          "input_photon_numbers": [
+            0,
+            3,
+            6
+          ],
+          "input_probabilities": [
+            0.5,
+            0.3,
+            0.2
+          ],
+          "mean_input_energy": 2.1,
+          "H_N_given_L_residue": 0.6941962746454526,
+          "H_L_given_B": 0.38962626436609726,
+          "H_floor_L_over_J": 0.5079006503411287,
+          "g_qE_over_J": 0.9700844320491462,
+          "coherent_information_from_state": 0.3045700102793534,
+          "coherent_information_from_counts": 0.3045700102793554,
+          "probability_L_at_least_J": 0.11033600000000006
+        },
+        {
+          "case": "nonzero_residue",
+          "J": 3,
+          "q": 0.4,
+          "residue": 1,
+          "input_photon_numbers": [
+            1,
+            4,
+            7
+          ],
+          "input_probabilities": [
+            0.25,
+            0.25,
+            0.5
+          ],
+          "mean_input_energy": 4.75,
+          "H_N_given_L_residue": 0.970402908899925,
+          "H_L_given_B": 0.646379107769993,
+          "H_floor_L_over_J": 0.981732762064111,
+          "g_qE_over_J": 1.5734480579320507,
+          "coherent_information_from_state": 0.32402380112992457,
+          "coherent_information_from_counts": 0.3240238011299317,
+          "probability_L_at_least_J": 0.334848
+        },
+        {
+          "case": "lossless",
+          "J": 4,
+          "q": 0.0,
+          "residue": 2,
+          "input_photon_numbers": [
+            2,
+            6,
+            10
+          ],
+          "input_probabilities": [
+            0.5,
+            0.3,
+            0.2
+          ],
+          "mean_input_energy": 4.8,
+          "H_N_given_L_residue": 1.4854752972273344,
+          "H_L_given_B": 0.0,
+          "H_floor_L_over_J": -0.0,
+          "g_qE_over_J": 0.0,
+          "coherent_information_from_state": 1.4854752972273315,
+          "coherent_information_from_counts": 1.4854752972273344,
+          "probability_L_at_least_J": 0.0
+        },
+        {
+          "case": "vacuum",
+          "J": 4,
+          "q": 0.4,
+          "residue": 0,
+          "input_photon_numbers": [
+            0
+          ],
+          "input_probabilities": [
+            1.0
+          ],
+          "mean_input_energy": 0.0,
+          "H_N_given_L_residue": 0.0,
+          "H_L_given_B": 0.0,
+          "H_floor_L_over_J": -0.0,
+          "g_qE_over_J": 0.0,
+          "coherent_information_from_state": 0.0,
+          "coherent_information_from_counts": 0.0,
+          "probability_L_at_least_J": 0.0
+        }
+      ],
+      "time_sharing": {
+        "residue_case_names": [
+          "zero_residue",
+          "nonzero_residue"
+        ],
+        "fractions": [
+          0.4,
+          0.6
+        ],
+        "average_input_energy": 3.6900000000000004,
+        "H_N_given_L_S": 0.859920255198136,
+        "average_forward_coherent_information": 0.31624228478969607,
+        "average_single_residue_entropy_envelopes": 1.3321026075788889,
+        "global_entropy_envelope": 1.3647020545318216
+      }
+    },
+    "binary_example": {
+      "lambda": 1,
+      "rescaled_energy": 0.5,
+      "poisson_limit": 0.5744693807965497,
+      "finite_J": [
+        {
+          "J": 8,
+          "q": 0.125,
+          "mean_input_energy": 4.0,
+          "coherent_information": 0.5510423042819532,
+          "closed_form_coherent_information": 0.5510423042819531,
+          "poisson_limit_error": 0.023427076514596523
+        },
+        {
+          "J": 32,
+          "q": 0.03125,
+          "mean_input_energy": 16.0,
+          "coherent_information": 0.5689275799779407,
+          "closed_form_coherent_information": 0.5689275799779405,
+          "poisson_limit_error": 0.0055418008186089995
+        },
+        {
+          "J": 128,
+          "q": 0.0078125,
+          "mean_input_energy": 64.0,
+          "coherent_information": 0.5731021161586731,
+          "closed_form_coherent_information": 0.5731021161586735,
+          "poisson_limit_error": 0.0013672646378766196
+        },
+        {
+          "J": 512,
+          "q": 0.001953125,
+          "mean_input_energy": 256.0,
+          "coherent_information": 0.5741286799704637,
+          "closed_form_coherent_information": 0.5741286799704641,
+          "poisson_limit_error": 0.00034070082608606
+        },
+        {
+          "J": 2048,
+          "q": 0.00048828125,
+          "mean_input_energy": 1024.0,
+          "coherent_information": 0.574384274973162,
+          "closed_form_coherent_information": 0.5743842749731622,
+          "poisson_limit_error": 8.51058233877211e-05
+        }
+      ]
+    },
+    "rounded_poisson_prior": {
+      "joint_residue_index_prior": [
+        [
+          0.25,
+          0.1,
+          0.05
+        ],
+        [
+          0.15,
+          0.12,
+          0.13
+        ],
+        [
+          0.1,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.1,
+          0.0
+        ]
+      ],
+      "unrounded_residues": [
+        0.0,
+        0.42,
+        0.999,
+        1.0
+      ],
+      "lambda": 1.2,
+      "unrounded_mean_energy": 1.0479,
+      "unrounded_poisson_conditional_entropy": 0.7526715887558542,
+      "loss_overflow_bucket_starts_at": 64,
+      "finite_J": [
+        {
+          "J": 8,
+          "q": 0.15,
+          "rounded_residues": [
+            0,
+            3,
+            7,
+            7
+          ],
+          "rounded_energy": 1.005,
+          "binned_TV_before_merging_residues": 0.03101105517392601,
+          "binned_TV_after_merging_residues": 0.03101105517392601,
+          "analytic_TV_upper": 0.6900000000000001,
+          "coarsened_poisson_conditional_entropy": 0.9257557569602306,
+          "binomial_conditional_entropy": 0.8807682634286982,
+          "analytic_entropy_continuity_upper": 0.24858854049115536,
+          "poisson_overflow_mass": 2.5174332883737097e-62,
+          "binomial_overflow_mass": 0.0
+        },
+        {
+          "J": 32,
+          "q": 0.0375,
+          "rounded_residues": [
+            0,
+            13,
+            31,
+            31
+          ],
+          "rounded_energy": 1.0362500000000001,
+          "binned_TV_before_merging_residues": 0.007324819458580038,
+          "binned_TV_after_merging_residues": 0.007324819458580039,
+          "analytic_TV_upper": 0.17250000000000001,
+          "coarsened_poisson_conditional_entropy": 0.9257557569602306,
+          "binomial_conditional_entropy": 0.9153942636877463,
+          "analytic_entropy_continuity_upper": 0.0740931266990873,
+          "poisson_overflow_mass": 2.5174332883737097e-62,
+          "binomial_overflow_mass": 8.012496385197442e-79
+        },
+        {
+          "J": 128,
+          "q": 0.009375,
+          "rounded_residues": [
+            0,
+            53,
+            127,
+            127
+          ],
+          "rounded_energy": 1.0440625,
+          "binned_TV_before_merging_residues": 0.0019389307178235577,
+          "binned_TV_after_merging_residues": 0.001938930717823558,
+          "analytic_TV_upper": 0.043125000000000004,
+          "coarsened_poisson_conditional_entropy": 0.9257557569602306,
+          "binomial_conditional_entropy": 0.9229853332162157,
+          "analytic_entropy_continuity_upper": 0.02333848447272325,
+          "poisson_overflow_mass": 2.5174332883737097e-62,
+          "binomial_overflow_mass": 3.4452848866483217e-65
         }
       ]
     }
@@ -1061,7 +1314,7 @@
     {
       "check": "scaling J=64: Gram eigenvalue above uniform envelope",
       "value": 0.9890834744294305,
-      "upper": 0.9999999986102831,
+      "upper": 0.9999999986102832,
       "tolerance": 3e-10,
       "passed": true
     },
@@ -1120,7 +1373,357 @@
       "upper": 2.735408634801895e-07,
       "tolerance": 5e-10,
       "passed": true
+    },
+    {
+      "check": "zero_residue: receiver determines loss residue",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "zero_residue: independent forward coherent information",
+      "value": 1.9984014443252818e-15,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "zero_residue: posterior minus alias entropy identity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "zero_residue: conditional alias entropy at most quotient entropy",
+      "value": 0.38962626436609726,
+      "upper": 0.5079006503411287,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "zero_residue: quotient entropy at most mean-energy envelope",
+      "value": 0.5079006503411287,
+      "upper": 0.9700844320491462,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "nonzero_residue: receiver determines loss residue",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "nonzero_residue: independent forward coherent information",
+      "value": 7.105427357601002e-15,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "nonzero_residue: posterior minus alias entropy identity",
+      "value": 3.3306690738754696e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "nonzero_residue: conditional alias entropy at most quotient entropy",
+      "value": 0.646379107769993,
+      "upper": 0.981732762064111,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "nonzero_residue: quotient entropy at most mean-energy envelope",
+      "value": 0.981732762064111,
+      "upper": 1.5734480579320507,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "lossless: receiver determines loss residue",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "lossless: independent forward coherent information",
+      "value": 2.886579864025407e-15,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "lossless: posterior minus alias entropy identity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "lossless: conditional alias entropy at most quotient entropy",
+      "value": 0.0,
+      "upper": -0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "lossless: quotient entropy at most mean-energy envelope",
+      "value": -0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "vacuum: receiver determines loss residue",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "vacuum: independent forward coherent information",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "vacuum: posterior minus alias entropy identity",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "vacuum: conditional alias entropy at most quotient entropy",
+      "value": 0.0,
+      "upper": -0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "vacuum: quotient entropy at most mean-energy envelope",
+      "value": -0.0,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "time sharing: average posterior equals H(N|L,S)",
+      "value": 2.220446049250313e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "time sharing: concave energy envelope",
+      "value": 1.3321026075788889,
+      "upper": 1.3647020545318216,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "time sharing: coherent information lower bound",
+      "value": 0.5436779704084399,
+      "upper": 1.3647020545318216,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "binary J=8: finite-order formula",
+      "value": 1.1102230246251565e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "binary J=32: finite-order formula",
+      "value": 2.220446049250313e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "binary J=128: finite-order formula",
+      "value": 3.3306690738754696e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "binary J=512: finite-order formula",
+      "value": 4.440892098500626e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "binary J=2048: finite-order formula",
+      "value": 2.220446049250313e-16,
+      "upper": 0.0,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "binary J=2048: approach to the Poisson limiting rate",
+      "value": 8.51058233877211e-05,
+      "upper": 0.0001,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=8: clipped residue and nonincreasing energy",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=8: count law normalization",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=8: Le Cam and mean shift bound on counted TV",
+      "value": 0.03101105517392601,
+      "upper": 0.6900000000000001,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=8: marginalizing the unrounded label contracts TV",
+      "value": 0.03101105517392601,
+      "upper": 0.03101105517392601,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=8: coarser residue gives more conditional entropy",
+      "value": 0.7536715887558542,
+      "upper": 0.9257557569602306,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=8: finite-index entropy continuity",
+      "value": 0.04498749353153242,
+      "upper": 0.24858854049115536,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=8: probability in overflow bucket",
+      "value": 2.5174332883737097e-62,
+      "upper": 1e-40,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=32: clipped residue and nonincreasing energy",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=32: count law normalization",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=32: Le Cam and mean shift bound on counted TV",
+      "value": 0.007324819458580038,
+      "upper": 0.17250000000000001,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=32: marginalizing the unrounded label contracts TV",
+      "value": 0.007324819458580039,
+      "upper": 0.007324819458580038,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=32: coarser residue gives more conditional entropy",
+      "value": 0.7536715887558542,
+      "upper": 0.9257557569602306,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=32: finite-index entropy continuity",
+      "value": 0.010361493272484257,
+      "upper": 0.0740931266990873,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=32: probability in overflow bucket",
+      "value": 2.5174332883737097e-62,
+      "upper": 1e-40,
+      "tolerance": 0.0,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=128: clipped residue and nonincreasing energy",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=128: count law normalization",
+      "value": 0.0,
+      "upper": 0.0,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=128: Le Cam and mean shift bound on counted TV",
+      "value": 0.0019389307178235577,
+      "upper": 0.043125000000000004,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=128: marginalizing the unrounded label contracts TV",
+      "value": 0.001938930717823558,
+      "upper": 0.0019389307178235577,
+      "tolerance": 4e-12,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=128: coarser residue gives more conditional entropy",
+      "value": 0.7536715887558542,
+      "upper": 0.9257557569602306,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=128: finite-index entropy continuity",
+      "value": 0.002770423744014927,
+      "upper": 0.02333848447272325,
+      "tolerance": 5e-10,
+      "passed": true
+    },
+    {
+      "check": "rounded prior J=128: probability in overflow bucket",
+      "value": 2.5174332883737097e-62,
+      "upper": 1e-40,
+      "tolerance": 0.0,
+      "passed": true
     }
   ],
-  "number_of_checks": 109
+  "number_of_checks": 159
 }

@@ -19,8 +19,8 @@ python verification/check_theorem.py
 The script uses the fixed seed `20261105`, takes about one second in the recorded
 environment, and writes `verification/results.json`. An alternative output path
 can be supplied with `--output`. No network or external data are needed after
-installing the dependencies. The script exits unsuccessfully at the first failed
-check; a successful run currently records **109 checks**.
+installing the dependencies. The script stops at the first failed check. A
+successful run records **159 checks**.
 
 ## What is checked
 
@@ -31,6 +31,7 @@ check; a successful run currently records **109 checks**.
 | Displacement matrix elements | Compare the finite normal-ordered sum against an independent associated-Laguerre evaluation for complex displacements. Check Gram Hermiticity and the coherent-state vacuum overlap, including its Weyl phase. |
 | Exact recovery instrument | Check the left inverse and trace-nonincreasing success operator. Simulate the encoded mixed phase branches and recovery on random entangled and Bell-like reference–data states. Check the full successful output against the predicted scalar multiple of the pure-loss output, the success probability, and the reference marginal. |
 | Energy and rate | Compute the finite-support input and lost-count entropies, reverse coherent information, charged carrier energy, and rate after heralding. Evaluate an explicit analytic uniform Gram bound and compare it with eigenvalues for seven alphabet sizes. Check finite-cutoff entropy convergence against an explicit geometric-tail bound. |
+| Critical crossover | Build the reference–receiver density matrix and independently compute its forward coherent information. Check the loss-residue identity, the entropy penalty from unresolved loss, and the bound after predetermined time sharing. Compare a binary input against its closed form and Poisson limit. Check a rounded prior with two residue labels that merge, including its photon cost and conditional entropy. |
 
 ### Avoiding a misleading optical cutoff
 
@@ -60,7 +61,7 @@ Each check and its actual value, bound, and tolerance are retained in the JSON.
 Underflowed binomial tails are omitted only below floating-point resolution;
 normalization and input marginals are checked afterward.
 
-## A quantitative example
+## Fixed-loss carrier example
 
 Take
 
@@ -129,6 +130,43 @@ $`r=2^{2M}e^{-24a^2}<1`$,
 The second inequality follows by bounding the ratio of successive positive
 terms by $`r`$. The polynomial is defined explicitly in the script.
 
+## Binary input at the critical loss scale
+
+Use $`0`$ and $`J`$ photons with equal probability, set the loss probability to
+$`q=1/J`$, and charge $`J/2`$ input photons per use. If $`L`$ is the lost count
+and $`B`$ is the receiver photon number, the only ambiguity in $`H(N\mid L)`$
+occurs at $`L=0`$. The only ambiguity in $`H(L\mid B)`$ occurs at $`B=0`$.
+Define the entropy contribution of each ambiguous outcome by
+
+```math
+b(z)=\frac{(1+z)\log_2(1+z)-z\log_2 z}{2},\qquad b(0)=0.
+```
+
+The finite calculation of forward coherent information is
+
+```math
+I_c=b((1-1/J)^J)-b(J^{-J})\longrightarrow b(\exp(-1)).
+```
+
+| $`J`$ | Charged photons per use | Forward coherent information per use |
+|---:|---:|---:|
+| 8 | 4 | 0.551042304282 |
+| 32 | 16 | 0.568927579978 |
+| 128 | 64 | 0.573102116159 |
+| 512 | 256 | 0.574128679970 |
+| 2048 | 1024 | 0.574384274973 |
+
+The Poisson limit of this input is approximately **0.574469380797**. It is an
+achievable rate for one prior. The [critical-crossover theorem](../science/critical-crossover.md)
+optimizes over all admissible priors.
+
+The separate rounded-prior check collects counts at or above 64 in one
+overflow outcome. It retains their total probability. Coarsening the counts
+changes the conditional entropy by at most the overflow probability times the
+logarithm of the index alphabet size. The checked overflow probability stays
+below $`10^{-40}`$. The theorem treats the full count law and all priors under
+the mean-energy bound.
+
 ## Limits of this verification
 
 The finite-support checks cannot establish the converse for states with infinite
@@ -137,9 +175,10 @@ second-moment identity, which requires only finite mean. The adaptive capacity
 bound and reverse hashing likewise rely on their stated information-theoretic
 theorems, not on these simulations.
 
-No efficient implementation of the non-Gaussian recovery instrument is claimed.
-Continuous phase perturbations, a correlated phase process, joint limits in
-loss and alphabet size, and optimal energy constants are outside these checks.
+These checks concern one use at a time and selected finite priors. The limits of
+capacity as loss and alphabet size vary follow from the exact theorem. Efficient
+recovery hardware, continuous phase perturbations, correlated phases, and optimal
+energy constants lie outside the tested models.
 
 ## Hosted mathematical display
 

@@ -35,7 +35,7 @@ c_{\eta,R}
 \qquad\text{(2)}
 ```
 
-The upper construction uses a fixed finite data cutoff and a carrier amplitude proportional to $`J`$. Its constants depend on $`\eta`$ and the target rate but not on coding block length. The result is for fixed transmissivity; it makes no claim uniform in a simultaneous limit $`\eta\to1`$.
+The upper construction uses a fixed finite data cutoff and a carrier amplitude proportional to $`J`$. Its constants depend on $`\eta`$ and the target rate but not on coding block length. [The critical crossover](critical-crossover.md) treats linear energy when the loss probability shrinks with the alphabet size.
 
 The proof proceeds through a finite-dimensional reverse-hashing construction, proved next.
 
@@ -345,5 +345,5 @@ Its transmitted energy is at most $`J\nu=E`$, and its output is the same pure en
 $`H(p^{(\nu,M)})`$.
 By (6), that entropy tends to $`g(\nu)`$ as $`M\to\infty`$. Taking the supremum over finite $`M`$ proves achievability at energy $`E`$. At $`E=0`$, only the vacuum input is available and both sides of (12) vanish. Equation (13) follows by strict monotonicity of $`g`$. ∎
 
-For each fixed nonzero loss, (1) gives a quadratic fixed-rate energy requirement. At exactly zero loss, (13) gives a linear requirement. The constants in the lossy theorem need not remain bounded as the transmissivity approaches one.
+For each fixed nonzero loss, (1) gives a quadratic fixed-rate energy requirement. At exactly zero loss, (13) gives a linear requirement. The exact joint limit at linear energy follows from the [number-residue argument](critical-crossover.md).
 
