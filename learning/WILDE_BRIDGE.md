@@ -16,6 +16,7 @@ Consult these sections as the corresponding ideas arise. The project does not re
 | Sections 10.1–10.3 | Classical entropy and conditioning | The [lost-photon estimate](../science/converse.md#lemma-2-a-prior-uniform-integer-estimation-bound) bounds the uncertainty left about an input number. |
 | Sections 11.1–11.2, 11.4–11.7 and 11.9 | Quantum entropy, coherent information, conditional mutual information and their inequalities | These connect [environment information to an upper bound](../science/converse.md#squashed-entanglement-and-the-imported-capacity-theorem) and [retained correlations to an attainable rate](../science/rate_energy.md#finite-data-and-reverse-coherent-information). |
 | Sections 9.1–9.3 | Trace distance and fidelity | The [capacity definitions](../science/model.md#two-way-capacities) require error to vanish with coding length. |
+| Sections 24.3–24.4 | Quantum capacity and direct coherent-information coding | The [critical crossover](../science/critical-crossover.md) uses forward coherent information. The mean-photon constraint is handled by the energy-constrained extension cited there. |
 | Sections 19.2, 24.1 and 24.9 | Local operations with classical communication, coding tasks and distillation | [Hashing after heralding](../science/rate_energy.md#exact-heralding-followed-by-hashing) produces reliable entanglement from noisy shared pairs. |
 
 ## Notation and resources
@@ -29,7 +30,7 @@ The same mathematical symbol can play different roles in different accounts. Use
 | Systems $`R,A,B`$ | Retained reference, transmitted input and received output. The scalar target rate $`R`$ is distinguished by context. |
 | $`\hat n`$ and $`E`$ | Photon-number observable and unconditional mean input photons per channel use. The scalar $`E`$ is a resource budget. |
 | $`J`$ and $`\eta`$ | Number of equally spaced phase possibilities and photon transmissivity. The phase is redrawn independently each use. |
-| $`Q_2`$ and $`K`$ | Two-way assisted entanglement-generation and secret-key capacities under the stated energy constraint. These are the tasks defined in this repository. |
+| $`Q`$, $`Q_2`$ and $`K`$ | Unassisted quantum, two-way quantum and two-way secret-key capacities under the same energy constraint. |
 
 The [operational model](../science/model.md#protocols-and-average-input-energy) permits local quantum processing and public two-way classical messages. It starts without shared entanglement or secret key. Every transmitted optical mode is a counted channel use, and every input photon counts, including the displacement carrier. The energy average includes adaptive histories, failed recovery attempts and idle uses. This permits rare bright signals and photon distributions with infinite variance; it requires only a finite mean.
 
@@ -99,5 +100,21 @@ For any fixed target below the pure-loss endpoint, an explicit tail estimate fir
 If the recovery succeeds with probability $`s_J`$, the attainable rate per attempted use approaches $`s_J I_{\rm rev}`$. The [fixed-length construction](../science/rate_energy.md#exact-heralding-followed-by-hashing) reserves a predetermined number of accepted pairs and lets the probability of insufficient successes vanish. Failed attempts remain in both the rate denominator and the energy accounting.
 
 Combining this construction with the converse gives the [matching quadratic law](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy). The pure-loss endpoint is supplied by [PLOB2017](../references/REFERENCES.md#plob2017); the project determines the additional energy order required by the growing discrete phase alphabet. At exactly zero loss, the protected residue subspace gives the [linear benchmark](../science/rate_energy.md#theorem-4-exact-lossless-benchmark). The final [interpretation](../science/interpretation.md) connects these statements to positive rates at every finite alphabet, the order of the continuous-phase and high-energy limits, and the physical scope of the receiver model.
+
+## The critical crossover
+
+The fixed-loss proof uses a carrier to recover the phase branch. In the crossover, use an input supported on one photon-number residue chosen as part of a fixed schedule. The cyclic phase has the same action on all number states in that residue. If $`N`$ photons enter, $`L`$ are lost and $`B=N-L`$ arrive, Bob's output determines $`L\bmod J`$ through the known input residue. A local measurement can reveal this label while preserving coherence within the corresponding output subspace.
+
+For a Fock-diagonal input in one residue, the joint output with its canonical reference has orthogonal loss branches. Wilde's coherent information and the classical chain rule give
+
+```math
+I_{\mathrm c}=H(B)-H(L)=H(N\mid L)-H(L\mid B).
+```
+
+Once Bob's photon number is given, any uncertainty about $`L`$ lies in the integer quotient $`\lfloor L/J\rfloor`$. Its mean is at most the mean lost count divided by $`J`$. The thermal entropy bound and a fixed schedule over input residues then give a gap of at most $`g(qE/J)`$ between unassisted quantum and two-way secret-key capacity. The [finite-alphabet proof](../science/critical-crossover.md#the-finite-alphabet-bound) uses the unrestricted adaptive converse and [Wilde and Qi's energy-constrained coding theorem](https://arxiv.org/abs/1609.01997). The coding theorem turns the coherent information of the fixed schedule into a rate without classical assistance.
+
+Let $`E=eJ`$ and let the loss probability $`q_J`$ satisfy $`Jq_J\to\lambda`$. Split the rescaled input number into a fractional residue $`A=(N\bmod J)/J`$ and the integer index $`U=\lfloor N/J\rfloor`$. Then $`N/J=A+U`$ and the lost count tends to a Poisson law of mean $`\lambda(A+U)`$. The exact limiting capacity is the supremum of $`H(U\mid L,A)`$ at mean cost $`\mathbb E[A+U]\le e`$. At fixed $`J`$ the code first makes its error vanish with block length. The [limit proof](../science/critical-crossover.md#exact-capacity-in-the-critical-window) then controls the Poisson approximation uniformly over input laws using only the mean energy. It also explains how continuum residue offsets are realized by physical residues in the limit.
+
+In the [two-level example](../science/critical-crossover.md#a-two-level-example), the input is equally likely to have zero or $`J`$ photons and the loss probability is $`1/J`$. A nonzero lost count reveals the occupied level, so the residual uncertainty comes from the runs in which zero photons were lost. The resulting rate approaches about $`0.57447`$ qubits per channel use at a mean of $`J/2`$ input photons. This is the rate of the specified input distribution. The full curve also optimizes the fractional residue and the distribution over indices.
 
 [Learning overview](README.md) · [30 milestones](MILESTONES.md) · [Scientific route](../science/README.md)

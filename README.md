@@ -1,6 +1,6 @@
 # Discrete Phase Noise and Photon Loss
 
-**How much light is needed to maintain a fixed quantum communication rate when the phase takes one of many unknown discrete values?** For an optical mode with independently redrawn cyclic phase noise, fixed partial photon loss changes the required mean input energy from linear to quadratic in the number of possible phases.
+**How much light is needed to communicate quantum information through an unknown optical phase?** For an optical mode with independently redrawn cyclic phase noise, fixed partial photon loss changes the required mean input energy from linear to quadratic in the number of possible phases. When the loss probability shrinks inversely with the alphabet size, an exact limiting capacity describes the crossover.
 
 Let $`J`$ equally spaced phase shifts be equally likely on each channel use, and let $`\eta`$ be the photon transmissivity. The energy $`E`$ is the unconditional mean number of input photons per use, including the carrier and failed attempts. Arbitrary local operations and public two-way classical communication are allowed.
 
@@ -26,6 +26,17 @@ For achievability, a bright displacement separates the finitely many rotated dat
 
 The two sides use the same unconditional energy budget. Every failed recovery and every idle use enters the accounting.
 
+## Capacity when photon loss shrinks
+
+Let $`q_J=1-\eta_J`$ be the loss probability. When $`Jq_J\to\lambda`$ and $`E=eJ`$, the unassisted quantum, two-way quantum and two-way secret-key capacities share a limit. Write the input photon number as a multiple of the alphabet size plus a residue. In the limit, $`U`$ is the integer quotient, $`A`$ is the residue divided by $`J`$, and the environment's loss count $`L`$ is Poisson:
+
+```math
+F_\lambda(e)=\sup_{\mathbb E[A+U]\le e} H(U\mid L,A),
+\qquad L\mid (A,U)\sim\mathrm{Pois}\!\left(\lambda(A+U)\right).
+```
+
+The receiver can infer the loss count modulo the alphabet size from the received number residue. This leaves an ambiguity with entropy at most $`g(q_J E/J)`$, which vanishes in this regime. The achievability code schedules its input residues in advance and uses the transmitted mode itself. [Proof and two-level example](science/critical-crossover.md)
+
 ## Read the science
 
 Start with the [scientific overview](science/README.md), then follow the route matching your question.
@@ -36,6 +47,7 @@ Start with the [scientific overview](science/README.md), then follow the route m
 | Why can arbitrary encodings and rare bright pulses not improve the energy order? | [Converse](science/converse.md) |
 | How can recovery distinguish phase branches without measuring the data? | [Exact recovery construction](science/recovery.md) |
 | How do the bounds give matching rates, the lossless benchmark and the infinite-energy limit? | [Rate and energy](science/rate_energy.md) |
+| When does unassisted quantum communication reach the two-way limit? | [Critical photon-loss crossover](science/critical-crossover.md) |
 | What is the physical meaning, and which limits do not commute? | [Interpretation](science/interpretation.md) |
 | Which results and techniques are inherited? | [Related work](references/RELATED_WORK.md) and [references](references/REFERENCES.md) |
 | What can be reproduced numerically? | [Verification guide](verification/README.md) |
@@ -53,13 +65,13 @@ python3 -m pip install -r verification/requirements.txt
 python3 verification/check_theorem.py
 ```
 
-The deterministic suite checks the conditional-entropy calculations, arbitrary-reference branches, displacement matrix elements, the recovery map and a concrete rate–energy construction. [Saved results](verification/results.json) record the inputs, tolerances and outputs. These finite checks support the implementation; the all-input and asymptotic statements follow from the proofs.
+The deterministic suite checks the conditional-entropy calculations, arbitrary-reference branches, displacement matrix elements, the heralded recovery and the finite-alphabet loss-count calculation. The all-input and asymptotic statements follow from the proofs. [Saved numerical results](verification/results.json)
 
 ## Scope
 
 The phase alphabet is known and exactly discrete, while the realized phase is hidden and independently redrawn on every use. There is no additional transmitted reference mode or initial shared entanglement. The receiver may implement arbitrary quantum operations. The recovery proof does not establish efficient hardware implementation or robustness to continuously broadened phase errors.
 
-The energy law concerns fixed rates and fixed transmissivity. It is not uniform in a simultaneous lossless limit, and it does not determine the exact finite-energy capacity curve. For every finite cyclic alphabet, positive transmissivity and positive energy budget, the two-way rate remains positive; the theorem determines the energy needed to keep that rate fixed as the alphabet grows.
+The quadratic energy law applies at fixed positive loss. The exact crossover takes the ordinary coding limit first for each channel, then grows the alphabet with linear mean input energy. At a fixed finite alphabet and positive loss, the finite-alphabet theorem gives capacity bounds. For every finite cyclic alphabet, positive transmissivity and positive energy budget, the two-way rate remains positive.
 
 ## Purpose and contact
 

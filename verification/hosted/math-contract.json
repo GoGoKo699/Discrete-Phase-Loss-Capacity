@@ -80,6 +80,12 @@
       "expected_text": "Cη"
     },
     {
+      "path": "README.md",
+      "index": 21,
+      "source_sha256": "8fbcb07bd9eec8bd0bfe758d97cc8d28683da48479cf06ca2e184ee8c2c6a074",
+      "expected_text": "Fλ(e)=supE[A+U]≤eH(U∣L,A),L∣(A,U)∼Pois(λ(A+U))."
+    },
+    {
       "path": "science/model.md",
       "index": 12,
       "source_sha256": "ca660c0ff3f4845820f40b023cc767e0036507eeee946fecf4c8732a8a099f8b",
