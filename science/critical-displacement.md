@@ -11,7 +11,7 @@ F_{\lambda,\beta}(e)=
 \sup_{\mathbb E[A+U]\le e} H(U\mid A,S,\mathsf E).
 ```
 
-Here $`A\in[0,1)`$ is the normalized photon-number residue, $`U\in\mathbb N_0`$ is the quotient, and $`x=A+U`$. Draw $`L\sim\operatorname{Pois}((\lambda+\beta)x)`$ and $`G\sim\operatorname{Pois}(\beta x)`$ independently given $`x`$. For net shift $`s=G-L`$, the environment $`\mathsf E`$ has the subnormalized vector
+Here $`A\in[0,1)`$ is the normalized photon-number residue, $`U\in\mathbb N_0`$ is the quotient, and $`x=A+U`$. Draw $`L\sim\mathrm{Pois}((\lambda+\beta)x)`$ and $`G\sim\mathrm{Pois}(\beta x)`$ independently given $`x`$. For net shift $`s=G-L`$, the environment $`\mathsf E`$ has the subnormalized vector
 
 ```math
 v_s(x)=\sum_{g-l=s}
