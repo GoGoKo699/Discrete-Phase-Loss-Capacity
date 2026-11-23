@@ -31,6 +31,12 @@ The use of a measured environment is mathematical: it bounds the channel's squas
 
 ## Closest external comparisons
 
+### Weak Gaussian displacement and number-preserving dephasing
+
+[Arqand and Smith](REFERENCES.md#arqandsmith2026) derive the finite-energy equality of assisted and unassisted capacities for number-preserving bosonic dephasing through an amortized relative-entropy comparison to complete dephasing. Gaussian displacement mixes received numbers. The [critical displacement theorem](../science/critical-displacement.md) applies the comparison after providing the receiver with a net-shift flag, then controls the cost of removing that flag using a number-residue code. [Ivan, Sabapathy and Simon](REFERENCES.md#iss2011) give the attenuation–amplification decomposition used to build the dilation. At the critical scale the loss and gain counts become conditionally independent Poisson variables, but their amplitudes within a shift block remain coherent. Those coherences cause a strict capacity separation from a shift-only channel with the same number transitions.
+
+[Bosonic Noise Dimension](https://github.com/GoGoKo699/Bosonic-Noise-Dimension/blob/main/science/07-cyclic-phase.md) treats the operational comparison and connects it to the displacement-only resolution law. The project-level proof of optimality here uses the additional cyclic phase twirl and charges all input energy.
+
 ### Modular photon number and the crossover
 
 [Michael et al.](REFERENCES.md#michael2016) and [Grimsmo, Combes and Baragiola](REFERENCES.md#grimsmo2020) establish the use of photon-number residues and generalized parity in bosonic codes. [Jacoby, Arnon-Friedman and Rosenblum](REFERENCES.md#jacoby2026) use modular number measurements to distill selected entangled two-cavity states. The crossover proof uses a known input residue and bounds the information in loss counts that agree modulo the alphabet size. Optimized coherent information approaches the adaptive converse, producing an exact limit across three communication tasks. [Wilde and Qi](REFERENCES.md#wildeqi2018) supply the constrained unassisted coding theorem. [Crossover proof](../science/critical-crossover.md)

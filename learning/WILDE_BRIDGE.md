@@ -1,8 +1,8 @@
 # From Wilde to discrete phase noise and photon loss
 
-The educational anchor is Mark M. Wilde, *Quantum Information Theory*, second edition, Cambridge University Press (2017), [DOI 10.1017/9781316809976](https://doi.org/10.1017/9781316809976). The [publisher's contents](https://assets.cambridge.org/97811071/76164/frontmatter/9781107176164_frontmatter.pdf) fix the section numbers below. A freely accessible [author version, arXiv:1106.1445v8](https://arxiv.org/abs/1106.1445v8), was revised in July 2019 and includes corrections; it is an access version of the same work, while the selected edition remains the 2017 book. See [Wilde2017](../references/REFERENCES.md#wilde2017) for the bibliographic record.
+A supplementary source is Mark M. Wilde, *Quantum Information Theory*, second edition, Cambridge University Press (2017), [DOI 10.1017/9781316809976](https://doi.org/10.1017/9781316809976). The [publisher's contents](https://assets.cambridge.org/97811071/76164/frontmatter/9781107176164_frontmatter.pdf) fix the section numbers below. A freely accessible [author version, arXiv:1106.1445v8](https://arxiv.org/abs/1106.1445v8), was revised in July 2019 and includes corrections; it is an access version of the 2017 book. See [Wilde2017](../references/REFERENCES.md#wilde2017) for the bibliographic record.
 
-Wilde supplies the language of states, channels, entropy and communication. This bridge develops the additional optical model and explains where each part enters the energy theorem. The [30-milestone map](MILESTONES.md) gives the complete conceptual route; the linked scientific pages contain the precise statements and proofs.
+The [Holevo bridge](HOLEVO_BRIDGE.md) is the main reading route and covers the displacement extension. Wilde supplies the language of states, channels, entropy and communication. This bridge develops the additional optical model and explains where each part enters the energy theorem. The [30-milestone map](MILESTONES.md) gives the complete conceptual route; the linked scientific pages contain the precise statements and proofs.
 
 ## Reading map
 
@@ -61,7 +61,7 @@ The right side measures the uncertainty about the original photon number after t
 
 The loss count estimates $`q\mathsf N`$. After the residue is known, the remaining candidate photon numbers are separated by $`J`$. The [rounded estimator](../science/converse.md#lemma-2-a-prior-uniform-integer-estimation-bound) exploits this separation. Its error bound depends on $`E/J^2`$: the conditional binomial variance is linear in the input number. Taking that conditional variance before averaging is what allows a finite-mean distribution with infinite variance.
 
-The passage from this one-use estimate to arbitrary adaptive communication is a separate research ingredient. [DSW2018](../references/REFERENCES.md#dsw2018), published after the selected textbook edition, supplies the required average-energy capacity theorem. The [converse page](../science/converse.md#squashed-entanglement-and-the-imported-capacity-theorem) checks its entropy and energy hypotheses. This use preserves the unconditional average constraint; it does not silently impose an energy cap on every use or history.
+The passage from this one-use estimate to arbitrary adaptive communication is a separate research ingredient. [DSW2018](../references/REFERENCES.md#dsw2018), published after Wilde's 2017 edition, supplies the required average-energy capacity theorem. The [converse page](../science/converse.md#squashed-entanglement-and-the-imported-capacity-theorem) checks its entropy and energy hypotheses. This use preserves the unconditional average constraint; it does not silently impose an energy cap on every use or history.
 
 ## Exact recovery
 

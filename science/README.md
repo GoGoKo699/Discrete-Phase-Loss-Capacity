@@ -14,6 +14,8 @@ At zero loss, the exact energy-constrained capacities equal $`g(E/J)`$, where $`
 
 At linear energy and loss probability of order the inverse alphabet size, a number-residue encoding reaches the same limiting capacity as the adaptive key converse. The limiting rate is a conditional entropy for the Poisson loss count. [Critical photon-loss crossover](critical-crossover.md)
 
+At the same energy scale, Gaussian displacement of variance of order the inverse alphabet size gives another common limiting capacity. The receiver can nearly resolve the net number shift. The environment retains coherent information inside each shift class, producing a strictly lower rate than a channel with the same number transitions and only a shift record. [Critical displacement](critical-displacement.md) · [Displacement-only comparison](https://github.com/GoGoKo699/Bosonic-Noise-Dimension/blob/main/science/07-cyclic-phase.md)
+
 ## Connected reading route
 
 1. [Model and statements](model.md) defines the memoryless channel, the unconditional mean-energy constraint and the allowed communication resources. It states the claims with their quantifiers.
@@ -21,6 +23,7 @@ At linear energy and loss probability of order the inverse alphabet size, a numb
 3. [Recovery](recovery.md) builds a physical heralded map on displaced finite-Fock subspaces. Its success event preserves arbitrary entangled data exactly. The overlap estimate remains uniform as the phase alphabet grows.
 4. [Rate and energy](rate_energy.md) combines the recovery with finite-support reverse hashing. It proves the quadratic energy law, the exact lossless result and the fixed-alphabet unconstrained capacity statement.
 5. [Critical photon-loss crossover](critical-crossover.md) bounds the value of two-way assistance at finite alphabet size and evaluates the common limit when the loss probability shrinks.
-6. [Interpretation](interpretation.md) explains the mechanisms, the noncommuting limits and the operational scope.
+6. [Critical displacement](critical-displacement.md) proves the finite-alphabet gap bound and the energy-constrained limit with weak Gaussian displacement.
+7. [Interpretation](interpretation.md) explains the mechanisms, the noncommuting limits and the operational scope.
 
 The [related-work account](../references/RELATED_WORK.md) separates the communication theorem from established lossy metrology, phase-noise coding and pure-loss capacity results. The [verification guide](../verification/README.md) describes finite checks of the entropy and recovery calculations; the universal statements rest on the written proofs and their cited dependencies.

@@ -2,13 +2,48 @@
 
 The fixed-loss sources were checked on 2026-11-05 and the crossover references on 2026-11-18. The keys below match [references.bib](references.bib); headings supply ordinary Markdown anchors, for example `REFERENCES.md#dsw2018`. [RELATED_WORK.md](RELATED_WORK.md) explains the contribution boundary. The educational textbook, research articles and pinned project repositories have distinct roles.
 
+## Holevo2019
+
+Alexander S. Holevo, **Quantum Systems, Channels, Information: A Mathematical Introduction**, second revised and expanded edition, De Gruyter (2019).
+
+- [Publisher and DOI 10.1515/9783110642490](https://doi.org/10.1515/9783110642490) · [Detailed contents](https://api.pageplace.de/preview/DT0400.9783110642490_A39059069/preview-9783110642490_A39059069.pdf)
+- Role: the educational anchor, with section-by-section links in the [Holevo bridge](../learning/HOLEVO_BRIDGE.md).
+
+## ISS2011
+
+J. Solomon Ivan, Krishna Kumar Sabapathy and R. Simon, **Operator-sum representation for bosonic Gaussian channels**, *Physical Review A* **84**, 042311 (2011).
+
+- [DOI 10.1103/PhysRevA.84.042311](https://doi.org/10.1103/PhysRevA.84.042311) · [arXiv:1012.4266](https://arxiv.org/abs/1012.4266)
+- Role: Gaussian channel composition and the Fock coefficients of quantum-limited attenuation and amplification in the [shift-resolved dilation](../science/critical-displacement.md#exact-finite-channel-comparison).
+
+## ArqandSmith2026
+
+Amir Arqand and Graeme Smith, **No advantage from classical assistance for energy-constrained bosonic dephasing channels** (2026).
+
+- [arXiv:2610.13854](https://arxiv.org/abs/2610.13854)
+- Role: pinching-based relative-entropy comparison for number-preserving dephasing, extended here using the net-shift flag.
+
+## KW2018
+
+Eneet Kaur and Mark M. Wilde, **Amortized entanglement of a quantum channel and approximately teleportation-simulable channels**, *Journal of Physics A: Mathematical and Theoretical* **51**, 035303 (2018).
+
+- [DOI 10.1088/1751-8121/aa9da7](https://doi.org/10.1088/1751-8121/aa9da7) · [arXiv:1707.07721](https://arxiv.org/abs/1707.07721)
+- Role: amortization and the privacy-test bound for adaptive secret-key protocols.
+
+## Winter2016
+
+Andreas Winter, **Tight uniform continuity bounds for quantum entropies: conditional entropy, relative entropy distance and energy constraints**, *Communications in Mathematical Physics* **347**, 291–313 (2016).
+
+- [DOI 10.1007/s00220-016-2609-8](https://doi.org/10.1007/s00220-016-2609-8) · [arXiv:1507.07775](https://arxiv.org/abs/1507.07775)
+- Role: conditional entropy continuity used for finite quotient support and an unbounded environment.
+
 ## Wilde2017
 
 Mark M. Wilde, **Quantum Information Theory**, second edition, Cambridge University Press (2017).
 
 - DOI and publisher: [10.1017/9781316809976](https://doi.org/10.1017/9781316809976)
-- Free author version: [arXiv:1106.1445v8, *From Classical to Quantum Shannon Theory*](https://arxiv.org/abs/1106.1445v8), revised 14 July 2019 with corrections. This access version is distinguished from the selected 2017 book edition.
-- Role: the single educational anchor for the [learning route](../learning/README.md). The [source-to-project bridge](../learning/WILDE_BRIDGE.md) identifies the relevant chapters and connects states, channels, entropy and communication protocols to this optical model.
+- Free author version: [arXiv:1106.1445v8, *From Classical to Quantum Shannon Theory*](https://arxiv.org/abs/1106.1445v8), revised 14 July 2019 with corrections. This access version is distinct from the published 2017 edition.
+- Role: supplementary quantum Shannon theory for the [learning route](../learning/README.md). The [reading notes](../learning/WILDE_BRIDGE.md) identifies the relevant chapters and connects states, channels, entropy and communication protocols to this optical model.
 - Scope: textbook foundations support the learning map. The channel-specific estimates and constructions are proved in the scientific pages, and research-level capacity and distillation ingredients are credited to the primary papers below.
 
 ## CW2004

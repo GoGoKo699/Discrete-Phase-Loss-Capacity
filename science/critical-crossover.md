@@ -133,3 +133,7 @@ I_c=b\!\left((1-1/J)^J\right)-b\!\left(J^{-J}\right).
 At $`J=128`$ the achievable rate is about $`0.573102`$ qubits per physical use. It approaches $`b(\exp(-1))\simeq0.574469`$ qubits per use. This is one feasible prior in $`F_1(1/2)`$. The limiting capacity optimizes over all paid number levels and residues.
 
 The result assumes exactly cyclic phase noise and arbitrary ideal local operations. The finite-alphabet theorem bounds the capacity gap even away from the critical limit. The exact shared variational formula concerns the limiting capacities. Hardware cost, robustness to continuous phase broadening and any exact capacity at a fixed nonzero loss and finite alphabet are separate questions.
+
+## With Gaussian displacement
+
+The [critical displacement theorem](critical-displacement.md) recovers this curve when the displacement scale vanishes. When the variance is of order the inverse alphabet size, the environment can retain coherent information about distinct loss and gain histories with the same net shift. The receiver's unresolved shift remains a vanishing entropy cost.
