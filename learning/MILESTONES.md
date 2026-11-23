@@ -1,10 +1,10 @@
 # Thirty milestones for discrete phase noise and photon loss
 
-[Learning overview](README.md) · [Wilde bridge](WILDE_BRIDGE.md) · [Scientific account](../science/README.md)
+[Learning overview](README.md) · [Holevo bridge](HOLEVO_BRIDGE.md) · [Scientific account](../science/README.md)
 
 How much mean photon energy is needed to keep a fixed communication rate as the number of possible phase rotations grows? The route connects one optical mode, the adaptive converse and a counted carrier construction at fixed loss. It then follows the same channel into the near-lossless regime, where the residue of the received photon number leads to an exact limiting capacity. The [model](../science/model.md), [fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy) and [critical crossover](../science/critical-crossover.md) give the precise statements.
 
-The selected educational anchor is **Mark M. Wilde, *Quantum Information Theory*, second edition (Cambridge University Press, 2017)**. The [reading map](WILDE_BRIDGE.md#reading-map) identifies the relevant sections. Textbook foundations, the optical derivations supplied here, and the primary research theorems used by the proofs have distinct roles.
+The educational anchor is **Alexander S. Holevo, *Quantum Systems, Channels, Information: A Mathematical Introduction*, second revised and expanded edition (2019)**. The [reading map](HOLEVO_BRIDGE.md#reading-map) identifies the textbook sections used below.
 
 | Phase | Milestones | Scientific role |
 |---|---|---|
@@ -23,7 +23,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Relate a state, its photon-number probabilities and its mean photon number. Explain why the infinitely many number states belong to one mode and do not represent infinitely many channel uses.
 - **Dependencies and story role:** None. This introduces the physical object whose energy and information will be tracked.
 - **Conceptual connection:** Quantum-state notation acquires an observable meaning through photon counting.
-- **Sources:** [Wilde §§3.2–3.4 and §4.1](WILDE_BRIDGE.md#reading-map); [one optical mode](../science/model.md#one-optical-mode-and-a-cyclic-phase-alphabet).
+- **Sources:** [Holevo §§2.2–2.3](HOLEVO_BRIDGE.md#reading-map); [one optical mode](../science/model.md#one-optical-mode-and-a-cyclic-phase-alphabet).
 
 ### M02
 
@@ -33,7 +33,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Explain reduced states, purification and entanglement. Distinguish preserving one prepared optical state from preserving its correlations with an arbitrary retained reference.
 - **Dependencies and story role:** [M01](#m01). The description expands from one mode to the joint system that communication must protect.
 - **Conceptual connection:** The reference tests whether a recovery operation preserves unknown quantum information.
-- **Sources:** [Wilde §§3.5–3.8 and §5.1](WILDE_BRIDGE.md#reading-map); [the reference requirement in exact recovery](../science/recovery.md#theorem-2-an-exact-success-instrument).
+- **Sources:** [Holevo §§3.1.1–3.1.3](HOLEVO_BRIDGE.md#reading-map); [the reference requirement in exact recovery](../science/recovery.md#theorem-2-an-exact-success-instrument).
 
 ### M03
 
@@ -43,7 +43,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Distinguish Shannon entropy of a photon-number law from von Neumann entropy of a state. Explain why finite mean photon number bounds both by the thermal entropy function, without requiring a finite number variance.
 - **Dependencies and story role:** [M01](#m01), [M02](#m02). This supplies the information quantities used in both proof directions.
 - **Conceptual connection:** A physical mean-energy constraint limits information even in an infinite-dimensional mode.
-- **Sources:** [Wilde §§10.1–10.3 and §11.1](WILDE_BRIDGE.md#reading-map); [entropy notation and the mean-energy bound](../science/model.md#entropy-notation).
+- **Sources:** [Holevo §§4.1–4.2 and 11.2](HOLEVO_BRIDGE.md#reading-map); [entropy notation and the mean-energy bound](../science/model.md#entropy-notation).
 
 ### M04
 
@@ -53,7 +53,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Connect a channel's Kraus operators, an isometric extension and the discarded environment. Explain why a receiver output and its complementary environment describe different parts of the same process.
 - **Dependencies and story role:** [M01](#m01), [M02](#m02). This introduces the environment that will carry the information used in the converse.
 - **Conceptual connection:** Lost information can be studied through correlations with a larger system.
-- **Sources:** [Wilde §§4.4–4.5 and §5.2](WILDE_BRIDGE.md#reading-map); [the channel's loss and residue Kraus representation](../science/model.md#one-optical-mode-and-a-cyclic-phase-alphabet).
+- **Sources:** [Holevo §§6.4–6.7](HOLEVO_BRIDGE.md#reading-map); [the channel's loss and residue Kraus representation](../science/model.md#one-optical-mode-and-a-cyclic-phase-alphabet).
 
 ### M05
 
@@ -63,7 +63,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Read conditional Shannon entropy as an average over posterior distributions. Explain why a mixture of pure quantum states has entropy no greater than the entropy of its mixing weights, even when those states are not orthogonal.
 - **Dependencies and story role:** [M02](#m02), [M03](#m03), [M04](#m04). This connects classical uncertainty with conditional quantum entanglement.
 - **Conceptual connection:** A classical probability calculation can bound a quantum state without replacing that state by a classical input.
-- **Sources:** [Wilde §10.2 and §§11.1, 11.9](WILDE_BRIDGE.md#reading-map); [the posterior-mixture argument](../science/converse.md#lemma-1-an-environment-extension-valid-for-every-reference).
+- **Sources:** [Holevo §§4.2 and 7.1–7.3](HOLEVO_BRIDGE.md#reading-map); [the posterior-mixture argument](../science/converse.md#lemma-1-an-environment-extension-valid-for-every-reference).
 
 ### M06
 
@@ -73,7 +73,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Explain the binomial lost-photon law for an input with a specified photon number. Relate transmissivity to the mean output energy and distinguish conditional fluctuations at a fixed input number from fluctuations of the input distribution itself.
 - **Dependencies and story role:** [M01](#m01), [M04](#m04), [M05](#m05). A concrete optical channel now supplies the random variables needed by the converse.
 - **Conceptual connection:** The same photon loss both damages the signal and carries information about its initial number.
-- **Sources:** [the optical bridge](WILDE_BRIDGE.md#the-optical-model); [pure-loss Kraus operators](../science/model.md#one-optical-mode-and-a-cyclic-phase-alphabet); [information carried away by lost photons](../science/interpretation.md#the-information-carried-away-by-lost-photons).
+- **Sources:** [the optical bridge](HOLEVO_BRIDGE.md#the-optical-model); [pure-loss Kraus operators](../science/model.md#one-optical-mode-and-a-cyclic-phase-alphabet); [information carried away by lost photons](../science/interpretation.md#the-information-carried-away-by-lost-photons).
 
 ### M07
 
@@ -83,7 +83,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Explain why averaging equally spaced phase rotations removes coherence between different photon-number residues while retaining coherence within a residue class. Distinguish a fresh phase on every use from a phase shared across many uses.
 - **Dependencies and story role:** [M01](#m01), [M04](#m04). This identifies the structure protected by phase randomization alone.
 - **Conceptual connection:** A finite symmetry preserves a family of quantum subspaces, but their energy spacing depends on the alphabet size.
-- **Sources:** [the optical bridge](WILDE_BRIDGE.md#the-optical-model); [cyclic twirling and residue projectors](../science/model.md#one-optical-mode-and-a-cyclic-phase-alphabet); [protection without loss](../science/interpretation.md#protection-without-loss).
+- **Sources:** [the optical bridge](HOLEVO_BRIDGE.md#the-optical-model); [cyclic twirling and residue projectors](../science/model.md#one-optical-mode-and-a-cyclic-phase-alphabet); [protection without loss](../science/interpretation.md#protection-without-loss).
 
 ### M08
 
@@ -93,7 +93,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Connect displacement amplitude to translated optical states and carrier photon energy. Explain pure-loss displacement covariance and why the simple sum of data and carrier energies used here relies on the chosen data marginal having zero first field moment.
 - **Dependencies and story role:** [M01](#m01), [M06](#m06), [M07](#m07). This introduces the physical operation used by the achievable construction.
 - **Conceptual connection:** The carrier carries branch information in the same transmitted mode, so its photons belong in the resource account.
-- **Sources:** [the recovery bridge](WILDE_BRIDGE.md#exact-recovery); [finite data and a counted carrier](../science/recovery.md#finite-data-and-a-counted-carrier); [input energy](../science/recovery.md#input-energy-of-the-encoded-data).
+- **Sources:** [the recovery bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue); [finite data and a counted carrier](../science/recovery.md#finite-data-and-a-counted-carrier); [input energy](../science/recovery.md#input-energy-of-the-encoded-data).
 
 ### M09
 
@@ -113,7 +113,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Distinguish a success map from a complete instrument. Explain the trace bound on its success operators, the necessary failure outcome, and why conditioning on success does not remove failed attempts from the rate or energy denominator.
 - **Dependencies and story role:** [M02](#m02), [M04](#m04), [M09](#m09). This supplies the operational language for the receiver construction.
 - **Conceptual connection:** Exact conditional recovery is compatible with nonorthogonal signals when inconclusive outcomes are included.
-- **Sources:** [Wilde §5.3](WILDE_BRIDGE.md#reading-map); [instrument validity and exact recovery](../science/recovery.md#proof-of-instrument-validity-and-exact-recovery).
+- **Sources:** [Holevo §§2.4 and 6.5](HOLEVO_BRIDGE.md#reading-map); [instrument validity and exact recovery](../science/recovery.md#proof-of-instrument-validity-and-exact-recovery).
 
 ### M11
 
@@ -123,7 +123,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Explain an ebit, a secret bit and a rate per attempted channel use. Relate local operations and public classical communication to entanglement distillation, and explain why distilled entanglement provides secret key while public communication alone is not pre-shared key.
 - **Dependencies and story role:** [M02](#m02), [M03](#m03), [M04](#m04), [M10](#m10). Local channel operations are connected to an asymptotic communication task.
 - **Conceptual connection:** A recovery probability becomes useful only after it is converted into a reliable entanglement or key rate.
-- **Sources:** [Wilde §19.2 and §24.9](WILDE_BRIDGE.md#reading-map); [two-way capacities](../science/model.md#two-way-capacities); [reverse coherent information](../science/rate_energy.md#finite-data-and-reverse-coherent-information).
+- **Sources:** [Holevo §§10.3.1–10.3.2](HOLEVO_BRIDGE.md#reading-map); [two-way capacities](../science/model.md#two-way-capacities); [reverse coherent information](../science/rate_energy.md#finite-data-and-reverse-coherent-information).
 
 ### M12
 
@@ -145,7 +145,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Explain squashed entanglement as a minimization over extensions and why one chosen extension gives an upper bound. Identify the loss-count and residue labels in this extension without granting either label to the communicating parties.
 - **Dependencies and story role:** [M03](#m03)–[M07](#m07), [M11](#m11), [M12](#m12). The first proof direction starts with a local environment construction.
 - **Conceptual connection:** Conditional quantum information turns the channel's hidden records into a communication constraint.
-- **Sources:** [Wilde §11.7](WILDE_BRIDGE.md#reading-map); [squashed entanglement](../science/converse.md#squashed-entanglement-and-the-imported-capacity-theorem); [CW2004](../references/REFERENCES.md#cw2004).
+- **Sources:** [Holevo §§7.2–7.3](HOLEVO_BRIDGE.md#reading-map); [squashed entanglement](../science/converse.md#squashed-entanglement-and-the-imported-capacity-theorem); [CW2004](../references/REFERENCES.md#cw2004).
 
 ### M14
 
@@ -195,7 +195,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Explain the finite-Fock data subspace before displacement, its preservation under pure loss, and the translated and rotated output subspaces for the phase branches. Distinguish this data cutoff from the generally infinite Fock support of the physical transmitted codeword.
 - **Dependencies and story role:** [M06](#m06)–[M10](#m10), [M12](#m12). The second proof direction starts from a concrete encoded signal.
 - **Conceptual connection:** Finite-dimensional data can be processed exactly inside a counted, infinite-dimensional optical mode.
-- **Sources:** [exact-recovery bridge](WILDE_BRIDGE.md#exact-recovery); [finite data and a counted carrier](../science/recovery.md#finite-data-and-a-counted-carrier); [avoiding an artificial optical cutoff](../verification/README.md#avoiding-a-misleading-optical-cutoff).
+- **Sources:** [exact-recovery bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue); [finite data and a counted carrier](../science/recovery.md#finite-data-and-a-counted-carrier); [avoiding an artificial optical cutoff](../verification/README.md#avoiding-a-misleading-optical-cutoff).
 
 ### M19
 
@@ -205,7 +205,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Explain the Gram matrix of all displaced data basis vectors and the role of distinct displacement amplitudes. Follow how independence of exponential-polynomial functions makes this matrix positive definite for every finite alphabet and positive carrier amplitude. Recognize that positivity alone does not give a success bound uniform in alphabet size.
 - **Dependencies and story role:** [M08](#m08), [M18](#m18). This establishes the algebraic possibility of exact branch recovery.
 - **Conceptual connection:** Independence of complete error subspaces supports preservation of arbitrary data, beyond discrimination of one selected probe state.
-- **Sources:** [exact-recovery bridge](WILDE_BRIDGE.md#exact-recovery); [Gram construction](../science/recovery.md#theorem-2-an-exact-success-instrument); [linear-independence proof](../science/recovery.md#proof-of-linear-independence).
+- **Sources:** [exact-recovery bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue); [Gram construction](../science/recovery.md#theorem-2-an-exact-success-instrument); [linear-independence proof](../science/recovery.md#proof-of-linear-independence).
 
 ### M20
 
@@ -215,7 +215,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** Explain the reciprocal-operator identities and the scaling by the smallest Gram eigenvalue that makes the total success effect at most the identity. Connect the resulting operator identity to exact recovery of the pure-loss output with any reference, and include the failure branch.
 - **Dependencies and story role:** [M02](#m02), [M04](#m04), [M10](#m10), [M19](#m19). This converts algebraic recovery into an allowed local operation.
 - **Conceptual connection:** A spectral bound controls both physical validity and the success probability.
-- **Sources:** [Wilde §§4.4–4.5 and §5.3](WILDE_BRIDGE.md#reading-map); [instrument and reference-preservation proof](../science/recovery.md#proof-of-instrument-validity-and-exact-recovery).
+- **Sources:** [Holevo §§2.4 and 6.5–6.6](HOLEVO_BRIDGE.md#reading-map); [instrument and reference-preservation proof](../science/recovery.md#proof-of-instrument-validity-and-exact-recovery).
 
 ### M21
 
@@ -245,7 +245,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target:** For the canonical finite-Fock purification, explain why the reference entropy is the input number entropy and the joint output entropy is the lost-count entropy. Identify their difference as reverse coherent information and connect a positive value to hashing with classical communication from receiver to sender.
 - **Dependencies and story role:** [M02](#m02), [M03](#m03), [M06](#m06), [M11](#m11), [M18](#m18). The recovered quantum state is assigned an operational entanglement rate.
 - **Conceptual connection:** Orthogonal loss sectors turn an entropy difference into an achievable communication resource.
-- **Sources:** [Wilde §11.5 and §24.9](WILDE_BRIDGE.md#reading-map); [finite data and reverse coherent information](../science/rate_energy.md#finite-data-and-reverse-coherent-information); [DW2005](../references/REFERENCES.md#dw2005); [Reverse2009](../references/REFERENCES.md#reverse2009).
+- **Sources:** [Holevo §§10.3.1–10.3.2](HOLEVO_BRIDGE.md#reading-map); [finite data and reverse coherent information](../science/rate_energy.md#finite-data-and-reverse-coherent-information); [DW2005](../references/REFERENCES.md#dw2005); [Reverse2009](../references/REFERENCES.md#reverse2009).
 
 ### M24
 
@@ -295,7 +295,7 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target** Use the known input residue to infer $`L\bmod J`$ from the receiver's output residue. Explain why measuring the residue preserves coherence within a residue class. Derive the forward coherent information of a fixed-residue input and bound its deficit from the converse by the entropy of the unresolved loss quotient. Explain how a predetermined, energy-accounted schedule handles multiple input residues.
 - **Dependencies and story role** [M03](#m03), [M06](#m06), [M07](#m07), [M09](#m09), [M14](#m14), [M23](#m23) and [M27](#m27) give the entropy, symmetry and operational tools. The achievable proof returns to the residue subspaces used in the lossless benchmark.
 - **Conceptual connection** The converse uses the full lost count. The output gives Bob the residue exactly, and mean lost photons control the cost of any unresolved part.
-- **Sources** [Wilde bridge](WILDE_BRIDGE.md#the-critical-crossover) and [finite-alphabet bound](../science/critical-crossover.md#the-finite-alphabet-bound).
+- **Sources** [Holevo bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue) and [finite-alphabet bound](../science/critical-crossover.md#the-finite-alphabet-bound).
 
 ### M29
 
@@ -305,14 +305,14 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 - **Understanding target** At mean energy $`E=eJ`$ and loss probability $`q_J`$ with $`Jq_J\to\lambda`$, split the normalized input number into its fractional residue and integer index. Explain the limiting Poisson law and why truncating large indices uniformly in the mean-constrained prior is needed before using that approximation. Explain how rounding the fractional residue down respects the energy budget. Take the coding block length limit at each fixed alphabet size before taking the joint limit.
 - **Dependencies and story role** [M03](#m03), [M06](#m06), [M09](#m09), [M15](#m15), [M27](#m27) and [M28](#m28) give the mean constraint, lattice and vanishing capacity gap. The lossless entropy formula becomes one endpoint of a curve.
 - **Conceptual connection** The lost count becomes a classical Poisson observation of the rescaled input number. Its posterior uncertainty gives the maximum surviving quantum rate in the limit.
-- **Sources** [Exact capacity in the critical window](../science/critical-crossover.md#exact-capacity-in-the-critical-window) and [Wilde bridge](WILDE_BRIDGE.md#the-critical-crossover).
+- **Sources** [Exact capacity in the critical window](../science/critical-crossover.md#exact-capacity-in-the-critical-window) and [Holevo bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue).
 
 ### M30
 
-**A two-level check of the crossover and its scope**
+**When the net photon shift hides environmental information**
 
-- **Central question** What rate can the simplest nontrivial residue code attain, and what does that example leave to the full theorem?
-- **Understanding target** For equiprobable input numbers $`0`$ and $`J`$ at $`q_J=1/J`$, identify the one lost count and the one received count that leave uncertainty about which number was sent. Relate those two posterior entropies to the code's achievable rate and to the Poisson prediction. Explain how the common limiting capacity also optimizes over other input laws. Compare the role of the output residue here with the counted carrier in the fixed-loss protocol, and identify how correlated phases, continuous phase broadening or restricted receiver hardware would change the model.
-- **Dependencies and story role** [M06](#m06), [M12](#m12), [M22](#m22) and [M26](#m26)–[M29](#m29) connect the concrete rate to both proof routes.
-- **Conceptual connection** A finite example checks the entropy calculation and illustrates the limiting mechanism. The proof supplies optimality over every protocol covered by the model.
-- **Sources** [Two-level example](../science/critical-crossover.md#a-two-level-example), [physical scope](../science/interpretation.md#boundaries-of-the-result) and [verification limits](../verification/README.md#limits-of-this-verification).
+- **Central question** Why can two channels with identical photon-number transitions have different quantum and key capacities?
+- **Understanding target** Use the loss–gain dilation to identify multiple microscopic histories with the same net shift. Explain how Bob's known residue gives the shift modulo the alphabet size, and how the conditional environment Gram matrix determines the additional Holevo correction. Compare the two-level example, the optimized strict gap for positive displacement scale and the zero-displacement Poisson endpoint. Identify the fixed-loss carrier result as a separate operational regime.
+- **Dependencies and story role** [M04](#m04), [M05](#m05), [M09](#m09), [M23](#m23) and [M26](#m26)–[M29](#m29) connect the optical dilation, finite-energy coding and the two capacity limits.
+- **Conceptual connection** Knowing a shift does not specify the environment state inside that shift. Retaining the environment's coherence changes the operational rate.
+- **Sources** [Holevo bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue), [critical displacement](../science/critical-displacement.md) and [binary check](../science/critical-displacement.md#binary-check).

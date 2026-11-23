@@ -108,6 +108,33 @@
       "index": 36,
       "source_sha256": "cafb4fae9a3e380f9f81930bdd3fcab0fd4df2b90ad73dba39a04d59e8ade731",
       "expected_text": "EminX(η,J,R)=inf{E≥0:X(η,J,E)≥R}.(2)"
+    },
+    {
+      "path": "science/critical-displacement.md",
+      "index": 11,
+      "source_sha256": "8f20c73127cc6fcd58d7b3d4de30449f8aa32607a37659b2cb947cb2819d9e95",
+      "expected_text": "JbJ→β"
+    },
+    {
+      "path": "science/critical-displacement.md",
+      "index": 14,
+      "source_sha256": "24c5c76e8b277706418ca09b7646f8dfdb7d90ea727557b0b5d2ac71ac18a393",
+      "required_text": [
+        "Fλ,β(e)=",
+        "H(U∣A,S,E)"
+      ]
+    },
+    {
+      "path": "science/critical-displacement.md",
+      "index": 171,
+      "source_sha256": "583cf6290785d72cc1b71808962dd4bd72ca369f004fb5cb587694fc1b26149f",
+      "expected_text": "λ"
+    },
+    {
+      "path": "science/critical-displacement.md",
+      "index": 172,
+      "source_sha256": "f3f3804480e8551ac91a68ccc198310e514ec1424346595aca42a3a558ddee0a",
+      "expected_text": "β"
     }
   ]
 }

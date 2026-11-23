@@ -14,6 +14,7 @@ repository root, run:
 ```bash
 python -m pip install -r verification/requirements.txt
 python verification/check_theorem.py
+python verification/check_critical_displacement.py
 ```
 
 The script uses the fixed seed `20261105`, takes about one second in the recorded
@@ -21,6 +22,10 @@ environment, and writes `verification/results.json`. An alternative output path
 can be supplied with `--output`. No network or external data are needed after
 installing the dependencies. The script stops at the first failed check. A
 successful run records **159 checks**.
+
+## Weak displacement check
+
+The standard-library script [check_critical_displacement.py](check_critical_displacement.py) applies the attenuator–amplifier dilation to an equal mixture of vacuum and one lattice step. For each shift, it computes the two-state environment Gram spectrum. It computes coherent information both from the receiver and environment entropies and from the shift-conditioned rate less the alias penalty. The calculation uses a cutoff of 48 in both the loss and gain counts, and each row reports a bound on the omitted probability mass. The checks cover displacement alone, combined loss and displacement, and pure loss. The [binary example](../science/critical-displacement.md#binary-check) gives an independent closed form for the limiting values.
 
 ## What is checked
 
@@ -119,7 +124,7 @@ The smallest evaluated eigenvalue is $`0.9975715971`$, at $`J=2`$. The finite ta
 does not establish a bound for untested alphabet sizes. Uniformity comes from the
 analytic estimate: if $`B_M(d)`$ is the sum of absolute monomials in the cutoff
 displacement matrix and $`4a\ge\sqrt{2M}`$, then, with
-$`r=2^{2M}e^{-24a^2}<1`$,
+$`r=2^{2M}e^{-24a^2}\lt 1`$,
 
 ```math
 \lVert G-I\rVert

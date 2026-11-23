@@ -1,6 +1,6 @@
 # Discrete Phase Noise and Photon Loss
 
-This repository studies communication through an independently redrawn cyclic phase alphabet followed by pure loss. It derives fixed-loss energy scaling and an exact common capacity limit at linear energy when loss shrinks inversely with alphabet size.
+This repository studies communication through an independently redrawn cyclic phase alphabet followed by pure loss. It derives fixed-loss energy scaling and exact common capacity limits at linear energy under weak photon loss and Gaussian displacement.
 
 ## Scientific story
 
@@ -11,12 +11,14 @@ This repository studies communication through an independently redrawn cyclic ph
 - science/recovery.md: exact data-preserving heralded filter and uniform displaced-Fock Gram bound.
 - science/rate_energy.md: finite-support reverse hashing, matching energy theorem, exact lossless benchmark and fixed-alphabet capacities.
 - science/critical-crossover.md: loss-count alias entropy bound at finite alphabet size and exact Poisson limit for unassisted quantum, two-way quantum and two-way secret-key capacities.
+- science/critical-displacement.md: exact limiting capacity with weak Gaussian displacement, the receiver's vanishing shift ambiguity, and strict environmental correction at the optimum.
 - science/interpretation.md: physical mechanism, metrology connection, noncommuting limits and scope.
 
 ## Learning route
 
 - learning/README.md: entrypoint for the background and project-understanding route.
-- learning/WILDE_BRIDGE.md: the selected educational anchor, Mark M. Wilde's Quantum Information Theory, second edition (Cambridge, 2017), with chapter pointers, notation and the additional optical and proof ingredients.
+- learning/HOLEVO_BRIDGE.md: the educational anchor, Alexander S. Holevo's Quantum Systems, Channels, Information, second revised and expanded edition (2019), mapped to this project's proofs.
+- learning/WILDE_BRIDGE.md: supplementary reading on quantum Shannon theory.
 - learning/MILESTONES.md: exactly 30 project-defined understanding targets, organized from background to the complete result, with dependencies and scientific references.
 
 Use the bridge for the transition from textbook concepts to this channel, and the milestone map for the connected learning sequence. The science pages supply exact claims and proofs. Primary research citations supply the imported theorem ingredients alongside the single educational anchor.
