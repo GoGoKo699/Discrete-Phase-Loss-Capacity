@@ -15,17 +15,46 @@ repository root, run:
 python -m pip install -r verification/requirements.txt
 python verification/check_theorem.py
 python verification/check_critical_displacement.py
+python verification/check_phase_jitter.py
 ```
 
-The script uses the fixed seed `20261105`, takes about one second in the recorded
-environment, and writes `verification/results.json`. An alternative output path
-can be supplied with `--output`. No network or external data are needed after
-installing the dependencies. The script stops at the first failed check. A
-successful run records **159 checks**.
+The base theorem checker uses the fixed seed `20261105`, takes about one second
+in the recorded environment, and writes `verification/results.json`. An
+alternative output path can be supplied with `--output`. No network or
+external data are needed after installing the dependencies. The base checker
+stops at the first failed check and records **159 checks** on a successful run.
 
 ## Weak displacement check
 
 The standard-library script [check_critical_displacement.py](check_critical_displacement.py) applies the attenuator–amplifier dilation to an equal mixture of vacuum and one lattice step. For each shift, it computes the two-state environment Gram spectrum. It computes coherent information both from the receiver and environment entropies and from the shift-conditioned rate less the alias penalty. The calculation uses a cutoff of 48 in both the loss and gain counts, and each row reports a bound on the omitted probability mass. The checks cover displacement alone, combined loss and displacement, and pure loss. The [binary example](../science/critical-displacement.md#binary-check) gives an independent closed form for the limiting values.
+
+## Residual phase jitter checks
+
+[check_phase_jitter.py](check_phase_jitter.py) exercises the receivers and tag
+identities in the [residual phase analysis](../science/phase-jitter.md). It
+prints its JSON results or saves them to the path supplied with `--output`.
+
+- At fixed loss, the script builds the two-qubit state for each accepted Fock
+  pair from the loss counts. It checks the per-outcome partial-transpose
+  criterion and compares the total acceptance probability and phase-corrected
+  Bell fidelity with independently integrated Gaussian densities. The cases
+  use a folded Gaussian law and a cosine density whose first nonzero harmonic
+  is the second, with a complex Fourier coefficient.
+- With weak loss and displacement, the script diagonalizes the environment
+  Gram matrices for the equal-weight vacuum and one-step input. It compares
+  the physical coherent information with the flagged rate less the
+  shift-alias cost and checks convergence to the binary Poisson formula. The
+  cases include phase-tag orthogonality and phase alignment, pure loss,
+  displacement alone, and loss with displacement. The script bounds the
+  probability omitted by the count cutoff of 48.
+- For a recentered window, a moving harmonic outside the window leaves the
+  local phase-tag Gram matrix equal to the identity, even after translating
+  the labels by a million. A phase-only binary prior whose separation follows
+  that harmonic retains positive coherent information.
+
+These calculations evaluate selected priors and alphabet sizes. The
+first-moment tail bound, fixed-loss capacity threshold, and optimized
+weak-channel limit follow from the analytical arguments.
 
 ## What is checked
 
@@ -182,8 +211,8 @@ theorems, not on these simulations.
 
 These checks concern one use at a time and selected finite priors. The limits of
 capacity as loss and alphabet size vary follow from the exact theorem. Efficient
-recovery hardware, continuous phase perturbations, correlated phases, and optimal
-energy constants lie outside the tested models.
+recovery hardware, correlated phases, and optimal energy constants lie outside
+the tested models.
 
 ## Hosted mathematical display
 

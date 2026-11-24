@@ -219,3 +219,11 @@ GoGoKo699, **Quantum-Group-Memory-Laws**, research repository, main commit `0d58
 
 - Inspected [model](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/0d585db681ebc66fe0f2c7acb75f0c636869beef/science/model.md) and [capacity](https://github.com/GoGoKo699/Quantum-Group-Memory-Laws/blob/0d585db681ebc66fe0f2c7acb75f0c636869beef/science/capacity.md) pages.
 - Role: inherited environment-measurement, hidden-label entropy, and adaptive squashed-entanglement proof structure in a different spin-chain projection/erasure model. It does not supply the bosonic modular/binomial estimate or the matching energy theorem.
+
+## BBPSSW1996
+
+Charles H. Bennett, Gilles Brassard, Sandu Popescu, Benjamin Schumacher, John A. Smolin, and William K. Wootters, **Purification of Noisy Entanglement and Faithful Teleportation via Noisy Channels**, *Physical Review Letters* **76**, 722–725 (1996).
+
+- DOI: [10.1103/PhysRevLett.76.722](https://doi.org/10.1103/PhysRevLett.76.722)
+- Author manuscript: [arXiv:quant-ph/9511027](https://arxiv.org/abs/quant-ph/9511027)
+- Role: recurrence distillation above Bell fidelity one half. A fixed number of rounds reaches the positive one-way hashing regime, with [one-way coding](#dw2005) providing the final rate.

@@ -135,6 +135,34 @@
       "index": 172,
       "source_sha256": "f3f3804480e8551ac91a68ccc198310e514ec1424346595aca42a3a558ddee0a",
       "expected_text": "β"
+    },
+    {
+      "path": "science/phase-jitter.md",
+      "index": 34,
+      "source_sha256": "2aad6e1e0add0e5b8cf1dce816262824a44bf0173c6be20e611eeeffb4241028",
+      "required_text": [
+        "K",
+        "H(U"
+      ]
+    },
+    {
+      "path": "science/phase-jitter.md",
+      "index": 129,
+      "source_sha256": "81cb428642c7b33e664ac5b98fc76c2a6038804a0f6fe70f7084e8137d86172b",
+      "required_text": [
+        "H(U",
+        "sup"
+      ]
+    },
+    {
+      "path": "science/phase-jitter.md",
+      "index": 163,
+      "source_sha256": "0b607bf860efc1eb734727192a2ee9b4eed7e16e7c2e5d2a08e01185a5428ef7",
+      "required_text": [
+        "Q",
+        "K",
+        "M"
+      ]
     }
   ]
 }

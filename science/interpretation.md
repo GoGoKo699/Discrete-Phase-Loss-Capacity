@@ -16,6 +16,8 @@ form a noiseless subspace. A geometric distribution on these levels encodes entr
 
 This protection uses a property of the exact cyclic alphabet. Additional phase errors outside that alphabet change the action on the protected coherence.
 
+The [phase-jitter theorem](phase-jitter.md) identifies the relevant part of that change. Fixed loss leaves a bounded uncertainty in the quotient at quadratic energy. Phase harmonics of bounded order can protect coherence within that uncertainty. If the only surviving harmonic moves to higher order, reaching its Fock-level separation requires more energy even when the phase-only capacity remains positive.
+
 ## The information carried away by lost photons
 
 Suppose the input contains $`n`$ photons. The loss environment's photon count has the binomial law

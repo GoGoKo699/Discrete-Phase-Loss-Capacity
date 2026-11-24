@@ -1,6 +1,6 @@
 # Discrete Phase Noise and Photon Loss
 
-This repository studies communication through an independently redrawn cyclic phase alphabet followed by pure loss. It derives fixed-loss energy scaling and exact common capacity limits at linear energy under weak photon loss and Gaussian displacement.
+This repository studies communication through an independently redrawn cyclic phase alphabet followed by pure loss. It derives fixed-loss energy scaling, conditions for positive assisted rates under independent phase jitter, and exact common capacity limits at linear energy under weak photon loss and Gaussian displacement.
 
 ## Scientific story
 
@@ -12,6 +12,7 @@ This repository studies communication through an independently redrawn cyclic ph
 - science/rate_energy.md: finite-support reverse hashing, matching energy theorem, exact lossless benchmark and fixed-alphabet capacities.
 - science/critical-crossover.md: loss-count alias entropy bound at finite alphabet size and exact Poisson limit for unassisted quantum, two-way quantum and two-way secret-key capacities.
 - science/critical-displacement.md: exact limiting capacity with weak Gaussian displacement, the receiver's vanishing shift ambiguity, and strict environmental correction at the optimum.
+- science/phase-jitter.md: exact folded-phase criterion for positive assisted rates at fixed loss, a typical-loss Fock-doublet code, the moving harmonic example, and an exact weak-noise limit with a coherent phase tag.
 - science/interpretation.md: physical mechanism, metrology connection, noncommuting limits and scope.
 
 ## Learning route
@@ -32,4 +33,4 @@ Use the bridge for the transition from textbook concepts to this channel, and th
 
 ## Preserve these distinctions
 
-The phase is redrawn independently every use; it is not one common unknown phase across a block. The energy constraint averages all physical uses and adaptive histories. Carrier photons and failed attempts are charged. The new claim is a matched communication-energy law; lossy metrology, pure-loss capacities, squashed-entanglement amortization and reciprocal discrimination methods are inherited. The converse covers arbitrary encodings and finite-mean photon tails. The recovery is unrestricted and non-Gaussian; efficient implementation and continuously broadened phase robustness are unproved. Finite checks support the calculations, while the universal claims follow from the proofs and cited theorems.
+The nominal phase and residual noise are drawn independently on each use. The energy constraint averages all physical uses and adaptive histories. Carrier photons and failed attempts are charged. The exact discrete model gives the energy order at every fixed rate below the pure-loss capacity. The independently broadened model gives a positive-rate criterion at fixed loss and an exact common capacity in the weak-noise limit. The converses cover arbitrary encodings and finite-mean photon tails. Local operations are unrestricted. Finite checks support the calculations, and the universal claims follow from the proofs and cited theorems.

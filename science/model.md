@@ -67,6 +67,8 @@ The energy transformation is exact:
 
 The fixed-loss theorem holds at $`0\lt\eta\lt1`$ while $`J`$ grows. The lossless endpoint $`\eta=1`$ and the regime where loss shrinks with the alphabet have their own capacity statements.
 
+The [phase-jitter extension](phase-jitter.md) retains the same independent-use model and adds a fresh independent residual rotation after the exact cyclic twirl on each use. The residual law is known. The law of the angle multiplied by the alphabet size, reduced modulo a full rotation, governs the coherence left inside each residue. The operational tasks and unconditional energy budget below also apply to this extension.
+
 ## Protocols and average input energy
 
 Alice and Bob initially have independent local systems and no shared entanglement or secret key. They may use arbitrary local quantum operations, quantum memories, local ancillas, and adaptive authenticated two-way public classical communication. Protocols use the energy-constrained LOCC definition of [DSW2018](../references/REFERENCES.md#dsw2018). The initial product preparation satisfies its technical separability hypothesis.
