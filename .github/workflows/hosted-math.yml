@@ -27,23 +27,56 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/hosted-deps" playwright@1.56.1 mathjax-full@3.2.1
           "$RUNNER_TEMP/hosted-deps/node_modules/.bin/playwright" install --with-deps chromium
       - name: Compare actual GitHub mathematics
+        id: hosted
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
-          HOSTED_RETRY_LOG: ${{ runner.temp }}/hosted-evidence/transport-retries.jsonl
           CHECKED_REPOSITORY: ${{ github.repository }}
           CHECKED_REVISION: ${{ github.event.pull_request.head.sha }}
         run: |
-          node --require ./verification/hosted/retry_529.cjs verification/hosted/capture_hosted_math.cjs \
-            --root "$GITHUB_WORKSPACE" \
-            --repository "$CHECKED_REPOSITORY" \
-            --revision "$CHECKED_REVISION" \
-            --output "$RUNNER_TEMP/hosted-evidence" \
-            --contract verification/hosted/math-contract.json
+          capture() {
+            local output="$1"
+            shift
+            HOSTED_RETRY_LOG="$output/transport-retries.jsonl" \
+              node --require ./verification/hosted/retry_529.cjs verification/hosted/capture_hosted_math.cjs \
+                --root "$GITHUB_WORKSPACE" \
+                --repository "$CHECKED_REPOSITORY" \
+                --revision "$CHECKED_REVISION" \
+                --output "$output" \
+                --contract verification/hosted/math-contract.json "$@"
+          }
+          initial="$RUNNER_TEMP/hosted-initial"
+          echo "evidence=$initial" >> "$GITHUB_OUTPUT"
+          if capture "$initial"; then exit 0; fi
+
+          # Resume the same source only after a transient GitHub service response.
+          python3 - "$initial/capture-state.json" <<'PY'
+          import json
+          import re
+          import sys
+
+          with open(sys.argv[1]) as report:
+              failures = json.load(report)['failures']
+          retryable = r'Error: HTTP (502|503|504|529)'
+          if not failures or not all(re.fullmatch(retryable, item['reason']) for item in failures):
+              raise SystemExit(1)
+          PY
+          resumed="$RUNNER_TEMP/hosted-resumed"
+          echo "initial=$initial" >> "$GITHUB_OUTPUT"
+          echo "evidence=$resumed" >> "$GITHUB_OUTPUT"
+          capture "$resumed" --resume-from "$initial"
       - name: Retain source inventories and actual hosted captures
-        if: always()
+        if: always() && steps.hosted.outputs.evidence != ''
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: hosted-math-${{ github.event.pull_request.head.sha }}-attempt-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/hosted-evidence
+          path: ${{ steps.hosted.outputs.evidence }}
+          if-no-files-found: error
+          retention-days: 7
+      - name: Retain the original interrupted capture
+        if: always() && steps.hosted.outputs.initial != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hosted-math-initial-${{ github.event.pull_request.head.sha }}-attempt-${{ github.run_attempt }}
+          path: ${{ steps.hosted.outputs.initial }}
           if-no-files-found: error
           retention-days: 7
