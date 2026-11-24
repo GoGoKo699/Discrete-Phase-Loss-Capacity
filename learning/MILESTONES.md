@@ -2,16 +2,16 @@
 
 [Learning overview](README.md) · [Holevo bridge](HOLEVO_BRIDGE.md) · [Scientific account](../science/README.md)
 
-How much mean photon energy is needed to keep a fixed communication rate as the number of possible phase rotations grows? The route connects one optical mode, the adaptive converse and a counted carrier construction at fixed loss. It then follows the same channel into the near-lossless regime, where the residue of the received photon number leads to an exact limiting capacity. The [model](../science/model.md), [fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy) and [critical crossover](../science/critical-crossover.md) give the precise statements.
+How much mean photon energy is needed to keep a fixed communication rate as the number of possible phase rotations grows? The route connects one optical mode, the adaptive converse and a counted carrier construction at fixed loss. It then asks which photon-number coherences survive residual angular jitter and how that jitter enters the limiting capacity at weak loss and displacement. The [model](../science/model.md), [fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy) and [phase-jitter theorem](../science/phase-jitter.md) give the precise statements.
 
 The educational anchor is **Alexander S. Holevo, *Quantum Systems, Channels, Information: A Mathematical Introduction*, second revised and expanded edition (2019)**. The [reading map](HOLEVO_BRIDGE.md#reading-map) identifies the textbook sections used below.
 
 | Phase | Milestones | Scientific role |
 |---|---|---|
 | [Background and preliminaries](#background-and-preliminaries) | M01–M12 | Join states, entropy and quantum operations to one optical mode, its photon budget and the assisted communication task. |
-| [Narrative and innovation](#narrative-and-innovation) | M13–M30 | Build the environment converse and carrier recovery, compare fixed loss with zero loss, and derive the critical crossover. |
+| [Narrative and innovation](#narrative-and-innovation) | M13–M30 | Build the environment converse and carrier recovery, compare fixed loss with zero loss, and derive the harmonic criterion and critical capacity. |
 
-The 12/18 allocation reflects these two bodies of work. The background phase ends with the complete communication problem. The narrative phase begins with the fixed-loss proof mechanisms and ends with a common capacity curve for the joint limit. Dependencies name earlier milestones; each source link leads to the authoritative statement or argument. Technical lemmas and detailed calculations remain in those sources.
+The 12/18 allocation reflects these two bodies of work. The background phase ends with the complete communication problem. The narrative phase begins with the fixed-loss proof mechanisms and ends with the phase-sensitive capacity in the joint limit. Dependencies name earlier milestones; each source link leads to the authoritative statement or argument. Technical lemmas and detailed calculations remain in those sources.
 
 ## Background and preliminaries
 
@@ -189,130 +189,130 @@ The 12/18 allocation reflects these two bodies of work. The background phase end
 
 ### M18
 
-**Finite data inside the displaced optical mode**
+**Displaced data and their Gram matrix**
 
-- **Central question:** Which part of the achievable code is finite dimensional?
-- **Understanding target:** Explain the finite-Fock data subspace before displacement, its preservation under pure loss, and the translated and rotated output subspaces for the phase branches. Distinguish this data cutoff from the generally infinite Fock support of the physical transmitted codeword.
-- **Dependencies and story role:** [M06](#m06)–[M10](#m10), [M12](#m12). The second proof direction starts from a concrete encoded signal.
-- **Conceptual connection:** Finite-dimensional data can be processed exactly inside a counted, infinite-dimensional optical mode.
-- **Sources:** [exact-recovery bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue); [finite data and a counted carrier](../science/recovery.md#finite-data-and-a-counted-carrier); [avoiding an artificial optical cutoff](../verification/README.md#avoiding-a-misleading-optical-cutoff).
+- **Central question:** How does a fixed finite data subspace fit inside a displaced optical mode?
+- **Understanding target:** Distinguish the finite-Fock data space from the full Fock support of the transmitted signal. Explain how the Gram matrix of the displaced and rotated output basis tests independence of all phase branches. Follow why distinct exponential-polynomial functions give a positive smallest eigenvalue at every fixed alphabet size.
+- **Dependencies and story role:** [M06](#m06)–[M10](#m10), [M12](#m12). The constructive proof moves from the channel to a concrete encoding.
+- **Conceptual connection:** The receiver must preserve an entire data subspace and its reference, so discrimination of a single probe is insufficient.
+- **Sources:** [Finite data and the counted carrier](../science/recovery.md#finite-data-and-a-counted-carrier), [Gram construction](../science/recovery.md#theorem-2-an-exact-success-instrument) and [linear-independence proof](../science/recovery.md#proof-of-linear-independence).
 
 ### M19
-
-**Independent displaced data subspaces**
-
-- **Central question:** Why does a reciprocal map exist for the whole data subspace?
-- **Understanding target:** Explain the Gram matrix of all displaced data basis vectors and the role of distinct displacement amplitudes. Follow how independence of exponential-polynomial functions makes this matrix positive definite for every finite alphabet and positive carrier amplitude. Recognize that positivity alone does not give a success bound uniform in alphabet size.
-- **Dependencies and story role:** [M08](#m08), [M18](#m18). This establishes the algebraic possibility of exact branch recovery.
-- **Conceptual connection:** Independence of complete error subspaces supports preservation of arbitrary data, beyond discrimination of one selected probe state.
-- **Sources:** [exact-recovery bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue); [Gram construction](../science/recovery.md#theorem-2-an-exact-success-instrument); [linear-independence proof](../science/recovery.md#proof-of-linear-independence).
-
-### M20
 
 **Reciprocal maps become a physical filter**
 
 - **Central question:** How does an algebraic left inverse yield a valid receiver instrument?
-- **Understanding target:** Explain the reciprocal-operator identities and the scaling by the smallest Gram eigenvalue that makes the total success effect at most the identity. Connect the resulting operator identity to exact recovery of the pure-loss output with any reference, and include the failure branch.
-- **Dependencies and story role:** [M02](#m02), [M04](#m04), [M10](#m10), [M19](#m19). This converts algebraic recovery into an allowed local operation.
-- **Conceptual connection:** A spectral bound controls both physical validity and the success probability.
-- **Sources:** [Holevo §§2.4 and 6.5–6.6](HOLEVO_BRIDGE.md#reading-map); [instrument and reference-preservation proof](../science/recovery.md#proof-of-instrument-validity-and-exact-recovery).
+- **Understanding target:** Use the reciprocal-operator identities and the smallest Gram eigenvalue to scale the total success effect below the identity. Explain how the resulting success operation recovers the pure-loss output with its arbitrary reference. Include the failure outcome.
+- **Dependencies and story role:** [M02](#m02), [M04](#m04), [M10](#m10), [M18](#m18). The algebraic recovery becomes a local operation.
+- **Conceptual connection:** The Gram eigenvalue controls both physical validity and success probability.
+- **Sources:** [Holevo §§2.4 and 6.5–6.6](HOLEVO_BRIDGE.md#reading-map) and [instrument validity and exact recovery](../science/recovery.md#proof-of-instrument-validity-and-exact-recovery).
 
-### M21
-
-**A uniform overlap bound around the phase circle**
-
-- **Central question:** Why does the growing number of branches not introduce another alphabet-size factor?
-- **Understanding target:** Explain the finite-Fock overlap envelope as a polynomial times a Gaussian. Group Gram blocks by circular separation and use the at-most-two multiplicity at each separation to obtain a summable row bound independent of the alphabet size.
-- **Dependencies and story role:** [M07](#m07), [M08](#m08), [M19](#m19), [M20](#m20). Exact recovery gains a quantitative bound that survives growing alphabets.
-- **Conceptual connection:** The geometry of equally spaced phase branches controls the collective overlap more sharply than multiplying one overlap by the number of branches.
-- **Sources:** [displacement envelope](../science/recovery.md#an-explicit-displacement-envelope); [uniform Gram estimate](../science/recovery.md#lemma-3-uniform-success-with-amplitude-proportional-to-the-alphabet-size).
-
-### M22
+### M20
 
 **Uniform success at quadratic carrier energy**
 
-- **Central question:** What photon cost keeps recovery success close to one as the alphabet grows?
-- **Understanding target:** For fixed data cutoff and desired success margin, explain choosing one carrier-amplitude coefficient that works for every alphabet size. Convert linear growth of carrier amplitude into quadratic physical input energy, including attenuation and the data contribution.
-- **Dependencies and story role:** [M08](#m08), [M09](#m09), [M18](#m18), [M21](#m21). The recovery estimate becomes a uniform resource statement.
-- **Conceptual connection:** A spectral overlap estimate has a directly charged optical energy cost.
-- **Sources:** [uniform-success lemma](../science/recovery.md#lemma-3-uniform-success-with-amplitude-proportional-to-the-alphabet-size); [encoded input energy](../science/recovery.md#input-energy-of-the-encoded-data).
+- **Central question:** Why does linear carrier amplitude suffice for a growing phase alphabet?
+- **Understanding target:** Explain the polynomial-times-Gaussian overlap envelope for displaced finite-Fock data. Group Gram blocks by circular separation to find a summable row bound and a carrier coefficient independent of the alphabet size. Convert the amplitude to unconditional mean input photons.
+- **Dependencies and story role:** [M07](#m07)–[M09](#m09), [M18](#m18), [M19](#m19). The receiver construction gains a quantitative resource bound.
+- **Conceptual connection:** Circular separation controls the overlap sum and fixes the energy cost of making success uniformly close to one.
+- **Sources:** [Displacement envelope](../science/recovery.md#an-explicit-displacement-envelope), [uniform Gram estimate](../science/recovery.md#lemma-3-uniform-success-with-amplitude-proportional-to-the-alphabet-size) and [encoded input energy](../science/recovery.md#input-energy-of-the-encoded-data).
 
-### M23
+### M21
 
 **Reverse hashing on finite optical data**
 
-- **Central question:** How much entanglement can be distilled from a successful recovered pair?
-- **Understanding target:** For the canonical finite-Fock purification, explain why the reference entropy is the input number entropy and the joint output entropy is the lost-count entropy. Identify their difference as reverse coherent information and connect a positive value to hashing with classical communication from receiver to sender.
-- **Dependencies and story role:** [M02](#m02), [M03](#m03), [M06](#m06), [M11](#m11), [M18](#m18). The recovered quantum state is assigned an operational entanglement rate.
-- **Conceptual connection:** Orthogonal loss sectors turn an entropy difference into an achievable communication resource.
-- **Sources:** [Holevo §§10.3.1–10.3.2](HOLEVO_BRIDGE.md#reading-map); [finite data and reverse coherent information](../science/rate_energy.md#finite-data-and-reverse-coherent-information); [DW2005](../references/REFERENCES.md#dw2005); [Reverse2009](../references/REFERENCES.md#reverse2009).
+- **Central question:** How much entanglement can be distilled from a successfully recovered pair?
+- **Understanding target:** For the canonical finite-Fock purification, identify the reference entropy as the input number entropy and the joint output entropy as the lost-count entropy. Explain how their difference gives a reverse hashing rate with messages from receiver to sender.
+- **Dependencies and story role:** [M02](#m02), [M03](#m03), [M06](#m06), [M11](#m11), [M18](#m18). A recovered quantum state receives an operational rate.
+- **Conceptual connection:** Orthogonal loss sectors turn an entropy difference into a distillable resource.
+- **Sources:** [Holevo §§10.3.1–10.3.2](HOLEVO_BRIDGE.md#reading-map), [finite data and reverse coherent information](../science/rate_energy.md#finite-data-and-reverse-coherent-information), [DW2005](../references/REFERENCES.md#dw2005) and [Reverse2009](../references/REFERENCES.md#reverse2009).
 
-### M24
+### M22
 
-**One finite cutoff suffices for the target rate**
+**One finite cutoff for a target rate**
 
-- **Central question:** Why can the data cutoff be fixed before alphabet size or coding length grows?
-- **Understanding target:** Follow the choice of one finite-mean geometric input whose reverse rate exceeds the target, then a finite cutoff that preserves this strict margin. Explain how the explicit tail-entropy estimate controls both input and lost-count entropies, avoiding an unsupported exchange of cutoff and coding limits.
-- **Dependencies and story role:** [M03](#m03), [M06](#m06), [M12](#m12), [M23](#m23). This makes the finite-dimensional recovery construction sufficient for every fixed rate below the pure-loss endpoint.
-- **Conceptual connection:** A controlled entropy limit converts a bosonic capacity argument into one finite data subspace.
-- **Sources:** [rates-and-limits bridge](WILDE_BRIDGE.md#rates-and-limits); [finite-cutoff lemma](../science/rate_energy.md#lemma-4-a-fixed-finite-cutoff-suffices-below-the-pure-loss-endpoint).
+- **Central question:** Why can the data cutoff be fixed before the alphabet size or coding length grows?
+- **Understanding target:** Choose one finite-mean geometric distribution whose reverse rate exceeds the target. Use a tail-entropy estimate on the input number and lost count to retain that strict margin after taking a finite cutoff.
+- **Dependencies and story role:** [M03](#m03), [M06](#m06), [M12](#m12), [M21](#m21). This makes finite-dimensional recovery sufficient below the pure-loss endpoint.
+- **Conceptual connection:** Controlling two entropy tails converts an optical capacity benchmark into a finite data-space choice.
+- **Sources:** [Limits in the Wilde reading notes](WILDE_BRIDGE.md#rates-and-limits) and [fixed finite-cutoff lemma](../science/rate_energy.md#lemma-4-a-fixed-finite-cutoff-suffices-below-the-pure-loss-endpoint).
 
-### M25
+### M23
 
 **Fixed-length coding after heralding**
 
-- **Central question:** How are random successes converted into a rate per attempted use?
-- **Understanding target:** Explain making a fixed number of attempts, reserving slightly fewer successful pairs than their typical number, and aborting on the vanishing-probability shortage event. Combine this with reverse hashing to approach success probability times recovered-pair rate while counting all attempted photons and uses.
-- **Dependencies and story role:** [M09](#m09)–[M11](#m11), [M20](#m20), [M22](#m22)–[M24](#m24). This completes the reliable communication protocol.
-- **Conceptual connection:** A conditional quantum operation becomes an unconditional, fixed-length capacity construction.
-- **Sources:** [rates-and-limits bridge](WILDE_BRIDGE.md#rates-and-limits); [exact heralding followed by hashing](../science/rate_energy.md#exact-heralding-followed-by-hashing).
+- **Central question:** How do random successes become a rate per attempted use?
+- **Understanding target:** Plan a fixed number of attempts, reserve slightly fewer successes than the typical number, and abort the coding block upon a shortage. Multiply the recovered-pair rate by the success probability and include the energy from every attempt.
+- **Dependencies and story role:** [M09](#m09)–[M11](#m11), [M19](#m19)–[M22](#m22). The local construction becomes a reliable communication protocol.
+- **Conceptual connection:** Heralding reveals which pairs to use while the protocol averages over all attempted uses.
+- **Sources:** [Limits in the Wilde reading notes](WILDE_BRIDGE.md#rates-and-limits) and [exact heralding followed by hashing](../science/rate_energy.md#exact-heralding-followed-by-hashing).
+
+### M24
+
+**Quadratic energy with loss, linear energy without it**
+
+- **Central question:** Why does removing loss change the energy order?
+- **Understanding target:** Combine the fixed-loss converse and carrier construction for a fixed target rate below the pure-loss endpoint. At zero loss, use the noiseless residue-zero subspace and the residue-conditioned entropy bound to derive the exact thermal-entropy benchmark. Explain why this gives a separate linear photon cost.
+- **Dependencies and story role:** [M03](#m03), [M07](#m07), [M12](#m12), [M17](#m17), [M23](#m23). The two proof directions meet and their lossless endpoint becomes a comparison.
+- **Conceptual connection:** Photon loss reveals information about the lattice index that cyclic phase averaging alone preserves.
+- **Sources:** [Fixed-rate energy theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy) and [lossless benchmark](../science/rate_energy.md#theorem-4-exact-lossless-benchmark).
+
+### M25
+
+**Residual angular jitter and its harmonics**
+
+- **Central question:** Which within-residue coherences survive after the cyclic phase peaks broaden?
+- **Understanding target:** Fold the residual angle by multiplying by the alphabet size and reducing modulo a full turn. Show that coherences whose Fock numbers differ by $`kJ`$ are multiplied by the $`k`$th Fourier coefficient of that folded law. For a folded law with equal masses at zero and half a turn, find the first nonzero positive harmonic.
+- **Dependencies and story role:** [M04](#m04), [M07](#m07), [M24](#m24). The phase alphabet now has independent angular jitter within each phase branch.
+- **Conceptual connection:** The number spacing in the input determines which Fourier coefficient controls its surviving coherence.
+- **Sources:** [Phase-jitter bridge](HOLEVO_BRIDGE.md#phase-jitter-and-folded-harmonics) and [folded phase law](../science/phase-jitter.md#folded-phase-law).
 
 ### M26
 
-**The matched energy law**
+**Why a moving harmonic can disappear at fixed loss**
 
-- **Central question:** What has been established when the necessary and sufficient photon orders coincide?
-- **Understanding target:** Combine the converse and construction under the same unconditional energy convention. Explain why both two-way entanglement and key require and admit quadratic energy for a fixed partial loss and fixed positive rate below the pure-loss endpoint. Identify which constants depend on loss and target rate, and why the theorem is not an exact finite-energy capacity formula.
-- **Dependencies and story role:** [M12](#m12), [M17](#m17), [M25](#m25). The two proof directions meet in the central result.
-- **Conceptual connection:** A universal lower bound and one compatible protocol determine the optimal scaling order.
-- **Sources:** [Fixed-rate theorem](../science/rate_energy.md#theorem-3-fixed-rate-photon-energy), [proof](../science/rate_energy.md#proof-of-theorem-3) and [finite carrier calculations](../verification/README.md#fixed-loss-carrier-example).
+- **Central question:** Why can quadratic energy fail even if the phase-only capacity stays positive?
+- **Understanding target:** Recenter the photon-number quotient using the flagged count, then use its bounded second moment to restrict attention to a fixed window. Explain why finite-window phase tags become orthogonal when the folded law tends to uniform, and why the omitted tail costs vanishing entropy. Apply the result to a fixed-amplitude cosine whose harmonic index tends to infinity and grows more slowly than $`J`$.
+- **Dependencies and story role:** [M05](#m05), [M14](#m14)–[M17](#m17), [M24](#m24), [M25](#m25). The posterior estimate shows which harmonics a fixed-loss photon budget can keep useful.
+- **Conceptual connection:** The phase-only relative entropy to uniform can stay constant while the separation in Fock number required to carry coherence grows.
+- **Sources:** [Rate bound for arbitrary inputs](../science/phase-jitter.md#a-rate-bound-for-arbitrary-inputs) and [moving-harmonic example](../science/phase-jitter.md#a-moving-harmonic-raises-the-energy-scale).
 
 ### M27
 
-**The exact lossless benchmark**
+**Heralding a Fock doublet at fixed loss**
 
-- **Central question:** Why does setting the loss exactly to zero change the energy order?
-- **Understanding target:** Use the residue-zero noiseless subspace to obtain the attainable entropy, and use the residue-conditioned environment bound to obtain the matching upper bound. Explain the exact thermal-entropy formula and resulting linear photon cost. Distinguish this separate endpoint proof from taking a uniform zero-loss limit of the lossy constants.
-- **Dependencies and story role:** [M03](#m03), [M07](#m07), [M13](#m13), [M24](#m24), [M26](#m26). The main law is compared with the channel's sharply different lossless endpoint.
-- **Conceptual connection:** Photon loss reveals a lattice index that phase randomization alone leaves protected.
-- **Sources:** [lossless theorem and proof](../science/rate_energy.md#theorem-4-exact-lossless-benchmark); [protection without loss](../science/interpretation.md#protection-without-loss).
+- **Central question:** How does one surviving harmonic give a positive assisted rate at quadratic energy?
+- **Understanding target:** Use two Fock levels separated by $`kJ`$ with an entangled reference. Describe the receiver's disjoint two-level projections and one typical-loss acceptance window. Relate nonzero surviving coherence and the two leakage populations to Bell fidelity above one half. Track the acceptance probability and the mean photons of all attempts through recurrence and hashing.
+- **Dependencies and story role:** [M06](#m06), [M09](#m09)–[M11](#m11), [M23](#m23), [M25](#m25), [M26](#m26). A physical receiver supplies the achievable half of the harmonic criterion.
+- **Conceptual connection:** Modular number coherence can support assisted communication even when the original branch-separation receiver is unavailable.
+- **Sources:** [Fixed-loss rate threshold](../science/phase-jitter.md#fixed-loss-rate-threshold) and [receiver and its loss window](../science/phase-jitter.md#a-receiver-that-accepts-typical-loss).
 
 ### M28
 
 **What Bob can infer from the output residue**
 
-- **Central question** Which information about the lost photons can Bob infer while preserving the encoded number superposition?
-- **Understanding target** Use the known input residue to infer $`L\bmod J`$ from the receiver's output residue. Explain why measuring the residue preserves coherence within a residue class. Derive the forward coherent information of a fixed-residue input and bound its deficit from the converse by the entropy of the unresolved loss quotient. Explain how a predetermined, energy-accounted schedule handles multiple input residues.
-- **Dependencies and story role** [M03](#m03), [M06](#m06), [M07](#m07), [M09](#m09), [M14](#m14), [M23](#m23) and [M27](#m27) give the entropy, symmetry and operational tools. The achievable proof returns to the residue subspaces used in the lossless benchmark.
-- **Conceptual connection** The converse uses the full lost count. The output gives Bob the residue exactly, and mean lost photons control the cost of any unresolved part.
-- **Sources** [Holevo bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue) and [finite-alphabet bound](../science/critical-crossover.md#the-finite-alphabet-bound).
+- **Central question:** Which information about the lost photons can Bob infer while preserving the encoded number superposition?
+- **Understanding target:** Use the known input residue to infer $`L\bmod J`$ from the receiver's output residue. Explain why measuring the residue preserves coherence within a residue class. Derive the forward coherent information of a fixed-residue input and bound its deficit from the converse by the entropy of the unresolved loss quotient. Explain how a predetermined schedule handles multiple input residues within the budget.
+- **Dependencies and story role:** [M03](#m03), [M06](#m06), [M07](#m07), [M09](#m09), [M14](#m14), [M21](#m21), [M24](#m24). The achievable proof returns to the residue subspaces used in the lossless benchmark.
+- **Conceptual connection:** The converse uses the full lost count. Bob learns its residue, and mean lost photons control the ambiguity cost.
+- **Sources:** [Holevo bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue) and [finite-alphabet bound](../science/critical-crossover.md#the-finite-alphabet-bound).
 
 ### M29
 
 **From a binomial loss count to an exact capacity**
 
-- **Central question** Why do all three capacities converge to the same curve when loss falls inversely with the alphabet size?
-- **Understanding target** At mean energy $`E=eJ`$ and loss probability $`q_J`$ with $`Jq_J\to\lambda`$, split the normalized input number into its fractional residue and integer index. Explain the limiting Poisson law and why truncating large indices uniformly in the mean-constrained prior is needed before using that approximation. Explain how rounding the fractional residue down respects the energy budget. Take the coding block length limit at each fixed alphabet size before taking the joint limit.
-- **Dependencies and story role** [M03](#m03), [M06](#m06), [M09](#m09), [M15](#m15), [M27](#m27) and [M28](#m28) give the mean constraint, lattice and vanishing capacity gap. The lossless entropy formula becomes one endpoint of a curve.
-- **Conceptual connection** The lost count becomes a classical Poisson observation of the rescaled input number. Its posterior uncertainty gives the maximum surviving quantum rate in the limit.
-- **Sources** [Exact capacity in the critical window](../science/critical-crossover.md#exact-capacity-in-the-critical-window) and [Holevo bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue).
+- **Central question:** Why do all three capacities converge to the same curve when loss falls inversely with the alphabet size?
+- **Understanding target:** At energy $`E=eJ`$ and with $`Jq_J\to\lambda`$, split the normalized input number into a fractional residue and an integer index. Explain how a uniform entropy-tail bound allows Poisson convergence on a bounded set of indices and how rounding the residue down respects the budget. Take the coding limit at each fixed alphabet size before taking the joint limit.
+- **Dependencies and story role:** [M03](#m03), [M06](#m06), [M09](#m09), [M15](#m15), [M24](#m24), [M28](#m28). The lossless entropy formula becomes one endpoint of a curve.
+- **Conceptual connection:** The lost count becomes a Poisson observation of the rescaled input number. In the absence of displacement and jitter, the resulting posterior uncertainty gives the limiting rate.
+- **Sources:** [Pure-loss critical window](../science/critical-crossover.md#exact-capacity-in-the-critical-window) and [Holevo bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue).
 
 ### M30
 
-**When the net photon shift hides environmental information**
+**Two environment records at linear energy**
 
-- **Central question** Why can two channels with identical photon-number transitions have different quantum and key capacities?
-- **Understanding target** Use the loss–gain dilation to identify multiple microscopic histories with the same net shift. Explain how Bob's known residue gives the shift modulo the alphabet size, and how the conditional environment Gram matrix determines the additional Holevo correction. Compare the two-level example, the optimized strict gap for positive displacement scale and the zero-displacement Poisson endpoint. Identify the fixed-loss carrier result as a separate operational regime.
-- **Dependencies and story role** [M04](#m04), [M05](#m05), [M09](#m09), [M23](#m23) and [M26](#m26)–[M29](#m29) connect the optical dilation, finite-energy coding and the two capacity limits.
-- **Conceptual connection** Knowing a shift does not specify the environment state inside that shift. Retaining the environment's coherence changes the operational rate.
-- **Sources** [Holevo bridge](HOLEVO_BRIDGE.md#the-carrier-and-the-residue), [critical displacement](../science/critical-displacement.md) and [binary check](../science/critical-displacement.md#binary-check).
+- **Central question:** Why can identical photon-number transitions coexist with different communication capacities?
+- **Understanding target:** Identify the coherent loss and gain histories within one net shift. Tensor their environment vectors with the phase tags whose overlaps are the folded harmonics. Explain why the receiver can infer the shift modulo $`J`$, how the ambiguity vanishes, and why a nonzero harmonic still gives a positive limiting rate with weak loss and displacement. Recover the no-jitter and uniform folded-law limits.
+- **Dependencies and story role:** [M04](#m04), [M05](#m05), [M21](#m21), [M25](#m25), [M27](#m27)–[M29](#m29). The model reaches a common limit for unassisted quantum transmission, two-way quantum communication and secret key.
+- **Conceptual connection:** A count shift and the environment's information within that shift are different resources. Residual phase changes the latter while leaving the receiver's photon-number transitions fixed.
+- **Sources:** [Critical displacement](../science/critical-displacement.md), [phase-jitter bridge](HOLEVO_BRIDGE.md#phase-jitter-and-folded-harmonics) and [phase-tagged critical capacity](../science/phase-jitter.md#exact-capacity-at-weak-loss-and-displacement).

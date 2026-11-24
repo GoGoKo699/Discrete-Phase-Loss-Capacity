@@ -43,6 +43,12 @@ Independent displacement of variance of order $`1/J`$ preserves a positive rate 
 
 [Critical displacement theorem](science/critical-displacement.md) · [Companion analysis in Bosonic Noise Dimension](https://github.com/GoGoKo699/Bosonic-Noise-Dimension/blob/main/science/07-cyclic-phase.md)
 
+## When the phase angles have jitter
+
+Add an independent residual rotation to each nominal cyclic phase. The relevant angular law is the distribution of the residual angle multiplied by $`J`$ and reduced modulo $`2\pi`$. At fixed photon loss and an unconditional budget of $`eJ^2`$ photons per use, a nonuniform limiting law preserves a positive two-way quantum and secret-key rate. A uniform limiting law drives both rates to zero. The receiver uses a surviving Fourier harmonic to choose a pair of Fock levels and accepts a band of typical photon losses.
+
+A harmonic that moves to higher order can preserve the phase-only capacity while pushing the required energy in the lossy channel above the quadratic scale. With loss and Gaussian displacement at the inverse-alphabet scale, a phase tag in the environment gives an exact common capacity limit at linear energy. [Phase-jitter theorems](science/phase-jitter.md)
+
 ## Read the science
 
 Start with the [scientific overview](science/README.md), then follow the route matching your question.
@@ -55,13 +61,14 @@ Start with the [scientific overview](science/README.md), then follow the route m
 | How do the bounds give matching rates, the lossless benchmark and the infinite-energy limit? | [Rate and energy](science/rate_energy.md) |
 | When does unassisted quantum communication reach the two-way limit? | [Critical photon-loss crossover](science/critical-crossover.md) |
 | Why can channels with the same photon-number transitions have different capacities? | [Critical displacement](science/critical-displacement.md) |
+| Which residual phase laws support communication after loss? | [Phase jitter and surviving harmonics](science/phase-jitter.md) |
 | What is the physical meaning, and which limits do not commute? | [Interpretation](science/interpretation.md) |
 | Which results and techniques are inherited? | [Related work](references/RELATED_WORK.md) and [references](references/REFERENCES.md) |
 | What can be reproduced numerically? | [Verification guide](verification/README.md) |
 
 ## Learn the project
 
-The [learning route](learning/README.md) follows Alexander S. Holevo's *Quantum Systems, Channels, Information*, second revised and expanded edition (2019). The [Holevo bridge](learning/HOLEVO_BRIDGE.md) connects the textbook to the photon budget, the optical channels and the capacity proof. The [30-milestone map](learning/MILESTONES.md) develops the background into the communication-energy theorem and its two critical limits.
+The [learning route](learning/README.md) follows Alexander S. Holevo's *Quantum Systems, Channels, Information*, second revised and expanded edition (2019). The [Holevo bridge](learning/HOLEVO_BRIDGE.md) connects the textbook to the photon budget, the optical channels and the capacity proof. The [30-milestone map](learning/MILESTONES.md) develops the communication-energy theorem, the critical limits and the role of phase harmonics.
 
 ## Reproduce the finite checks
 
@@ -71,15 +78,16 @@ From the repository root:
 python3 -m pip install -r verification/requirements.txt
 python3 verification/check_theorem.py
 python3 verification/check_critical_displacement.py
+python3 verification/check_phase_jitter.py
 ```
 
-The deterministic suite checks the conditional-entropy calculations, arbitrary-reference branches, displacement matrix elements, the heralded recovery and the finite-alphabet loss-count calculation. The displacement check reproduces the binary coherent-information calculation and its finite-alphabet alias cost. The all-input and asymptotic statements follow from the proofs. [Saved numerical results](verification/results.json)
+The deterministic suite checks the conditional-entropy calculations, arbitrary-reference branches, displacement matrix elements, the heralded recovery and the finite-alphabet loss-count calculation. The displacement check reproduces the binary coherent-information calculation and its finite-alphabet alias cost. The jitter check evaluates binomial loss windows and phase-tag overlaps. The all-input and asymptotic statements follow from the proofs. [Verification guide](verification/README.md)
 
 ## Scope
 
-The phase alphabet is known and exactly discrete, while the realized phase is hidden and independently redrawn on every use. There is no additional transmitted reference mode or initial shared entanglement. The receiver may implement arbitrary quantum operations. The recovery proof does not establish efficient hardware implementation or robustness to continuously broadened phase errors.
+The nominal phase alphabet and any residual phase law are known. The realized phases are hidden and independently redrawn on every use. There is no additional transmitted reference mode or initial shared entanglement. The constructions allow arbitrary local quantum operations, including number-selective measurements. Hardware costs for these operations are outside the channel-use and photon budgets.
 
-The quadratic energy law applies at fixed positive loss. The exact crossover takes the ordinary coding limit first for each channel, then grows the alphabet with linear mean input energy. At a fixed finite alphabet and positive loss, the finite-alphabet theorem gives capacity bounds. For every finite cyclic alphabet, positive transmissivity and positive energy budget, the two-way rate remains positive.
+The quadratic energy law for target rates below the pure-loss capacity applies to the exact cyclic alphabet at fixed positive loss. The jitter criterion decides whether a positive rate survives at quadratic energy. The exact critical limits take the ordinary coding limit first for each channel, then grow the alphabet with linear mean input energy.
 
 ## Purpose and contact
 
